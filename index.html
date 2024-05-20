@@ -1,110 +1,219 @@
-<!-- ---
-layout: default
---- -->
-
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>完整的圣诞树</title>
-    <style>
-        body { margin: 0; }
-        canvas { display: block; }
+    <title>520快乐哈~</title>
+    <style type="text/css">
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+			 background-color: #FCE8F8;
+        }
+
+        #snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .snowflake {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .heart {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            animation: heartbeat 1s infinite;
+            transform-origin: center center;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            background-color: red;
+            border-radius: 50px 50px 0 0;
+            position: absolute;
+            top: 0;
+        }
+
+        .heart:before {
+            left: 100px;
+            width: 100px;
+            height: 160px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart:after {
+            left: 0;
+            width: 100px;
+            height: 160px;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        #timeElapsed {
+            text-align: center;
+            font-size: 24px;
+            margin-top: -20px;
+            margin-left: 16px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .sakura {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            background-image: url('https://www.unicode.org/emoji/charts/full-emoji-list.html#1f338'); /* 🌸的Unicode转义序列 */
+            background-size: cover;
+            animation: falling linear infinite;
+            animation-duration: 10s;
+        }
+        #words-spoken {
+            position: absolute;
+            margin-left: 50%;
+            transform: translate(-50%);
+            text-align: center;
+            bottom: 40px;
+        }
     </style>
 </head>
 <body>
-<script src="https://threejs.org/build/three.js"></script>
-<script >
-    // 创建场景
-    let scene = new THREE.Scene();
+    <div id="snow-container">
+        <div id="words-spoken">
+            <!-- <div>你虽然懒惰，但你有一颗善良的心；你虽然胖胖的，但你有一颗有趣的灵魂。&nbsp;</div>
+            <div> 520，我爱你，爱你的全部，包括你的小缺点。</div> -->
+        </div>
+    </div>
+    <div class="heart"></div>
+    <div id="timeElapsed">
+        <div>你虽然懒惰，但你有一颗善良的心；你虽然胖胖的，但你有一颗有趣的灵魂。&nbsp;</div>
+        <div> 520，我爱你，爱你的全部，包括你的小缺点。</div>
+    </div>
 
-    // 添加背景颜色
-    scene.background = new THREE.Color(0x002633);
+    <script>
+        function getTimeElapsed() {
+            var startDate = new Date("2017-05-16"); // 设置开始日期，替换为实际的起始日期
+            var currentDate = new Date();
+            var timeDiff = currentDate - startDate;
 
-    // 创建相机
-    let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 5;
+            var milliseconds = timeDiff % 1000;
+            timeDiff = Math.floor(timeDiff / 1000);
+            var seconds = timeDiff % 60;
+            timeDiff = Math.floor(timeDiff / 60);
+            var minutes = timeDiff % 60;
+            timeDiff = Math.floor(timeDiff / 60);
+            var hours = timeDiff % 24;
+            timeDiff = Math.floor(timeDiff / 24);
+            var days = timeDiff;
 
-    // 创建渲染器
-    let renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+            var timeString = "温宝我们已经在一起 " + days + " 天 " + hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒了";
 
-    // 创建材质
-    let brownMaterial = new THREE.MeshBasicMaterial({ color: 0x7f4014 });
-    let greenMaterial = new THREE.MeshBasicMaterial({ color: 0x006400, transparent: true, opacity: 0.8 });
-    let redMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-    let yellowMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-
-    // 创建树干
-    let trunkGeometry = new THREE.CylinderGeometry(0.2, 0.4, 1.6, 8);
-    let trunk = new THREE.Mesh(trunkGeometry, brownMaterial);
-    scene.add(trunk);
-
-    // 创建树叶
-    let leavesGeometry = new THREE.ConeGeometry(1.2, 2.4, 8);
-    let leaves = new THREE.Mesh(leavesGeometry, greenMaterial);
-    leaves.position.y = 1.6;
-    scene.add(leaves);
-
-    // 创建彩灯
-    let lightGeometry = new THREE.SphereGeometry(0.1, 4, 4);
-    let lights = [];
-    let colors = [redMaterial, yellowMaterial, new THREE.MeshBasicMaterial({ color: 0x0000ff }), new THREE.MeshBasicMaterial({ color: 0x00ff00 })];
-    let angles = [0, Math.PI / 3, 2 * Math.PI / 3, Math.PI, 4 * Math.PI / 3, 5 * Math.PI / 3];
-    for (let i = 0; i < angles.length; i++) {
-        let light = new THREE.Mesh(lightGeometry, colors[i % 4]);
-        light.position.set(Math.cos(angles[i]) * 0.9, 2.2, Math.sin(angles[i]) * 0.9);
-        scene.add(light);
-        lights.push(light);
-    }
-
-    // 创建星星
-    let starGeometry = new THREE.SphereGeometry(0.2, 4, 4);
-    let star = new THREE.Mesh(starGeometry, yellowMaterial);
-    star.position.y = 2.7;
-    scene.add(star);
-
-    // 创建礼物盒
-    let giftGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-    let giftMaterials = [
-        new THREE.MeshBasicMaterial({ color: 0xff0000 }),
-        new THREE.MeshBasicMaterial({ color: 0x00ff00 }),
-        new THREE.MeshBasicMaterial({ color: 0x0000ff }),
-        new THREE.MeshBasicMaterial({ color: 0xffff00 }),
-        new THREE.MeshBasicMaterial({ color: 0xff00ff }),
-        new THREE.MeshBasicMaterial({ color: 0x00ffff })
-    ];
-    let giftMesh = new THREE.Mesh(giftGeometry, giftMaterials);
-    giftMesh.position.set(0, -1.3, 0);
-    scene.add(giftMesh);
-
-    // 添加雪花效果
-    let snowFlakeGeometry = new THREE.BufferGeometry();
-    let positions = [];
-    for (let i = 0; i < 1000; i++) {
-        positions.push(Math.random() * 2000 - 1000);
-        positions.push(Math.random() * 2000 - 1000);
-        positions.push(Math.random() * 2000 - 1000);
-    }
-    snowFlakeGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-    let snowFlakeMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 2 });
-    let snowFlake = new THREE.Points(snowFlakeGeometry, snowFlakeMaterial);
-    scene.add(snowFlake);
-    
-
-    // 渲染循环
-    function animate() {
-        requestAnimationFrame(animate);
-        trunk.rotation.y += 0.01;
-        leaves.rotation.y += 0.01;
-        for (let i = 0; i < lights.length; i++) {
-            lights[i].rotation.y += 0.02;
+            document.getElementById("words-spoken").textContent = timeString;
         }
-        snowFlake.rotation.y -= 0.001;
-        renderer.render(scene, camera);
-    }
-    animate();
-</script>
+
+        setInterval(getTimeElapsed, 1000);
+    </script>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+
+            const randomColor = getRandomColor();
+            snowflake.style.backgroundColor = randomColor;
+
+            // snowflake.innerHTML = '命运之光'; // You can customize the snowflake symbol here
+
+            return snowflake;
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function snowfall() {
+            const snowContainer = document.getElementById('snow-container');
+            const numSnowflakes = 50; // Adjust the number of snowflakes here
+
+            for (let i = 0; i < numSnowflakes; i++) {
+                const snowflake = createSnowflake();
+                snowContainer.appendChild(snowflake);
+            }
+        }
+
+        snowfall();
+    </script>
+
+    <script>
+        function createSakura() {
+            var sakura = document.createElement("div");
+            sakura.className = "sakura";
+            sakura.style.left = Math.random() * 100 + "vw";
+            sakura.style.animationDelay = Math.random() * 5 + "s";
+            document.body.appendChild(sakura);
+
+            setTimeout(function () {
+                sakura.remove();
+            }, 10000);
+        }
+
+        setInterval(createSakura, 200);
+    </script>
 </body>
 </html>
