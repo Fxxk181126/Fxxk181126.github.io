@@ -15,7 +15,7 @@
   transition: $transition-fast;
   
   &:hover {
-    background: color.scale($light-gray, $lightness: -5%);
+    background: darken($light-gray, 5%);
     color: $text-color;
     text-decoration: none;
   }
@@ -85,7 +85,7 @@
     color: #fff;
     
     &:hover {
-      background: color.scale($primary-color, $lightness: -10%);
+      background: darken($primary-color, 10%);
       color: #fff;
     }
   }

@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>现代CSS技术与最佳实践 - 个人官网 | Vue风格设计</title>
+    <meta name="description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta name="author" content="你的姓名">
+    <meta name="keywords" content="CSS, Grid, Flexbox, 响应式设计">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-CN">
+    
+    <!-- Google Site Verification -->
+    
+    <meta name="google-site-verification" content="">
+    
+    
+    <!-- Bing Site Verification -->
+    
+    <meta name="msvalidate.01" content="">
+    
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="现代CSS技术与最佳实践">
+    <meta property="og:description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:4000/blog/modern-css-techniques/">
+    <meta property="og:image" content="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20css%20grid%20flexbox%20responsive%20design%20colorful%20layout&image_size=landscape_16_9">
+    <meta property="og:site_name" content="个人官网 | Vue风格设计">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="现代CSS技术与最佳实践">
+    <meta name="twitter:description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta name="twitter:image" content="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20css%20grid%20flexbox%20responsive%20design%20colorful%20layout&image_size=landscape_16_9">
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#42b883">
+    <meta name="msapplication-TileColor" content="#42b883">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/blog/modern-css-techniques/">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="个人官网 | Vue风格设计" href="/feed.xml">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/assets/css/main.css" as="style">
+    <link rel="preload" href="/assets/js/main.js" as="script">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Google Analytics -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "你的姓名",
+        "url": "http://localhost:4000",
+        "sameAs": [
+            
+            "https://github.com/Fxxk181126",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "mailto:your.email@example.com"
+            
+        ],
+        "jobTitle": "全栈开发者",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelancer"
+        },
+        "description": "热爱技术创新，专注于前端开发和用户体验设计",
+        "image": "http://localhost:4000/assets/images/avatar.svg"
+    }
+    </script>
+</head>
+
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+    <div class="container">
+        <!-- Brand -->
+        <a href="/" class="navbar-brand">
+            <div class="brand-logo">个</div>
+            <span>个人品牌</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link active">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link ">联系</a>
+            </li>
+        </ul>
+        
+        <!-- Actions -->
+        <div class="navbar-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <a href="/contact" class="btn contact-btn">联系我</a>
+        </div>
+        
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" id="navbar-toggler" aria-label="打开菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="navbar-mobile" id="navbar-mobile">
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-brand">个人品牌</div>
+            <button class="mobile-close" id="mobile-close" aria-label="关闭菜单">
+                ✕
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link active">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link ">联系</a>
+            </li>
+        </ul>
+        <div class="mobile-actions">
+            <a href="/contact" class="btn contact-btn">联系我</a>
+            <button class="btn theme-toggle">
+                <span class="theme-icon">🌙</span>
+                切换主题
+            </button>
+        </div>
+    </div>
+</div>
+
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <main class="post-content">
+    <!-- Post Hero -->
+    <section class="post-hero">
+        <div class="container">
+            <div class="post-header">
+                <nav class="breadcrumb fade-in-up" aria-label="面包屑导航">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/blog/">博客</a></li>
+                        <li>现代CSS技术与最佳实践</li>
+                    </ol>
+                </nav>
+                <h1 class="post-title fade-in-up">现代CSS技术与最佳实践</h1>
+                <div class="post-meta fade-in-up">
+                    <time datetime="2024-01-05T00:00:00+08:00">
+                        2024年01月05日
+                    </time>
+                    
+                    <span class="post-author">你的姓名</span>
+                    
+                    
+                    <div class="post-categories">
+                        
+                        <span class="category">前端开发</span>
+                        
+                        <span class="category">CSS</span>
+                        
+                    </div>
+                    
+                    
+                    <div class="post-tags">
+                        
+                        <span class="tag">#CSS</span>
+                        
+                        <span class="tag">#Grid</span>
+                        
+                        <span class="tag">#Flexbox</span>
+                        
+                        <span class="tag">#响应式设计</span>
+                        
+                    </div>
+                    
+                </div>
+                
+                <p class="post-excerpt fade-in-up">探索现代CSS的强大功能，包括Grid布局、Flexbox、自定义属性、容器查询等最新技术，助你构建更优雅的用户界面。</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <section class="post-body">
+        <div class="container">
+            <div class="post-content-wrapper">
+                <article class="prose">
+                    <p>CSS在过去几年中发生了巨大的变化，新的布局方法、自定义属性、容器查询等功能让我们能够创建更加灵活和强大的用户界面。本文将深入探讨这些现代CSS技术。</p>
+
+<h2 id="css-grid-布局">CSS Grid 布局</h2>
+
+<h3 id="基础概念">基础概念</h3>
+
+<p>CSS Grid是一个二维布局系统，可以同时处理行和列：</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.grid-container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="n">fr</span><span class="p">);</span>
+  <span class="py">grid-template-rows</span><span class="p">:</span> <span class="nb">auto</span> <span class="m">1</span><span class="n">fr</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="py">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">min-height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.header</span> <span class="p">{</span>
+  <span class="nl">grid-column</span><span class="p">:</span> <span class="m">1</span> <span class="p">/</span> <span class="m">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="p">{</span>
+  <span class="nl">grid-row</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.main</span> <span class="p">{</span>
+  <span class="nl">grid-row</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.footer</span> <span class="p">{</span>
+  <span class="nl">grid-column</span><span class="p">:</span> <span class="m">1</span> <span class="p">/</span> <span class="m">-1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="高级grid技巧">高级Grid技巧</h3>
+
+<h4 id="1-命名网格线">1. 命名网格线</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.grid-container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> 
+    <span class="p">[</span><span class="n">sidebar-start</span><span class="p">]</span> <span class="m">250px</span> 
+    <span class="p">[</span><span class="n">sidebar-end</span> <span class="n">main-start</span><span class="p">]</span> <span class="m">1</span><span class="n">fr</span> 
+    <span class="p">[</span><span class="n">main-end</span><span class="p">];</span>
+  <span class="py">grid-template-rows</span><span class="p">:</span> 
+    <span class="p">[</span><span class="n">header-start</span><span class="p">]</span> <span class="nb">auto</span> 
+    <span class="p">[</span><span class="n">header-end</span> <span class="n">content-start</span><span class="p">]</span> <span class="m">1</span><span class="n">fr</span> 
+    <span class="p">[</span><span class="n">content-end</span> <span class="n">footer-start</span><span class="p">]</span> <span class="nb">auto</span> 
+    <span class="p">[</span><span class="n">footer-end</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="nc">.header</span> <span class="p">{</span>
+  <span class="nl">grid-column</span><span class="p">:</span> <span class="n">sidebar-start</span> <span class="p">/</span> <span class="n">main-end</span><span class="p">;</span>
+  <span class="nl">grid-row</span><span class="p">:</span> <span class="n">header-start</span> <span class="p">/</span> <span class="n">header-end</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="2-网格区域">2. 网格区域</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.grid-container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-areas</span><span class="p">:</span>
+    <span class="s1">"header header header"</span>
+    <span class="s1">"sidebar main aside"</span>
+    <span class="s1">"footer footer footer"</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">200px</span> <span class="m">1</span><span class="n">fr</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="py">grid-template-rows</span><span class="p">:</span> <span class="nb">auto</span> <span class="m">1</span><span class="n">fr</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.header</span> <span class="p">{</span> <span class="py">grid-area</span><span class="p">:</span> <span class="n">header</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.sidebar</span> <span class="p">{</span> <span class="py">grid-area</span><span class="p">:</span> <span class="n">sidebar</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.main</span> <span class="p">{</span> <span class="py">grid-area</span><span class="p">:</span> <span class="n">main</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.aside</span> <span class="p">{</span> <span class="py">grid-area</span><span class="p">:</span> <span class="n">aside</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.footer</span> <span class="p">{</span> <span class="py">grid-area</span><span class="p">:</span> <span class="n">footer</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="3-响应式grid">3. 响应式Grid</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.responsive-grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">(</span><span class="n">auto-fit</span><span class="p">,</span> <span class="n">minmax</span><span class="p">(</span><span class="m">300px</span><span class="p">,</span> <span class="m">1</span><span class="n">fr</span><span class="p">));</span>
+  <span class="py">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 更复杂的响应式布局 */</span>
+<span class="nc">.complex-grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">1</span><span class="n">fr</span><span class="p">);</span>
+  <span class="py">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.item-1</span> <span class="p">{</span>
+  <span class="nl">grid-column</span><span class="p">:</span> <span class="n">span</span> <span class="m">12</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.item-1</span> <span class="p">{</span>
+    <span class="nl">grid-column</span><span class="p">:</span> <span class="n">span</span> <span class="m">6</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">1024px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.item-1</span> <span class="p">{</span>
+    <span class="nl">grid-column</span><span class="p">:</span> <span class="n">span</span> <span class="m">4</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="flexbox-高级应用">Flexbox 高级应用</h2>
+
+<h3 id="灵活的布局模式">灵活的布局模式</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 自适应卡片布局 */</span>
+<span class="nc">.card-container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">flex-wrap</span><span class="p">:</span> <span class="n">wrap</span><span class="p">;</span>
+  <span class="py">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span> <span class="m">1</span> <span class="m">300px</span><span class="p">;</span> <span class="c">/* grow shrink basis */</span>
+  <span class="nl">min-width</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="c">/* 防止内容溢出 */</span>
+<span class="p">}</span>
+
+<span class="c">/* 垂直居中的多种方法 */</span>
+<span class="nc">.center-flex</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.center-grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">place-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.center-absolute</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span> <span class="m">-50%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="flexbox-实用模式">Flexbox 实用模式</h3>
+
+<h4 id="1-圣杯布局">1. 圣杯布局</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.holy-grail</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+  <span class="nl">min-height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.holy-grail-body</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.holy-grail-content</span> <span class="p">{</span>
+  <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="nl">order</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.holy-grail-nav</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="nl">order</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.holy-grail-ads</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
+  <span class="nl">order</span><span class="p">:</span> <span class="m">3</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="2-媒体对象">2. 媒体对象</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.media</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="n">flex-start</span><span class="p">;</span>
+  <span class="py">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.media-object</span> <span class="p">{</span>
+  <span class="nl">flex-shrink</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.media-content</span> <span class="p">{</span>
+  <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="nl">min-width</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="css-自定义属性-css-variables">CSS 自定义属性 (CSS Variables)</h2>
+
+<h3 id="基础用法">基础用法</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--primary-color</span><span class="p">:</span> <span class="m">#42b883</span><span class="p">;</span>
+  <span class="py">--secondary-color</span><span class="p">:</span> <span class="m">#369870</span><span class="p">;</span>
+  <span class="py">--font-size-base</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="py">--spacing-unit</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+  <span class="py">--border-radius</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.button</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color</span><span class="p">);</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--font-size-base</span><span class="p">);</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">--spacing-unit</span><span class="p">)</span> <span class="err">*</span> <span class="m">2</span><span class="p">)</span> <span class="n">calc</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">--spacing-unit</span><span class="p">)</span> <span class="err">*</span> <span class="m">3</span><span class="p">);</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--border-radius</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="高级应用">高级应用</h3>
+
+<h4 id="1-主题切换">1. 主题切换</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 默认主题 */</span>
+<span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--bg-color</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+  <span class="py">--text-color</span><span class="p">:</span> <span class="m">#333333</span><span class="p">;</span>
+  <span class="py">--accent-color</span><span class="p">:</span> <span class="m">#42b883</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 暗色主题 */</span>
+<span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s1">"dark"</span><span class="o">]</span> <span class="p">{</span>
+  <span class="py">--bg-color</span><span class="p">:</span> <span class="m">#1a1a1a</span><span class="p">;</span>
+  <span class="py">--text-color</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+  <span class="py">--accent-color</span><span class="p">:</span> <span class="m">#4ade80</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--bg-color</span><span class="p">);</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--text-color</span><span class="p">);</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="p">,</span> <span class="n">color</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="2-响应式变量">2. 响应式变量</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--container-padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">--grid-columns</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nd">:root</span> <span class="p">{</span>
+    <span class="py">--container-padding</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+    <span class="py">--grid-columns</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">1024px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nd">:root</span> <span class="p">{</span>
+    <span class="py">--container-padding</span><span class="p">:</span> <span class="m">3rem</span><span class="p">;</span>
+    <span class="py">--grid-columns</span><span class="p">:</span> <span class="m">3</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.container</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--container-padding</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">--grid-columns</span><span class="p">),</span> <span class="m">1</span><span class="n">fr</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="3-动态变量">3. 动态变量</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.progress-bar</span> <span class="p">{</span>
+  <span class="py">--progress</span><span class="p">:</span> <span class="m">0%</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#f0f0f0</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.progress-bar</span><span class="nd">::before</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--progress</span><span class="p">);</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color</span><span class="p">);</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">width</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// JavaScript 控制</span>
+<span class="kd">const</span> <span class="nx">progressBar</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.progress-bar</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">progressBar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="dl">'</span><span class="s1">--progress</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">75%</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="容器查询-container-queries">容器查询 (Container Queries)</h2>
+
+<h3 id="基础语法">基础语法</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.card-container</span> <span class="p">{</span>
+  <span class="py">container-type</span><span class="p">:</span> <span class="n">inline-size</span><span class="p">;</span>
+  <span class="py">container-name</span><span class="p">:</span> <span class="n">card</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@container</span> <span class="n">card</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">300px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.card</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="py">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="nc">.card-image</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@container</span> <span class="n">card</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">500px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.card</span> <span class="p">{</span>
+    <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="nc">.card-image</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="实际应用">实际应用</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 响应式组件 */</span>
+<span class="nc">.sidebar</span> <span class="p">{</span>
+  <span class="py">container-type</span><span class="p">:</span> <span class="n">inline-size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.widget</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@container</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">250px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.widget</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+    <span class="py">grid-template-columns</span><span class="p">:</span> <span class="nb">auto</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span>
+    <span class="py">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@container</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">400px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.widget</span> <span class="p">{</span>
+    <span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">1</span><span class="n">fr</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="现代css选择器">现代CSS选择器</h2>
+
+<h3 id="逻辑选择器">逻辑选择器</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* :is() 选择器 */</span>
+<span class="nd">:is</span><span class="o">(</span><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Helvetica'</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* :where() 选择器 (优先级为0) */</span>
+<span class="nd">:where</span><span class="o">(</span><span class="nt">ul</span><span class="o">,</span> <span class="nt">ol</span><span class="o">)</span> <span class="nd">:where</span><span class="o">(</span><span class="nt">ul</span><span class="o">,</span> <span class="nt">ol</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* :not() 选择器 */</span>
+<span class="nt">button</span><span class="nd">:not</span><span class="o">(</span><span class="nc">.secondary</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nc">.ghost</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color</span><span class="p">);</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* :has() 选择器 */</span>
+<span class="nc">.card</span><span class="nd">:has</span><span class="o">(</span><span class="nt">img</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="nb">auto</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.form-group</span><span class="nd">:has</span><span class="o">(</span><span class="nt">input</span><span class="nd">:invalid</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="状态选择器">状态选择器</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* :focus-visible */</span>
+<span class="nt">button</span><span class="nd">:focus-visible</span> <span class="p">{</span>
+  <span class="nl">outline</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--accent-color</span><span class="p">);</span>
+  <span class="nl">outline-offset</span><span class="p">:</span> <span class="m">2px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* :focus-within */</span>
+<span class="nc">.search-container</span><span class="nd">:focus-within</span> <span class="p">{</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">3px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">66</span><span class="p">,</span> <span class="m">184</span><span class="p">,</span> <span class="m">131</span><span class="p">,</span> <span class="m">0.1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* :target */</span>
+<span class="nc">.tab-content</span><span class="nd">:target</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* :empty */</span>
+<span class="nc">.message</span><span class="nd">:empty::before</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">"暂无消息"</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#999</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="高级动画技术">高级动画技术</h2>
+
+<h3 id="css-transitions">CSS Transitions</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.smooth-transition</span> <span class="p">{</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.3s</span> <span class="n">cubic-bezier</span><span class="p">(</span><span class="m">0.4</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* 自定义缓动函数 */</span>
+<span class="nc">.custom-easing</span> <span class="p">{</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">transform</span> <span class="m">0.5s</span> <span class="n">cubic-bezier</span><span class="p">(</span><span class="m">0.68</span><span class="p">,</span> <span class="m">-0.55</span><span class="p">,</span> <span class="m">0.265</span><span class="p">,</span> <span class="m">1.55</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* 分别控制不同属性 */</span>
+<span class="nc">.complex-transition</span> <span class="p">{</span>
+  <span class="nl">transition</span><span class="p">:</span> 
+    <span class="n">transform</span> <span class="m">0.3s</span> <span class="n">ease-out</span><span class="p">,</span>
+    <span class="n">opacity</span> <span class="m">0.2s</span> <span class="n">ease-in</span><span class="p">,</span>
+    <span class="n">background-color</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="css-animations">CSS Animations</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@keyframes</span> <span class="n">slideInUp</span> <span class="p">{</span>
+  <span class="nt">from</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">100%</span><span class="p">);</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">to</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@keyframes</span> <span class="n">pulse</span> <span class="p">{</span>
+  <span class="err">0</span><span class="o">%,</span> <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="err">50</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.05</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.animated-element</span> <span class="p">{</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="n">slideInUp</span> <span class="m">0.6s</span> <span class="n">ease-out</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.pulse-animation</span> <span class="p">{</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="n">pulse</span> <span class="m">2s</span> <span class="n">infinite</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 复杂动画序列 */</span>
+<span class="k">@keyframes</span> <span class="n">complexAnimation</span> <span class="p">{</span>
+  <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">-100%</span><span class="p">)</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0deg</span><span class="p">);</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="err">25</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="n">rotate</span><span class="p">(</span><span class="m">90deg</span><span class="p">);</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="err">50</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180deg</span><span class="p">);</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="err">75</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="n">rotate</span><span class="p">(</span><span class="m">270deg</span><span class="p">);</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="n">rotate</span><span class="p">(</span><span class="m">360deg</span><span class="p">);</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="性能优化的动画">性能优化的动画</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 使用 transform 和 opacity */</span>
+<span class="nc">.optimized-animation</span> <span class="p">{</span>
+  <span class="py">will-change</span><span class="p">:</span> <span class="n">transform</span><span class="p">,</span> <span class="n">opacity</span><span class="p">;</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">0</span><span class="p">);</span> <span class="c">/* 触发硬件加速 */</span>
+<span class="p">}</span>
+
+<span class="c">/* 动画完成后清理 */</span>
+<span class="nc">.animation-done</span> <span class="p">{</span>
+  <span class="py">will-change</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 减少动画对性能的影响 */</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">prefers-reduced-motion</span><span class="p">:</span> <span class="n">reduce</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">*</span> <span class="p">{</span>
+    <span class="nl">animation-duration</span><span class="p">:</span> <span class="m">0.01ms</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">animation-iteration-count</span><span class="p">:</span> <span class="m">1</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">transition-duration</span><span class="p">:</span> <span class="m">0.01ms</span> <span class="cp">!important</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="响应式设计进阶">响应式设计进阶</h2>
+
+<h3 id="现代媒体查询">现代媒体查询</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 基于用户偏好的查询 */</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">prefers-color-scheme</span><span class="p">:</span> <span class="n">dark</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nd">:root</span> <span class="p">{</span>
+    <span class="py">--bg-color</span><span class="p">:</span> <span class="m">#1a1a1a</span><span class="p">;</span>
+    <span class="py">--text-color</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">prefers-reduced-motion</span><span class="p">:</span> <span class="n">reduce</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">*</span> <span class="p">{</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="nb">none</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="nb">none</span> <span class="cp">!important</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">prefers-contrast</span><span class="p">:</span> <span class="nb">high</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.button</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="n">currentColor</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* 设备特性查询 */</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">hover</span><span class="p">:</span> <span class="n">hover</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.button</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color-dark</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="nb">pointer</span><span class="p">:</span> <span class="n">coarse</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.button</span> <span class="p">{</span>
+    <span class="nl">min-height</span><span class="p">:</span> <span class="m">44px</span><span class="p">;</span> <span class="c">/* 触摸友好的尺寸 */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="流体排版">流体排版</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 使用 clamp() 实现流体排版 */</span>
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="n">clamp</span><span class="p">(</span><span class="m">1.5rem</span><span class="p">,</span> <span class="m">4vw</span><span class="p">,</span> <span class="m">3rem</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="n">clamp</span><span class="p">(</span><span class="m">1rem</span><span class="p">,</span> <span class="m">2.5vw</span><span class="p">,</span> <span class="m">1.25rem</span><span class="p">);</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="n">clamp</span><span class="p">(</span><span class="m">1.4</span><span class="p">,</span> <span class="m">1.5</span><span class="p">,</span> <span class="m">1.6</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* 流体间距 */</span>
+<span class="nc">.section</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="n">clamp</span><span class="p">(</span><span class="m">2rem</span><span class="p">,</span> <span class="m">8vw</span><span class="p">,</span> <span class="m">8rem</span><span class="p">)</span> <span class="n">clamp</span><span class="p">(</span><span class="m">1rem</span><span class="p">,</span> <span class="m">4vw</span><span class="p">,</span> <span class="m">4rem</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* 流体网格 */</span>
+<span class="nc">.fluid-grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">(</span><span class="n">auto-fit</span><span class="p">,</span> <span class="n">minmax</span><span class="p">(</span><span class="n">clamp</span><span class="p">(</span><span class="m">250px</span><span class="p">,</span> <span class="m">30vw</span><span class="p">,</span> <span class="m">350px</span><span class="p">),</span> <span class="m">1</span><span class="n">fr</span><span class="p">));</span>
+  <span class="py">gap</span><span class="p">:</span> <span class="n">clamp</span><span class="p">(</span><span class="m">1rem</span><span class="p">,</span> <span class="m">3vw</span><span class="p">,</span> <span class="m">2rem</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="css-架构和组织">CSS 架构和组织</h2>
+
+<h3 id="bem-方法论">BEM 方法论</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Block */</span>
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Element */</span>
+<span class="nc">.card__title</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.25rem</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.card__content</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#666</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.card__actions</span> <span class="p">{</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="py">gap</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Modifier */</span>
+<span class="nc">.card--featured</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.card--large</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.card__title--highlighted</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="css-模块化">CSS 模块化</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 组件样式 */</span>
+<span class="nc">.component</span> <span class="p">{</span>
+  <span class="c">/* 组件基础样式 */</span>
+<span class="p">}</span>
+
+<span class="nc">.component--variant</span> <span class="p">{</span>
+  <span class="c">/* 变体样式 */</span>
+<span class="p">}</span>
+
+<span class="nc">.component__element</span> <span class="p">{</span>
+  <span class="c">/* 元素样式 */</span>
+<span class="p">}</span>
+
+<span class="c">/* 工具类 */</span>
+<span class="nc">.u-text-center</span> <span class="p">{</span> <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.u-margin-bottom-small</span> <span class="p">{</span> <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.u-margin-bottom-medium</span> <span class="p">{</span> <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.u-margin-bottom-large</span> <span class="p">{</span> <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c">/* 状态类 */</span>
+<span class="nc">.is-active</span> <span class="p">{</span> <span class="p">}</span>
+<span class="nc">.is-disabled</span> <span class="p">{</span> <span class="p">}</span>
+<span class="nc">.is-loading</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="实用技巧和模式">实用技巧和模式</h2>
+
+<h3 id="1-粘性定位">1. 粘性定位</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.sticky-header</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="n">sticky</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">z-index</span><span class="p">:</span> <span class="m">100</span><span class="p">;</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.sticky-sidebar</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="n">sticky</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="n">fit-content</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-截断文本">2. 截断文本</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 单行截断 */</span>
+<span class="nc">.truncate</span> <span class="p">{</span>
+  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+  <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">ellipsis</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 多行截断 */</span>
+<span class="nc">.truncate-multiline</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">-webkit-box</span><span class="p">;</span>
+  <span class="nl">-webkit-line-clamp</span><span class="p">:</span> <span class="m">3</span><span class="p">;</span>
+  <span class="nl">-webkit-box-orient</span><span class="p">:</span> <span class="n">vertical</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="3-宽高比">3. 宽高比</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 使用 aspect-ratio */</span>
+<span class="nc">.video-container</span> <span class="p">{</span>
+  <span class="py">aspect-ratio</span><span class="p">:</span> <span class="m">16</span> <span class="p">/</span> <span class="m">9</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#f0f0f0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.square</span> <span class="p">{</span>
+  <span class="py">aspect-ratio</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 兼容性方案 */</span>
+<span class="nc">.aspect-ratio-16-9</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">56.25%</span><span class="p">;</span> <span class="c">/* 9/16 = 0.5625 */</span>
+<span class="p">}</span>
+
+<span class="nc">.aspect-ratio-16-9</span> <span class="o">&gt;</span> <span class="o">*</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="4-现代重置样式">4. 现代重置样式</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 现代CSS重置 */</span>
+<span class="o">*,</span>
+<span class="o">*</span><span class="nd">::before</span><span class="o">,</span>
+<span class="o">*</span><span class="nd">::after</span> <span class="p">{</span>
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">*</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">html</span><span class="o">,</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.5</span><span class="p">;</span>
+  <span class="nl">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">img</span><span class="o">,</span>
+<span class="nt">picture</span><span class="o">,</span>
+<span class="nt">video</span><span class="o">,</span>
+<span class="nt">canvas</span><span class="o">,</span>
+<span class="nt">svg</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="o">,</span>
+<span class="nt">button</span><span class="o">,</span>
+<span class="nt">textarea</span><span class="o">,</span>
+<span class="nt">select</span> <span class="p">{</span>
+  <span class="nl">font</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span><span class="o">,</span>
+<span class="nt">h1</span><span class="o">,</span>
+<span class="nt">h2</span><span class="o">,</span>
+<span class="nt">h3</span><span class="o">,</span>
+<span class="nt">h4</span><span class="o">,</span>
+<span class="nt">h5</span><span class="o">,</span>
+<span class="nt">h6</span> <span class="p">{</span>
+  <span class="nl">overflow-wrap</span><span class="p">:</span> <span class="n">break-word</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#root</span><span class="o">,</span>
+<span class="nf">#__next</span> <span class="p">{</span>
+  <span class="py">isolation</span><span class="p">:</span> <span class="n">isolate</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="总结">总结</h2>
+
+<p>现代CSS为我们提供了强大的工具来创建灵活、响应式和高性能的用户界面：</p>
+
+<h3 id="关键技术">关键技术</h3>
+
+<ol>
+  <li><strong>CSS Grid</strong> - 二维布局系统</li>
+  <li><strong>Flexbox</strong> - 一维布局和对齐</li>
+  <li><strong>自定义属性</strong> - 动态样式和主题</li>
+  <li><strong>容器查询</strong> - 组件级响应式设计</li>
+  <li><strong>现代选择器</strong> - 更精确的样式控制</li>
+</ol>
+
+<h3 id="最佳实践">最佳实践</h3>
+
+<ul>
+  <li>使用语义化的命名约定</li>
+  <li>保持样式的模块化和可维护性</li>
+  <li>优先考虑性能和可访问性</li>
+  <li>利用现代CSS特性简化代码</li>
+  <li>建立一致的设计系统</li>
+</ul>
+
+<p>通过掌握这些现代CSS技术，我们可以创建更加优雅、高效和用户友好的Web界面。记住，CSS是一个不断发展的技术，保持学习和实践是提高技能的关键。</p>
+
+                </article>
+                
+                <!-- Post Navigation -->
+                <nav class="post-navigation">
+                    
+                    
+                    <div class="nav-next">
+                        <a href="/blog/frontend-performance-optimization/" class="nav-link">
+                            <span class="nav-label">下一篇</span>
+                            <span class="nav-title">前端性能优化实战指南</span>
+                        </a>
+                    </div>
+                    
+                </nav>
+
+                <!-- Related Posts -->
+                
+                
+                <section class="related-posts">
+                    <h3>相关文章</h3>
+                    <div class="related-posts-grid">
+                        
+                        <article class="related-post">
+                            <h4><a href="/blog/vue3-composition-api-guide/">Vue 3 Composition API 完全指南</a></h4>
+                            <time datetime="2024-01-15T00:00:00+08:00">
+                                2024年01月15日
+                            </time>
+                            
+                            <p>深入了解 Vue 3 Composition API 的核心概念、使用方法和最佳实践，帮助你更好地构建现代化的 Vue 应用。</p>
+                            
+                        </article>
+                        
+                        <article class="related-post">
+                            <h4><a href="/blog/frontend-performance-optimization/">前端性能优化实战指南</a></h4>
+                            <time datetime="2024-01-10T00:00:00+08:00">
+                                2024年01月10日
+                            </time>
+                            
+                            <p>全面的前端性能优化指南，从加载速度到运行时性能，帮助你构建更快、更流畅的Web应用。</p>
+                            
+                        </article>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </section>
+</main>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <h3>个人官网 | Vue风格设计</h3>
+                    <p>基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+</p>
+                </div>
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/Fxxk181126" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="掘金">
+                        <i class="fas fa-gem"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="知乎">
+                        <i class="fab fa-zhihu"></i>
+                    </a>
+                    
+                    <a href="mailto:your.email@example.com" class="social-link" target="_blank" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul class="footer-links">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/about">关于我</a></li>
+                    <li><a href="/projects">项目</a></li>
+                    <li><a href="/blog">博客</a></li>
+                    <li><a href="/contact">联系</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>技术栈</h4>
+                <ul class="footer-links">
+                    
+                    
+                    <li>Vue.js</li>
+                    
+                    <li>React</li>
+                    
+                    <li>TypeScript</li>
+                    
+                    <li>JavaScript</li>
+                    
+                    <li>CSS/SCSS</li>
+                    
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <div class="footer-contact">
+                    <p>
+                        <i class="icon-mail"></i>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    </p>
+                    
+                    <p>
+                        <i class="icon-location"></i>
+                        中国
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 你的姓名. 2024 个人官网. All Rights Reserved.</p>
+            </div>
+            <div class="footer-meta">
+                <p>
+                    使用 <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> 构建
+                    • 托管于 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+        <!-- Scripts -->
+        <!-- Core Scripts -->
+<script src="/assets/js/main.js"></script>
+
+<!-- Additional Scripts for specific pages -->
+
+<!-- Syntax highlighting for code blocks -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+
+
+
+
+<!-- Blog search and filtering -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Blog category filtering
+    const categoryFilters = document.querySelectorAll('.category-filter');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    if (categoryFilters.length > 0) {
+        categoryFilters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                const filterValue = this.getAttribute('data-category');
+                
+                // Update active filter
+                categoryFilters.forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter blog posts
+                blogCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.add('show'), 100);
+                    } else {
+                        card.classList.remove('show');
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+    }
+});
+</script>
+
+
+<!-- Analytics (if configured) -->
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+
+<!-- Performance optimization -->
+<script>
+// Preload critical resources
+document.addEventListener('DOMContentLoaded', function() {
+    // Preload next page if user hovers over navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('/')) {
+                const linkElement = document.createElement('link');
+                linkElement.rel = 'prefetch';
+                linkElement.href = href;
+                document.head.appendChild(linkElement);
+            }
+        });
+    });
+});
+</script>
+        
+        <!-- Tracking -->
+        <!-- Google Analitycs -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!-- END Google Analitycs -->
+    </body>
+</html>

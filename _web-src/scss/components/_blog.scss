@@ -72,7 +72,7 @@
     font-size: $font-size-sm;
     
     &:hover {
-      color: color.scale($primary-color, $lightness: -10%);
+      color: darken($primary-color, 10%);
     }
   }
 }

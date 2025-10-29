@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>联系我 - 个人官网 | Vue风格设计</title>
+    <meta name="description" content="通过多种方式与我取得联系，期待与您的交流合作">
+    <meta name="author" content="你的姓名">
+    <meta name="keywords" content="Vue.js, 个人网站, 前端开发, 全栈开发, Jekyll, 响应式设计">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-CN">
+    
+    <!-- Google Site Verification -->
+    
+    <meta name="google-site-verification" content="">
+    
+    
+    <!-- Bing Site Verification -->
+    
+    <meta name="msvalidate.01" content="">
+    
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="联系我">
+    <meta property="og:description" content="通过多种方式与我取得联系，期待与您的交流合作">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/contact/">
+    <meta property="og:image" content="http://localhost:4000/assets/images/og-image.png">
+    <meta property="og:site_name" content="个人官网 | Vue风格设计">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="联系我">
+    <meta name="twitter:description" content="通过多种方式与我取得联系，期待与您的交流合作">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/og-image.png">
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#42b883">
+    <meta name="msapplication-TileColor" content="#42b883">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/contact/">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="个人官网 | Vue风格设计" href="/feed.xml">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/assets/css/main.css" as="style">
+    <link rel="preload" href="/assets/js/main.js" as="script">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Google Analytics -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "你的姓名",
+        "url": "http://localhost:4000",
+        "sameAs": [
+            
+            "https://github.com/Fxxk181126",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "mailto:your.email@example.com"
+            
+        ],
+        "jobTitle": "全栈开发者",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelancer"
+        },
+        "description": "热爱技术创新，专注于前端开发和用户体验设计",
+        "image": "http://localhost:4000/assets/images/avatar.svg"
+    }
+    </script>
+</head>
+
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+    <div class="container">
+        <!-- Brand -->
+        <a href="/" class="navbar-brand">
+            <div class="brand-logo">个</div>
+            <span>个人品牌</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link ">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link active">联系</a>
+            </li>
+        </ul>
+        
+        <!-- Actions -->
+        <div class="navbar-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <a href="/contact" class="btn contact-btn">联系我</a>
+        </div>
+        
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" id="navbar-toggler" aria-label="打开菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="navbar-mobile" id="navbar-mobile">
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-brand">个人品牌</div>
+            <button class="mobile-close" id="mobile-close" aria-label="关闭菜单">
+                ✕
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link ">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link active">联系</a>
+            </li>
+        </ul>
+        <div class="mobile-actions">
+            <a href="/contact" class="btn contact-btn">联系我</a>
+            <button class="btn theme-toggle">
+                <span class="theme-icon">🌙</span>
+                切换主题
+            </button>
+        </div>
+    </div>
+</div>
+
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+  <div class="section">
+    <div class="section-title">
+      <h1>联系我</h1>
+      <p>通过多种方式与我取得联系，期待与您的交流合作</p>
+    </div>
+
+    <div class="row">
+      <!-- 联系信息 -->
+      <div class="col-lg-6 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title mb-4">
+              <i class="fas fa-address-card me-2 text-primary"></i>
+              联系信息
+            </h3>
+            
+            <div class="contact-info">
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-center">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h5>邮箱</h5>
+                    <p class="mb-0">
+                      <a href="mailto:" class="text-decoration-none">
+                        
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-center">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h5>位置</h5>
+                    <p class="mb-0">中国</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-center">
+                  <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h5>工作时间</h5>
+                    <p class="mb-0">周一至周五 9:00 - 18:00</p>
+                    <small class="text-muted">通常24小时内回复邮件</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="d-flex align-items-center">
+                  <div class="contact-icon">
+                    <i class="fas fa-language"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h5>语言</h5>
+                    <p class="mb-0">中文、英文</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 社交媒体 -->
+            <div class="mt-5">
+              <h4 class="mb-3">社交媒体</h4>
+              <div class="social-links">
+                
+                  <a href="https://github.com/Fxxk181126" 
+                     class="social-link" 
+                     target="_blank"
+                     title="查看我的开源项目和代码贡献"
+                     style="background-color: #333;">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                  </a>
+                
+                  <a href="#" 
+                     class="social-link" 
+                     target="_blank"
+                     title="专业经历和职业网络"
+                     style="background-color: #0077b5;">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                  </a>
+                
+                  <a href="#" 
+                     class="social-link" 
+                     target="_blank"
+                     title="技术分享和日常动态"
+                     style="background-color: #1da1f2;">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                  </a>
+                
+                  <a href="#" 
+                     class="social-link" 
+                     target="_blank"
+                     title="技术文章和经验分享"
+                     style="background-color: #1e80ff;">
+                    <i class="fas fa-gem"></i>
+                    <span>掘金</span>
+                  </a>
+                
+                  <a href="#" 
+                     class="social-link" 
+                     target="_blank"
+                     title="技术问答和深度思考"
+                     style="background-color: #0084ff;">
+                    <i class="fab fa-zhihu"></i>
+                    <span>知乎</span>
+                  </a>
+                
+                  <a href="mailto:your.email@example.com" 
+                     class="social-link" 
+                     target="_blank"
+                     title="商务合作和技术交流"
+                     style="background-color: #ea4335;">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                  </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 联系表单 -->
+      <div class="col-lg-6 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title mb-4">
+              <i class="fas fa-paper-plane me-2 text-primary"></i>
+              发送消息
+            </h3>
+            
+            <form id="contact-form" class="contact-form">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">姓名 *</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">邮箱 *</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="subject" class="form-label">主题 *</label>
+                <select class="form-select" id="subject" name="subject" required>
+                  <option value="">请选择主题</option>
+                  <option value="project">项目合作</option>
+                  <option value="job">工作机会</option>
+                  <option value="consultation">技术咨询</option>
+                  <option value="feedback">反馈建议</option>
+                  <option value="other">其他</option>
+                </select>
+              </div>
+              
+              <div class="mb-3">
+                <label for="message" class="form-label">消息内容 *</label>
+                <textarea class="form-control" id="message" name="message" rows="6" required 
+                          placeholder="请详细描述您的需求或想法..."></textarea>
+              </div>
+              
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                  <label class="form-check-label" for="privacy">
+                    我同意处理我的个人信息用于回复此消息
+                  </label>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-lg w-100">
+                <i class="fas fa-paper-plane me-2"></i>
+                发送消息
+              </button>
+            </form>
+            
+            <div id="form-message" class="mt-3" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 合作方式 -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h2 class="mb-4 text-center">合作方式</h2>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <div class="collaboration-icon mb-3">
+                  <i class="fas fa-code fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title">项目开发</h5>
+                <p class="card-text">提供全栈Web开发服务，从需求分析到产品上线的完整解决方案。</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <div class="collaboration-icon mb-3">
+                  <i class="fas fa-chalkboard-teacher fa-3x text-success"></i>
+                </div>
+                <h5 class="card-title">技术咨询</h5>
+                <p class="card-text">为您的技术团队提供架构设计、代码审查和技术选型建议。</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <div class="collaboration-icon mb-3">
+                  <i class="fas fa-users fa-3x text-warning"></i>
+                </div>
+                <h5 class="card-title">团队协作</h5>
+                <p class="card-text">加入您的开发团队，参与长期或短期的项目开发工作。</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <div class="collaboration-icon mb-3">
+                  <i class="fas fa-graduation-cap fa-3x text-danger"></i>
+                </div>
+                <h5 class="card-title">技术培训</h5>
+                <p class="card-text">提供前端、后端技术培训，帮助团队提升技术能力。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 常见问题 -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h2 class="mb-4 text-center">常见问题</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                您的技术栈主要包括哪些？
+              </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                我主要专注于现代Web开发技术，包括Vue.js、React、Node.js、Python等。
+                具体的技术栈可以在<a href="/about/">关于我</a>页面查看详细信息。
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                项目开发的流程是怎样的？
+              </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                通常包括需求分析、技术方案设计、开发实现、测试部署等阶段。
+                我会与客户保持密切沟通，确保项目按时按质完成。
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                如何确定项目报价？
+              </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                项目报价会根据需求复杂度、开发周期、技术难度等因素综合评估。
+                欢迎联系我详细讨论您的项目需求，我会提供合理的报价方案。
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                是否提供后期维护服务？
+              </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                是的，我提供项目的后期维护和技术支持服务，包括bug修复、功能更新、性能优化等。
+                具体的维护方案可以根据项目需求定制。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 响应时间说明 -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="alert alert-info">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-info-circle fa-2x me-3"></i>
+            <div>
+              <h5 class="alert-heading mb-1">响应时间说明</h5>
+              <p class="mb-0">
+                我通常会在24小时内回复您的邮件。如果是紧急项目，请在邮件标题中注明"紧急"，
+                我会优先处理。感谢您的理解与耐心！
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #42b883, #369870);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.contact-icon i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.contact-details h5 {
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.contact-details p {
+  color: #666;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.social-link i {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+  border-color: #42b883;
+  box-shadow: 0 0 0 0.2rem rgba(66, 184, 131, 0.25);
+}
+
+.collaboration-icon {
+  margin-bottom: 1rem;
+}
+
+.accordion-button {
+  font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  color: #42b883;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(66, 184, 131, 0.25);
+}
+
+.alert-info {
+  background-color: #e8f4fd;
+  border-color: #bee5eb;
+  color: #0c5460;
+}
+
+.form-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.form-message.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.form-message.error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contact-form');
+  const formMessage = document.getElementById('form-message');
+  
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // 获取表单数据
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
+    
+    // 显示提交中状态
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>发送中...';
+    submitBtn.disabled = true;
+    
+    // 模拟表单提交（实际项目中需要连接后端服务）
+    setTimeout(() => {
+      // 重置按钮状态
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+      
+      // 显示成功消息
+      formMessage.className = 'form-message success';
+      formMessage.innerHTML = `
+        <i class="fas fa-check-circle me-2"></i>
+        <strong>消息发送成功！</strong> 感谢您的联系，我会尽快回复您。
+      `;
+      formMessage.style.display = 'block';
+      
+      // 重置表单
+      contactForm.reset();
+      
+      // 3秒后隐藏消息
+      setTimeout(() => {
+        formMessage.style.display = 'none';
+      }, 5000);
+    }, 2000);
+  });
+  
+  // 表单验证
+  const inputs = contactForm.querySelectorAll('input, textarea, select');
+  inputs.forEach(input => {
+    input.addEventListener('blur', function() {
+      if (this.hasAttribute('required') && !this.value.trim()) {
+        this.classList.add('is-invalid');
+      } else {
+        this.classList.remove('is-invalid');
+      }
+    });
+    
+    input.addEventListener('input', function() {
+      if (this.classList.contains('is-invalid') && this.value.trim()) {
+        this.classList.remove('is-invalid');
+      }
+    });
+  });
+});
+</script>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <h3>个人官网 | Vue风格设计</h3>
+                    <p>基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+</p>
+                </div>
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/Fxxk181126" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="掘金">
+                        <i class="fas fa-gem"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="知乎">
+                        <i class="fab fa-zhihu"></i>
+                    </a>
+                    
+                    <a href="mailto:your.email@example.com" class="social-link" target="_blank" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul class="footer-links">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/about">关于我</a></li>
+                    <li><a href="/projects">项目</a></li>
+                    <li><a href="/blog">博客</a></li>
+                    <li><a href="/contact">联系</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>技术栈</h4>
+                <ul class="footer-links">
+                    
+                    
+                    <li>Vue.js</li>
+                    
+                    <li>React</li>
+                    
+                    <li>TypeScript</li>
+                    
+                    <li>JavaScript</li>
+                    
+                    <li>CSS/SCSS</li>
+                    
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <div class="footer-contact">
+                    <p>
+                        <i class="icon-mail"></i>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    </p>
+                    
+                    <p>
+                        <i class="icon-location"></i>
+                        中国
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 你的姓名. 2024 个人官网. All Rights Reserved.</p>
+            </div>
+            <div class="footer-meta">
+                <p>
+                    使用 <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> 构建
+                    • 托管于 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+        <!-- Scripts -->
+        <!-- Core Scripts -->
+<script src="/assets/js/main.js"></script>
+
+<!-- Additional Scripts for specific pages -->
+
+
+
+
+
+
+<!-- Analytics (if configured) -->
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+
+<!-- Performance optimization -->
+<script>
+// Preload critical resources
+document.addEventListener('DOMContentLoaded', function() {
+    // Preload next page if user hovers over navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('/')) {
+                const linkElement = document.createElement('link');
+                linkElement.rel = 'prefetch';
+                linkElement.href = href;
+                document.head.appendChild(linkElement);
+            }
+        });
+    });
+});
+</script>
+        
+        <!-- Tracking -->
+        <!-- Google Analitycs -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!-- END Google Analitycs -->
+    </body>
+</html>

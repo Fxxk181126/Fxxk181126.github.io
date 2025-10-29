@@ -168,7 +168,7 @@
 // Back to top button styles
 .back-to-top {
   &:hover {
-    background: color.scale($primary-color, $lightness: -10%) !important;
+    background: darken($primary-color, 10%) !important;
     transform: translateY(-2px) !important;
   }
   

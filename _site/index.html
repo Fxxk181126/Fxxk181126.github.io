@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人官网 | Vue风格设计</title>
+    <meta name="description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="brand-link">个人品牌</a>
+            </div>
+            <div class="navbar-menu">
+                <a href="/" class="nav-link active">首页</a>
+                <a href="/about.html" class="nav-link">关于</a>
+                <a href="/projects.html" class="nav-link">项目</a>
+                <a href="/blog.html" class="nav-link">博客</a>
+                <a href="/contact.html" class="nav-link">联系</a>
+            </div>
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-greeting">👋 你好，我是</p>
+                <h1 class="hero-title">全栈开发者</h1>
+                <p class="hero-subtitle">热爱技术创新，专注于前端开发和用户体验设计</p>
+                <div class="hero-actions">
+                    <a href="/about.html" class="btn btn-primary btn-lg">了解更多</a>
+                    <a href="/contact.html" class="btn btn-outline btn-lg">联系我</a>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span class="scroll-text">向下滚动</span>
+                <i class="scroll-icon">↓</i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section id="about" class="section about-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>关于我</h2>
+                <p>了解我的背景、技能和经验</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 class="about-title">全栈开发工程师</h3>
+                    <p class="about-description">
+                        我是一名充满热情的全栈开发工程师，专注于创建优雅、高效的Web应用程序。我热爱学习新技术，并致力于将创新的解决方案带给用户。
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">年经验</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">项目</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">文章</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="/assets/images/avatar.svg" alt="个人头像" class="avatar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>技能专长</h2>
+                <p>掌握现代化的技术栈，致力于创造优秀的用户体验</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">🎨</div>
+                    <h3 class="skill-title">前端开发</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Vue.js</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">Sass/SCSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">⚙️</div>
+                    <h3 class="skill-title">后端开发</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Express</span>
+                        <span class="skill-item">MongoDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">🛠️</div>
+                    <h3 class="skill-title">工具与部署</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section featured-projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>精选项目</h2>
+                <p>展示一些代表性的技术项目和作品</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/assets/images/project-placeholder.svg" alt="Vue风格Web应用">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Vue风格Web应用</h3>
+                        <p class="project-description">基于Vue.js构建的现代化Web应用，具有响应式设计和优秀的用户体验。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Sass</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/assets/images/project-placeholder.svg" alt="响应式移动应用">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">响应式移动应用</h3>
+                        <p class="project-description">跨平台移动应用，支持多种设备尺寸，提供一致的用户体验。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/assets/images/project-placeholder.svg" alt="数据可视化平台">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">数据可视化平台</h3>
+                        <p class="project-description">企业级数据分析平台，提供丰富的图表和实时数据监控功能。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-actions">
+                <a href="/projects.html" class="btn btn-outline">查看更多项目</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="section latest-posts">
+        <div class="container">
+            <div class="section-title">
+                <h2>最新文章</h2>
+                <p>分享技术心得和开发经验</p>
+            </div>
+            <div class="posts-grid">
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <time datetime="2024-01-15">2024年01月15日</time>
+                        <span class="blog-category">Vue.js</span>
+                    </div>
+                    <h3 class="blog-title">
+                        <a href="/blog/vue3-composition-api-guide.html">Vue 3 Composition API 完全指南</a>
+                    </h3>
+                    <p class="blog-excerpt">深入探讨Vue 3 Composition API的核心概念和最佳实践，帮助开发者更好地理解和使用这个强大的功能。</p>
+                    <div class="blog-footer">
+                        <a href="/blog/vue3-composition-api-guide.html" class="read-more">阅读更多</a>
+                        <div class="blog-tags">
+                            <span class="tag">#Vue3</span>
+                            <span class="tag">#JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <time datetime="2024-01-10">2024年01月10日</time>
+                        <span class="blog-category">性能优化</span>
+                    </div>
+                    <h3 class="blog-title">
+                        <a href="/blog/frontend-performance-optimization.html">前端性能优化最佳实践</a>
+                    </h3>
+                    <p class="blog-excerpt">从代码分割到图片优化，全面介绍前端性能优化的各种技巧和工具，提升用户体验。</p>
+                    <div class="blog-footer">
+                        <a href="/blog/frontend-performance-optimization.html" class="read-more">阅读更多</a>
+                        <div class="blog-tags">
+                            <span class="tag">#性能</span>
+                            <span class="tag">#优化</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <time datetime="2024-01-05">2024年01月05日</time>
+                        <span class="blog-category">CSS</span>
+                    </div>
+                    <h3 class="blog-title">
+                        <a href="/blog/modern-css-techniques.html">现代CSS技术与最佳实践</a>
+                    </h3>
+                    <p class="blog-excerpt">探索CSS Grid、Flexbox、自定义属性等现代CSS特性，构建更灵活和可维护的样式系统。</p>
+                    <div class="blog-footer">
+                        <a href="/blog/modern-css-techniques.html" class="read-more">阅读更多</a>
+                        <div class="blog-tags">
+                            <span class="tag">#CSS</span>
+                            <span class="tag">#布局</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="section-actions">
+                <a href="/blog.html" class="btn btn-outline">查看所有文章</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">准备开始合作？</h2>
+                <p class="cta-description">如果您有项目需求或想要技术交流，欢迎随时联系我</p>
+                <div class="cta-actions">
+                    <a href="/contact.html" class="btn btn-primary">联系我</a>
+                    <a href="/projects.html" class="btn btn-ghost">查看作品</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-title">个人品牌</h3>
+                    <p class="footer-description">致力于创造优雅的用户体验和高质量的技术解决方案</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>导航</h4>
+                        <ul>
+                            <li><a href="/">首页</a></li>
+                            <li><a href="/about.html">关于</a></li>
+                            <li><a href="/projects.html">项目</a></li>
+                            <li><a href="/blog.html">博客</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>联系方式</h4>
+                        <ul>
+                            <li><a href="mailto:your.email@example.com">邮箱</a></li>
+                            <li><a href="https://github.com/Fxxk181126">GitHub</a></li>
+                            <li><a href="/contact.html">联系页面</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 个人官网. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

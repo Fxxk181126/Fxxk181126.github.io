@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Vue 3 Composition API 完全指南 - 个人官网 | Vue风格设计</title>
+    <meta name="description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta name="author" content="你的姓名">
+    <meta name="keywords" content="Vue3, Composition API, JavaScript, 前端">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-CN">
+    
+    <!-- Google Site Verification -->
+    
+    <meta name="google-site-verification" content="">
+    
+    
+    <!-- Bing Site Verification -->
+    
+    <meta name="msvalidate.01" content="">
+    
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Vue 3 Composition API 完全指南">
+    <meta property="og:description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:4000/blog/vue3-composition-api-guide/">
+    <meta property="og:image" content="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Vue.js%20logo%20composition%20api%20modern%20web%20development&image_size=landscape_16_9">
+    <meta property="og:site_name" content="个人官网 | Vue风格设计">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vue 3 Composition API 完全指南">
+    <meta name="twitter:description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta name="twitter:image" content="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Vue.js%20logo%20composition%20api%20modern%20web%20development&image_size=landscape_16_9">
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#42b883">
+    <meta name="msapplication-TileColor" content="#42b883">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/blog/vue3-composition-api-guide/">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="个人官网 | Vue风格设计" href="/feed.xml">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/assets/css/main.css" as="style">
+    <link rel="preload" href="/assets/js/main.js" as="script">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Google Analytics -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "你的姓名",
+        "url": "http://localhost:4000",
+        "sameAs": [
+            
+            "https://github.com/Fxxk181126",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "mailto:your.email@example.com"
+            
+        ],
+        "jobTitle": "全栈开发者",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelancer"
+        },
+        "description": "热爱技术创新，专注于前端开发和用户体验设计",
+        "image": "http://localhost:4000/assets/images/avatar.svg"
+    }
+    </script>
+</head>
+
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+    <div class="container">
+        <!-- Brand -->
+        <a href="/" class="navbar-brand">
+            <div class="brand-logo">个</div>
+            <span>个人品牌</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link active">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link ">联系</a>
+            </li>
+        </ul>
+        
+        <!-- Actions -->
+        <div class="navbar-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <a href="/contact" class="btn contact-btn">联系我</a>
+        </div>
+        
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" id="navbar-toggler" aria-label="打开菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="navbar-mobile" id="navbar-mobile">
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-brand">个人品牌</div>
+            <button class="mobile-close" id="mobile-close" aria-label="关闭菜单">
+                ✕
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link active">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link ">联系</a>
+            </li>
+        </ul>
+        <div class="mobile-actions">
+            <a href="/contact" class="btn contact-btn">联系我</a>
+            <button class="btn theme-toggle">
+                <span class="theme-icon">🌙</span>
+                切换主题
+            </button>
+        </div>
+    </div>
+</div>
+
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <main class="post-content">
+    <!-- Post Hero -->
+    <section class="post-hero">
+        <div class="container">
+            <div class="post-header">
+                <nav class="breadcrumb fade-in-up" aria-label="面包屑导航">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/blog/">博客</a></li>
+                        <li>Vue 3 Composition API 完全指南</li>
+                    </ol>
+                </nav>
+                <h1 class="post-title fade-in-up">Vue 3 Composition API 完全指南</h1>
+                <div class="post-meta fade-in-up">
+                    <time datetime="2024-01-15T00:00:00+08:00">
+                        2024年01月15日
+                    </time>
+                    
+                    <span class="post-author">你的姓名</span>
+                    
+                    
+                    <div class="post-categories">
+                        
+                        <span class="category">前端开发</span>
+                        
+                        <span class="category">Vue.js</span>
+                        
+                    </div>
+                    
+                    
+                    <div class="post-tags">
+                        
+                        <span class="tag">#Vue3</span>
+                        
+                        <span class="tag">#Composition API</span>
+                        
+                        <span class="tag">#JavaScript</span>
+                        
+                        <span class="tag">#前端</span>
+                        
+                    </div>
+                    
+                </div>
+                
+                <p class="post-excerpt fade-in-up">深入了解 Vue 3 Composition API 的核心概念、使用方法和最佳实践，帮助你更好地构建现代化的 Vue 应用。</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <section class="post-body">
+        <div class="container">
+            <div class="post-content-wrapper">
+                <article class="prose">
+                    <p>Vue 3 引入的 Composition API 是一个重大的变革，它为我们提供了更灵活、更强大的组件逻辑组织方式。本文将深入探讨 Composition API 的核心概念和实际应用。</p>
+
+<h2 id="什么是-composition-api">什么是 Composition API？</h2>
+
+<p>Composition API 是 Vue 3 中新增的一套 API，它允许我们使用函数的方式来组织组件的逻辑。相比于 Options API，Composition API 提供了更好的逻辑复用性和类型推导支持。</p>
+
+<h3 id="核心优势">核心优势</h3>
+
+<ol>
+  <li><strong>更好的逻辑复用</strong> - 通过组合函数实现逻辑复用</li>
+  <li><strong>更好的类型推导</strong> - 对 TypeScript 的支持更加友好</li>
+  <li><strong>更灵活的代码组织</strong> - 相关逻辑可以组织在一起</li>
+  <li><strong>更小的打包体积</strong> - 更好的 tree-shaking 支持</li>
+</ol>
+
+<h2 id="基础用法">基础用法</h2>
+
+<h3 id="setup-函数">setup 函数</h3>
+
+<p><code class="language-plaintext highlighter-rouge">setup</code> 函数是 Composition API 的入口点：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">reactive</span><span class="p">,</span> <span class="nx">computed</span><span class="p">,</span> <span class="nx">onMounted</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 响应式数据</span>
+    <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Vue 3</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">version</span><span class="p">:</span> <span class="dl">'</span><span class="s1">3.0</span><span class="dl">'</span>
+    <span class="p">})</span>
+    
+    <span class="c1">// 计算属性</span>
+    <span class="kd">const</span> <span class="nx">doubleCount</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1">// 方法</span>
+    <span class="kd">const</span> <span class="nx">increment</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="o">++</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// 生命周期</span>
+    <span class="nx">onMounted</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">组件已挂载</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">})</span>
+    
+    <span class="c1">// 返回模板需要的数据和方法</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">count</span><span class="p">,</span>
+      <span class="nx">state</span><span class="p">,</span>
+      <span class="nx">doubleCount</span><span class="p">,</span>
+      <span class="nx">increment</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="响应式-api">响应式 API</h3>
+
+<h4 id="ref-和-reactive">ref 和 reactive</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">reactive</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+
+<span class="c1">// ref - 用于基本类型</span>
+<span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="c1">// reactive - 用于对象类型</span>
+<span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
+  <span class="na">user</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">30</span>
+  <span class="p">},</span>
+  <span class="na">posts</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+
+<span class="c1">// 访问 ref 的值需要使用 .value</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 0</span>
+<span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">// reactive 对象可以直接访问</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="c1">// 'John'</span>
+<span class="nx">state</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Jane</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h4 id="computed-计算属性">computed 计算属性</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">computed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="dl">'</span><span class="s1">Doe</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="c1">// 只读计算属性</span>
+<span class="kd">const</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span>
+<span class="p">})</span>
+
+<span class="c1">// 可写计算属性</span>
+<span class="kd">const</span> <span class="nx">fullNameWritable</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">({</span>
+  <span class="kd">get</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span>
+  <span class="p">},</span>
+  <span class="kd">set</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">.</span><span class="nx">value</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h4 id="watch-和-watcheffect">watch 和 watchEffect</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">watch</span><span class="p">,</span> <span class="nx">watchEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Vue</span><span class="dl">'</span> <span class="p">})</span>
+
+<span class="c1">// watch - 监听特定数据源</span>
+<span class="nx">watch</span><span class="p">(</span><span class="nx">count</span><span class="p">,</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`count changed from </span><span class="p">${</span><span class="nx">oldValue</span><span class="p">}</span><span class="s2"> to </span><span class="p">${</span><span class="nx">newValue</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">// 监听多个数据源</span>
+<span class="nx">watch</span><span class="p">([</span><span class="nx">count</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">],</span> <span class="p">([</span><span class="nx">newCount</span><span class="p">,</span> <span class="nx">newName</span><span class="p">],</span> <span class="p">[</span><span class="nx">oldCount</span><span class="p">,</span> <span class="nx">oldName</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Multiple values changed</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">// watchEffect - 自动追踪依赖</span>
+<span class="nx">watchEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Count is </span><span class="p">${</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Name is </span><span class="p">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="组合函数-composables">组合函数 (Composables)</h2>
+
+<p>组合函数是 Composition API 的核心特性之一，它允许我们将相关的逻辑封装成可复用的函数。</p>
+
+<h3 id="创建组合函数">创建组合函数</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// composables/useCounter.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">computed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">useCounter</span><span class="p">(</span><span class="nx">initialValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="nx">initialValue</span><span class="p">)</span>
+  
+  <span class="kd">const</span> <span class="nx">doubleCount</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+  
+  <span class="kd">const</span> <span class="nx">increment</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="o">++</span>
+  <span class="p">}</span>
+  
+  <span class="kd">const</span> <span class="nx">decrement</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="o">--</span>
+  <span class="p">}</span>
+  
+  <span class="kd">const</span> <span class="nx">reset</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">initialValue</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">count</span><span class="p">,</span>
+    <span class="nx">doubleCount</span><span class="p">,</span>
+    <span class="nx">increment</span><span class="p">,</span>
+    <span class="nx">decrement</span><span class="p">,</span>
+    <span class="nx">reset</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="使用组合函数">使用组合函数</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 在组件中使用</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useCounter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/composables/useCounter</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">count</span><span class="p">,</span> <span class="nx">doubleCount</span><span class="p">,</span> <span class="nx">increment</span><span class="p">,</span> <span class="nx">decrement</span><span class="p">,</span> <span class="nx">reset</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useCounter</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">count</span><span class="p">,</span>
+      <span class="nx">doubleCount</span><span class="p">,</span>
+      <span class="nx">increment</span><span class="p">,</span>
+      <span class="nx">decrement</span><span class="p">,</span>
+      <span class="nx">reset</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="生命周期钩子">生命周期钩子</h2>
+
+<p>Composition API 提供了对应的生命周期钩子函数：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span>
+  <span class="nx">onBeforeMount</span><span class="p">,</span>
+  <span class="nx">onMounted</span><span class="p">,</span>
+  <span class="nx">onBeforeUpdate</span><span class="p">,</span>
+  <span class="nx">onUpdated</span><span class="p">,</span>
+  <span class="nx">onBeforeUnmount</span><span class="p">,</span>
+  <span class="nx">onUnmounted</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">onBeforeMount</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">组件即将挂载</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">})</span>
+    
+    <span class="nx">onMounted</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">组件已挂载</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">})</span>
+    
+    <span class="nx">onBeforeUpdate</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">组件即将更新</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">})</span>
+    
+    <span class="nx">onUpdated</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">组件已更新</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">})</span>
+    
+    <span class="nx">onBeforeUnmount</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">组件即将卸载</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">})</span>
+    
+    <span class="nx">onUnmounted</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">组件已卸载</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="实际应用示例">实际应用示例</h2>
+
+<p>让我们创建一个完整的待办事项组件来演示 Composition API 的实际应用：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// components/TodoList.vue</span>
+<span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">todo-list</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">待办事项</span> <span class="p">()</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>    
+    <span class="o">&lt;</span><span class="nx">form</span> <span class="p">@</span><span class="nd">submit</span><span class="p">.</span><span class="nx">prevent</span><span class="o">=</span><span class="dl">"</span><span class="s2">addTodo</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">input</span>
+        <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">newTodo</span><span class="dl">"</span>
+        <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">添加新的待办事项</span><span class="dl">"</span>
+        <span class="nx">required</span>
+      <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">添加</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>    
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">filters</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span>
+        <span class="nx">v</span><span class="o">-</span><span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">filter in filters</span><span class="dl">"</span>
+        <span class="p">:</span><span class="nx">key</span><span class="o">=</span><span class="dl">"</span><span class="s2">filter</span><span class="dl">"</span>
+        <span class="p">:</span><span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">{ active: currentFilter === filter }</span><span class="dl">"</span>
+        <span class="p">@</span><span class="nd">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">currentFilter = filter</span><span class="dl">"</span>
+      <span class="o">&gt;</span>
+        
+      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    
+    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">li</span>
+        <span class="nx">v</span><span class="o">-</span><span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">todo in filteredTodos</span><span class="dl">"</span>
+        <span class="p">:</span><span class="nx">key</span><span class="o">=</span><span class="dl">"</span><span class="s2">todo.id</span><span class="dl">"</span>
+        <span class="p">:</span><span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">{ completed: todo.completed }</span><span class="dl">"</span>
+      <span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span>
+          <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">todo.completed</span><span class="dl">"</span>
+        <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="p">@</span><span class="nd">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">removeTodo(todo.id)</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">删除</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>    
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">stats</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">已完成</span><span class="p">:</span>  <span class="o">/</span> <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">进度</span><span class="p">:</span> <span class="o">%&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useTodos</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/composables/useTodos</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">TodoList</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span>
+      <span class="nx">todos</span><span class="p">,</span>
+      <span class="nx">newTodo</span><span class="p">,</span>
+      <span class="nx">currentFilter</span><span class="p">,</span>
+      <span class="nx">filters</span><span class="p">,</span>
+      <span class="nx">filteredTodos</span><span class="p">,</span>
+      <span class="nx">stats</span><span class="p">,</span>
+      <span class="nx">addTodo</span><span class="p">,</span>
+      <span class="nx">removeTodo</span>
+    <span class="p">}</span> <span class="o">=</span> <span class="nx">useTodos</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">todos</span><span class="p">,</span>
+      <span class="nx">newTodo</span><span class="p">,</span>
+      <span class="nx">currentFilter</span><span class="p">,</span>
+      <span class="nx">filters</span><span class="p">,</span>
+      <span class="nx">filteredTodos</span><span class="p">,</span>
+      <span class="nx">stats</span><span class="p">,</span>
+      <span class="nx">addTodo</span><span class="p">,</span>
+      <span class="nx">removeTodo</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// composables/useTodos.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">reactive</span><span class="p">,</span> <span class="nx">computed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">useTodos</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">todos</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">([])</span>
+  <span class="kd">const</span> <span class="nx">newTodo</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">currentFilter</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="dl">'</span><span class="s1">全部</span><span class="dl">'</span><span class="p">)</span>
+  
+  <span class="kd">const</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">全部</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">未完成</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">已完成</span><span class="dl">'</span><span class="p">]</span>
+  
+  <span class="c1">// 计算属性</span>
+  <span class="kd">const</span> <span class="nx">filteredTodos</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">currentFilter</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="dl">'</span><span class="s1">未完成</span><span class="dl">'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nx">todos</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">todo</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">todo</span><span class="p">.</span><span class="nx">completed</span><span class="p">)</span>
+      <span class="k">case</span> <span class="dl">'</span><span class="s1">已完成</span><span class="dl">'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nx">todos</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">todo</span> <span class="o">=&gt;</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">completed</span><span class="p">)</span>
+      <span class="na">default</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nx">todos</span><span class="p">.</span><span class="nx">value</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+  
+  <span class="kd">const</span> <span class="nx">stats</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">total</span> <span class="o">=</span> <span class="nx">todos</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span>
+    <span class="kd">const</span> <span class="nx">completed</span> <span class="o">=</span> <span class="nx">todos</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">todo</span> <span class="o">=&gt;</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">completed</span><span class="p">).</span><span class="nx">length</span>
+    <span class="kd">const</span> <span class="nx">percentage</span> <span class="o">=</span> <span class="nx">total</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="nx">completed</span> <span class="o">/</span> <span class="nx">total</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="p">:</span> <span class="mi">0</span>
+    
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">total</span><span class="p">,</span>
+      <span class="nx">completed</span><span class="p">,</span>
+      <span class="nx">percentage</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+  
+  <span class="c1">// 方法</span>
+  <span class="kd">const</span> <span class="nx">addTodo</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">newTodo</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span> <span class="p">{</span>
+      <span class="nx">todos</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+        <span class="na">id</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+        <span class="na">text</span><span class="p">:</span> <span class="nx">newTodo</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">(),</span>
+        <span class="na">completed</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">})</span>
+      <span class="nx">newTodo</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">''</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="kd">const</span> <span class="nx">removeTodo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">todos</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">todo</span> <span class="o">=&gt;</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">todos</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">todos</span><span class="p">,</span>
+    <span class="nx">newTodo</span><span class="p">,</span>
+    <span class="nx">currentFilter</span><span class="p">,</span>
+    <span class="nx">filters</span><span class="p">,</span>
+    <span class="nx">filteredTodos</span><span class="p">,</span>
+    <span class="nx">stats</span><span class="p">,</span>
+    <span class="nx">addTodo</span><span class="p">,</span>
+    <span class="nx">removeTodo</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="最佳实践">最佳实践</h2>
+
+<h3 id="1-合理使用-ref-和-reactive">1. 合理使用 ref 和 reactive</h3>
+
+<ul>
+  <li>基本类型使用 <code class="language-plaintext highlighter-rouge">ref</code></li>
+  <li>对象类型使用 <code class="language-plaintext highlighter-rouge">reactive</code></li>
+  <li>需要替换整个对象时使用 <code class="language-plaintext highlighter-rouge">ref</code></li>
+</ul>
+
+<h3 id="2-组合函数命名规范">2. 组合函数命名规范</h3>
+
+<ul>
+  <li>使用 <code class="language-plaintext highlighter-rouge">use</code> 前缀</li>
+  <li>使用驼峰命名法</li>
+  <li>名称要具有描述性</li>
+</ul>
+
+<h3 id="3-逻辑分组">3. 逻辑分组</h3>
+
+<p>将相关的逻辑组织在一起：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 用户相关逻辑</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">login</span><span class="p">,</span> <span class="nx">logout</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useAuth</span><span class="p">()</span>
+    
+    <span class="c1">// 数据获取逻辑</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">loading</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">fetchData</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useApi</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/posts</span><span class="dl">'</span><span class="p">)</span>
+    
+    <span class="c1">// 表单逻辑</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">form</span><span class="p">,</span> <span class="nx">validate</span><span class="p">,</span> <span class="nx">submit</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useForm</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="c1">// 用户</span>
+      <span class="nx">user</span><span class="p">,</span>
+      <span class="nx">login</span><span class="p">,</span>
+      <span class="nx">logout</span><span class="p">,</span>
+      
+      <span class="c1">// 数据</span>
+      <span class="nx">data</span><span class="p">,</span>
+      <span class="nx">loading</span><span class="p">,</span>
+      <span class="nx">error</span><span class="p">,</span>
+      <span class="nx">fetchData</span><span class="p">,</span>
+      
+      <span class="c1">// 表单</span>
+      <span class="nx">form</span><span class="p">,</span>
+      <span class="nx">validate</span><span class="p">,</span>
+      <span class="nx">submit</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="4-typescript-支持">4. TypeScript 支持</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">Ref</span><span class="p">,</span> <span class="nx">computed</span><span class="p">,</span> <span class="nx">ComputedRef</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+
+<span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">email</span><span class="p">:</span> <span class="kr">string</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">useUser</span><span class="p">():</span> <span class="p">{</span>
+  <span class="nl">user</span><span class="p">:</span> <span class="nx">Ref</span><span class="o">&lt;</span><span class="nx">User</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
+  <span class="nx">isLoggedIn</span><span class="p">:</span> <span class="nx">ComputedRef</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span>
+  <span class="nx">login</span><span class="p">:</span> <span class="p">(</span><span class="nx">userData</span><span class="p">:</span> <span class="nx">User</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+  <span class="nx">logout</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span>
+<span class="p">}</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">ref</span><span class="o">&lt;</span><span class="nx">User</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+  
+  <span class="kd">const</span> <span class="nx">isLoggedIn</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">value</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span>
+  
+  <span class="kd">const</span> <span class="nx">login</span> <span class="o">=</span> <span class="p">(</span><span class="na">userData</span><span class="p">:</span> <span class="nx">User</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">user</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">userData</span>
+  <span class="p">}</span>
+  
+  <span class="kd">const</span> <span class="nx">logout</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">user</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="kc">null</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">user</span><span class="p">,</span>
+    <span class="nx">isLoggedIn</span><span class="p">,</span>
+    <span class="nx">login</span><span class="p">,</span>
+    <span class="nx">logout</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="总结">总结</h2>
+
+<p>Composition API 为 Vue 3 带来了更强大、更灵活的组件开发方式。通过合理使用响应式 API、组合函数和生命周期钩子，我们可以构建更加模块化、可维护的应用程序。</p>
+
+<p>关键要点：</p>
+
+<ol>
+  <li><strong>setup 函数</strong>是 Composition API 的入口</li>
+  <li><strong>ref 和 reactive</strong>提供响应式数据</li>
+  <li><strong>组合函数</strong>实现逻辑复用</li>
+  <li><strong>合理的代码组织</strong>提高可维护性</li>
+  <li><strong>TypeScript 支持</strong>提供更好的开发体验</li>
+</ol>
+
+<p>掌握 Composition API 将帮助你构建更加现代化、高效的 Vue 应用程序。</p>
+
+                </article>
+                
+                <!-- Post Navigation -->
+                <nav class="post-navigation">
+                    
+                    <div class="nav-previous">
+                        <a href="/blog/frontend-performance-optimization/" class="nav-link">
+                            <span class="nav-label">上一篇</span>
+                            <span class="nav-title">前端性能优化实战指南</span>
+                        </a>
+                    </div>
+                    
+                    
+                </nav>
+
+                <!-- Related Posts -->
+                
+                
+                <section class="related-posts">
+                    <h3>相关文章</h3>
+                    <div class="related-posts-grid">
+                        
+                        <article class="related-post">
+                            <h4><a href="/blog/frontend-performance-optimization/">前端性能优化实战指南</a></h4>
+                            <time datetime="2024-01-10T00:00:00+08:00">
+                                2024年01月10日
+                            </time>
+                            
+                            <p>全面的前端性能优化指南，从加载速度到运行时性能，帮助你构建更快、更流畅的Web应用。</p>
+                            
+                        </article>
+                        
+                        <article class="related-post">
+                            <h4><a href="/blog/modern-css-techniques/">现代CSS技术与最佳实践</a></h4>
+                            <time datetime="2024-01-05T00:00:00+08:00">
+                                2024年01月05日
+                            </time>
+                            
+                            <p>探索现代CSS的强大功能，包括Grid布局、Flexbox、自定义属性、容器查询等最新技术，助你构建更优雅的用户界面。</p>
+                            
+                        </article>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </section>
+</main>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <h3>个人官网 | Vue风格设计</h3>
+                    <p>基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+</p>
+                </div>
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/Fxxk181126" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="掘金">
+                        <i class="fas fa-gem"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="知乎">
+                        <i class="fab fa-zhihu"></i>
+                    </a>
+                    
+                    <a href="mailto:your.email@example.com" class="social-link" target="_blank" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul class="footer-links">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/about">关于我</a></li>
+                    <li><a href="/projects">项目</a></li>
+                    <li><a href="/blog">博客</a></li>
+                    <li><a href="/contact">联系</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>技术栈</h4>
+                <ul class="footer-links">
+                    
+                    
+                    <li>Vue.js</li>
+                    
+                    <li>React</li>
+                    
+                    <li>TypeScript</li>
+                    
+                    <li>JavaScript</li>
+                    
+                    <li>CSS/SCSS</li>
+                    
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <div class="footer-contact">
+                    <p>
+                        <i class="icon-mail"></i>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    </p>
+                    
+                    <p>
+                        <i class="icon-location"></i>
+                        中国
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 你的姓名. 2024 个人官网. All Rights Reserved.</p>
+            </div>
+            <div class="footer-meta">
+                <p>
+                    使用 <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> 构建
+                    • 托管于 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+        <!-- Scripts -->
+        <!-- Core Scripts -->
+<script src="/assets/js/main.js"></script>
+
+<!-- Additional Scripts for specific pages -->
+
+<!-- Syntax highlighting for code blocks -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+
+
+
+
+<!-- Blog search and filtering -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Blog category filtering
+    const categoryFilters = document.querySelectorAll('.category-filter');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    if (categoryFilters.length > 0) {
+        categoryFilters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                const filterValue = this.getAttribute('data-category');
+                
+                // Update active filter
+                categoryFilters.forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter blog posts
+                blogCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.add('show'), 100);
+                    } else {
+                        card.classList.remove('show');
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+    }
+});
+</script>
+
+
+<!-- Analytics (if configured) -->
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+
+<!-- Performance optimization -->
+<script>
+// Preload critical resources
+document.addEventListener('DOMContentLoaded', function() {
+    // Preload next page if user hovers over navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('/')) {
+                const linkElement = document.createElement('link');
+                linkElement.rel = 'prefetch';
+                linkElement.href = href;
+                document.head.appendChild(linkElement);
+            }
+        });
+    });
+});
+</script>
+        
+        <!-- Tracking -->
+        <!-- Google Analitycs -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!-- END Google Analitycs -->
+    </body>
+</html>

@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>前端性能优化实战指南 - 个人官网 | Vue风格设计</title>
+    <meta name="description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta name="author" content="你的姓名">
+    <meta name="keywords" content="性能优化, JavaScript, CSS, 前端">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-CN">
+    
+    <!-- Google Site Verification -->
+    
+    <meta name="google-site-verification" content="">
+    
+    
+    <!-- Bing Site Verification -->
+    
+    <meta name="msvalidate.01" content="">
+    
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="前端性能优化实战指南">
+    <meta property="og:description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:4000/blog/frontend-performance-optimization/">
+    <meta property="og:image" content="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=web%20performance%20optimization%20speed%20dashboard%20metrics&image_size=landscape_16_9">
+    <meta property="og:site_name" content="个人官网 | Vue风格设计">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="前端性能优化实战指南">
+    <meta name="twitter:description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta name="twitter:image" content="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=web%20performance%20optimization%20speed%20dashboard%20metrics&image_size=landscape_16_9">
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#42b883">
+    <meta name="msapplication-TileColor" content="#42b883">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/blog/frontend-performance-optimization/">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="个人官网 | Vue风格设计" href="/feed.xml">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/assets/css/main.css" as="style">
+    <link rel="preload" href="/assets/js/main.js" as="script">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Google Analytics -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "你的姓名",
+        "url": "http://localhost:4000",
+        "sameAs": [
+            
+            "https://github.com/Fxxk181126",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "mailto:your.email@example.com"
+            
+        ],
+        "jobTitle": "全栈开发者",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelancer"
+        },
+        "description": "热爱技术创新，专注于前端开发和用户体验设计",
+        "image": "http://localhost:4000/assets/images/avatar.svg"
+    }
+    </script>
+</head>
+
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+    <div class="container">
+        <!-- Brand -->
+        <a href="/" class="navbar-brand">
+            <div class="brand-logo">个</div>
+            <span>个人品牌</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link active">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link ">联系</a>
+            </li>
+        </ul>
+        
+        <!-- Actions -->
+        <div class="navbar-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <a href="/contact" class="btn contact-btn">联系我</a>
+        </div>
+        
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" id="navbar-toggler" aria-label="打开菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="navbar-mobile" id="navbar-mobile">
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-brand">个人品牌</div>
+            <button class="mobile-close" id="mobile-close" aria-label="关闭菜单">
+                ✕
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link active">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link ">联系</a>
+            </li>
+        </ul>
+        <div class="mobile-actions">
+            <a href="/contact" class="btn contact-btn">联系我</a>
+            <button class="btn theme-toggle">
+                <span class="theme-icon">🌙</span>
+                切换主题
+            </button>
+        </div>
+    </div>
+</div>
+
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <main class="post-content">
+    <!-- Post Hero -->
+    <section class="post-hero">
+        <div class="container">
+            <div class="post-header">
+                <nav class="breadcrumb fade-in-up" aria-label="面包屑导航">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/blog/">博客</a></li>
+                        <li>前端性能优化实战指南</li>
+                    </ol>
+                </nav>
+                <h1 class="post-title fade-in-up">前端性能优化实战指南</h1>
+                <div class="post-meta fade-in-up">
+                    <time datetime="2024-01-10T00:00:00+08:00">
+                        2024年01月10日
+                    </time>
+                    
+                    <span class="post-author">你的姓名</span>
+                    
+                    
+                    <div class="post-categories">
+                        
+                        <span class="category">前端开发</span>
+                        
+                        <span class="category">性能优化</span>
+                        
+                    </div>
+                    
+                    
+                    <div class="post-tags">
+                        
+                        <span class="tag">#性能优化</span>
+                        
+                        <span class="tag">#JavaScript</span>
+                        
+                        <span class="tag">#CSS</span>
+                        
+                        <span class="tag">#前端</span>
+                        
+                    </div>
+                    
+                </div>
+                
+                <p class="post-excerpt fade-in-up">全面的前端性能优化指南，从加载速度到运行时性能，帮助你构建更快、更流畅的Web应用。</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <section class="post-body">
+        <div class="container">
+            <div class="post-content-wrapper">
+                <article class="prose">
+                    <p>在现代Web开发中，性能优化是一个至关重要的话题。用户期望网站能够快速加载并流畅运行，而搜索引擎也将页面速度作为排名因素之一。本文将深入探讨前端性能优化的各个方面。</p>
+
+<h2 id="性能优化的重要性">性能优化的重要性</h2>
+
+<h3 id="用户体验影响">用户体验影响</h3>
+
+<ul>
+  <li><strong>加载时间</strong>：页面加载时间每增加1秒，转化率下降7%</li>
+  <li><strong>首屏时间</strong>：用户期望页面在2秒内完成首屏渲染</li>
+  <li><strong>交互响应</strong>：用户操作应在100ms内得到响应</li>
+</ul>
+
+<h3 id="业务价值">业务价值</h3>
+
+<ul>
+  <li>提高用户留存率</li>
+  <li>增加转化率</li>
+  <li>改善SEO排名</li>
+  <li>降低服务器成本</li>
+</ul>
+
+<h2 id="性能指标与测量">性能指标与测量</h2>
+
+<h3 id="核心web指标-core-web-vitals">核心Web指标 (Core Web Vitals)</h3>
+
+<h4 id="1-lcp-largest-contentful-paint">1. LCP (Largest Contentful Paint)</h4>
+<p>最大内容绘制时间，衡量加载性能：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 监测 LCP</span>
+<span class="k">new</span> <span class="nx">PerformanceObserver</span><span class="p">((</span><span class="nx">entryList</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nx">entryList</span><span class="p">.</span><span class="nx">getEntries</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">LCP:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">startTime</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}).</span><span class="nx">observe</span><span class="p">({</span> <span class="na">entryTypes</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">largest-contentful-paint</span><span class="dl">'</span><span class="p">]</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="2-fid-first-input-delay">2. FID (First Input Delay)</h4>
+<p>首次输入延迟，衡量交互性：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 监测 FID</span>
+<span class="k">new</span> <span class="nx">PerformanceObserver</span><span class="p">((</span><span class="nx">entryList</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nx">entryList</span><span class="p">.</span><span class="nx">getEntries</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">FID:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">processingStart</span> <span class="o">-</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">startTime</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}).</span><span class="nx">observe</span><span class="p">({</span> <span class="na">entryTypes</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">first-input</span><span class="dl">'</span><span class="p">]</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="3-cls-cumulative-layout-shift">3. CLS (Cumulative Layout Shift)</h4>
+<p>累积布局偏移，衡量视觉稳定性：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 监测 CLS</span>
+<span class="kd">let</span> <span class="nx">clsValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">new</span> <span class="nx">PerformanceObserver</span><span class="p">((</span><span class="nx">entryList</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nx">entryList</span><span class="p">.</span><span class="nx">getEntries</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">entry</span><span class="p">.</span><span class="nx">hadRecentInput</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">clsValue</span> <span class="o">+=</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">CLS:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">clsValue</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">observe</span><span class="p">({</span> <span class="na">entryTypes</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">layout-shift</span><span class="dl">'</span><span class="p">]</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="加载性能优化">加载性能优化</h2>
+
+<h3 id="1-资源优化">1. 资源优化</h3>
+
+<h4 id="图片优化">图片优化</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- 使用现代图片格式 --&gt;</span>
+<span class="nt">&lt;picture&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"image.webp"</span> <span class="na">type=</span><span class="s">"image/webp"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"image.avif"</span> <span class="na">type=</span><span class="s">"image/avif"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"image.jpg"</span> <span class="na">alt=</span><span class="s">"描述"</span> <span class="na">loading=</span><span class="s">"lazy"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+
+<span class="c">&lt;!-- 响应式图片 --&gt;</span>
+<span class="nt">&lt;img</span> 
+  <span class="na">srcset=</span><span class="s">"small.jpg 480w, medium.jpg 800w, large.jpg 1200w"</span>
+  <span class="na">sizes=</span><span class="s">"(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px"</span>
+  <span class="na">src=</span><span class="s">"medium.jpg"</span> 
+  <span class="na">alt=</span><span class="s">"描述"</span>
+<span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h4 id="css优化">CSS优化</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 关键CSS内联 */</span>
+<span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+  <span class="c">/* 首屏关键样式 */</span>
+  <span class="nc">.header</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.hero</span> <span class="p">{</span> <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+
+<span class="c">/* 非关键CSS异步加载 */</span>
+<span class="o">&lt;</span><span class="nt">link</span> <span class="nt">rel</span><span class="o">=</span><span class="s1">"preload"</span> <span class="nt">href</span><span class="o">=</span><span class="s1">"styles.css"</span> <span class="nt">as</span><span class="o">=</span><span class="s1">"style"</span> <span class="nt">onload</span><span class="o">=</span><span class="s1">"this.onload=null;this.rel='stylesheet'"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h4 id="javascript优化">JavaScript优化</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 代码分割</span>
+<span class="kd">const</span> <span class="nx">LazyComponent</span> <span class="o">=</span> <span class="nx">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">./LazyComponent</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="c1">// 动态导入</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">loadModule</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">heavyFunction</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">./heavyModule</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">heavyFunction</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Tree Shaking</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">debounce</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">lodash-es</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// 只导入需要的函数</span>
+</code></pre></div></div>
+
+<h3 id="2-网络优化">2. 网络优化</h3>
+
+<h4 id="http2-和-http3">HTTP/2 和 HTTP/3</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 利用 HTTP/2 多路复用</span>
+<span class="c1">// 不再需要合并小文件，可以按需加载</span>
+
+<span class="c1">// 服务器推送</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/styles.css</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/script.js</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="缓存策略">缓存策略</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Service Worker 缓存</span>
+<span class="nb">self</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">fetch</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">destination</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">image</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">respondWith</span><span class="p">(</span>
+      <span class="nx">caches</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">images</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">cache</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">cache</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">request</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">response</span> <span class="o">||</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">request</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">fetchResponse</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">cache</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">request</span><span class="p">,</span> <span class="nx">fetchResponse</span><span class="p">.</span><span class="nx">clone</span><span class="p">());</span>
+            <span class="k">return</span> <span class="nx">fetchResponse</span><span class="p">;</span>
+          <span class="p">});</span>
+        <span class="p">});</span>
+      <span class="p">})</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="cdn-和预加载">CDN 和预加载</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- DNS 预解析 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"dns-prefetch"</span> <span class="na">href=</span><span class="s">"//cdn.example.com"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- 预连接 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"preconnect"</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- 资源预加载 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"preload"</span> <span class="na">href=</span><span class="s">"font.woff2"</span> <span class="na">as=</span><span class="s">"font"</span> <span class="na">type=</span><span class="s">"font/woff2"</span> <span class="na">crossorigin</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- 页面预取 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"prefetch"</span> <span class="na">href=</span><span class="s">"/next-page.html"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="运行时性能优化">运行时性能优化</h2>
+
+<h3 id="1-javascript-性能">1. JavaScript 性能</h3>
+
+<h4 id="避免长任务">避免长任务</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 使用 requestIdleCallback 分解长任务</span>
+<span class="kd">function</span> <span class="nx">processLargeArray</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">chunk</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+  
+  <span class="c1">// 处理当前块</span>
+  <span class="nx">processChunk</span><span class="p">(</span><span class="nx">chunk</span><span class="p">);</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">requestIdleCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">processLargeArray</span><span class="p">(</span><span class="nx">array</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 使用 Web Workers 处理重计算</span>
+<span class="c1">// main.js</span>
+<span class="kd">const</span> <span class="nx">worker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Worker</span><span class="p">(</span><span class="dl">'</span><span class="s1">worker.js</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">worker</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span> <span class="na">data</span><span class="p">:</span> <span class="nx">largeDataSet</span> <span class="p">});</span>
+<span class="nx">worker</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">计算结果:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// worker.js</span>
+<span class="nb">self</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">heavyComputation</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+  <span class="nb">self</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="内存管理">内存管理</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 避免内存泄漏</span>
+<span class="kd">class</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleResize</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleResize</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">resize</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleResize</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="nx">destroy</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 清理事件监听器</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">resize</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleResize</span><span class="p">);</span>
+    
+    <span class="c1">// 清理定时器</span>
+    <span class="nx">clearInterval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timer</span><span class="p">);</span>
+    
+    <span class="c1">// 清理引用</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 使用 WeakMap 避免循环引用</span>
+<span class="kd">const</span> <span class="nx">elementData</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">WeakMap</span><span class="p">();</span>
+<span class="nx">elementData</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">some data</span><span class="dl">'</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="2-dom-操作优化">2. DOM 操作优化</h3>
+
+<h4 id="批量dom操作">批量DOM操作</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 使用 DocumentFragment</span>
+<span class="kd">function</span> <span class="nx">addMultipleElements</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">fragment</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createDocumentFragment</span><span class="p">();</span>
+  
+  <span class="nx">items</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">item</span><span class="p">;</span>
+    <span class="nx">fragment</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+  <span class="p">});</span>
+  
+  <span class="nx">container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">fragment</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 使用 requestAnimationFrame</span>
+<span class="kd">function</span> <span class="nx">animateElement</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">targetPosition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">currentPosition</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">offsetLeft</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">distance</span> <span class="o">=</span> <span class="nx">targetPosition</span> <span class="o">-</span> <span class="nx">currentPosition</span><span class="p">;</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">distance</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">currentPosition</span> <span class="o">+</span> <span class="nx">distance</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">px</span><span class="dl">'</span><span class="p">;</span>
+      <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="虚拟滚动">虚拟滚动</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 虚拟滚动实现</span>
+<span class="kd">class</span> <span class="nx">VirtualScroll</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">items</span><span class="p">,</span> <span class="nx">itemHeight</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">container</span> <span class="o">=</span> <span class="nx">container</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">items</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">itemHeight</span> <span class="o">=</span> <span class="nx">itemHeight</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">visibleCount</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">clientHeight</span> <span class="o">/</span> <span class="nx">itemHeight</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">startIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">this</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">bindEvents</span><span class="p">();</span>
+  <span class="p">}</span>
+  
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">endIndex</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">startIndex</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">visibleCount</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span>
+    <span class="p">);</span>
+    
+    <span class="kd">const</span> <span class="nx">visibleItems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">startIndex</span><span class="p">,</span> <span class="nx">endIndex</span><span class="p">);</span>
+    
+    <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">visibleItems</span>
+      <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`
+        &lt;div style="height: </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">itemHeight</span><span class="p">}</span><span class="s2">px; transform: translateY(</span><span class="p">${(</span><span class="k">this</span><span class="p">.</span><span class="nx">startIndex</span> <span class="o">+</span> <span class="nx">index</span><span class="p">)</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">itemHeight</span><span class="p">}</span><span class="s2">px)"&gt;
+          </span><span class="p">${</span><span class="nx">item</span><span class="p">}</span><span class="s2">
+        &lt;/div&gt;
+      `</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="nx">bindEvents</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">scroll</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">newStartIndex</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">itemHeight</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">newStartIndex</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">startIndex</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">startIndex</span> <span class="o">=</span> <span class="nx">newStartIndex</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="css-性能优化">CSS 性能优化</h2>
+
+<h3 id="1-选择器优化">1. 选择器优化</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 避免复杂选择器 */</span>
+<span class="c">/* 不好 */</span>
+<span class="nc">.container</span> <span class="nc">.sidebar</span> <span class="nc">.widget</span> <span class="nc">.title</span> <span class="nt">span</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="c">/* 好 */</span>
+<span class="nc">.widget-title-span</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="c">/* 使用 CSS 自定义属性减少重复 */</span>
+<span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--primary-color</span><span class="p">:</span> <span class="m">#42b883</span><span class="p">;</span>
+  <span class="py">--secondary-color</span><span class="p">:</span> <span class="m">#369870</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.button</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-动画优化">2. 动画优化</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 使用 transform 和 opacity 进行动画 */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">transform</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="p">,</span> <span class="n">opacity</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.element</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">-5px</span><span class="p">);</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.8</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 使用 will-change 提示浏览器 */</span>
+<span class="nc">.animated-element</span> <span class="p">{</span>
+  <span class="py">will-change</span><span class="p">:</span> <span class="n">transform</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 动画完成后移除 will-change */</span>
+<span class="nc">.animated-element.animation-done</span> <span class="p">{</span>
+  <span class="py">will-change</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="3-布局优化">3. 布局优化</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 使用 Flexbox 和 Grid */</span>
+<span class="nc">.container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">(</span><span class="n">auto-fit</span><span class="p">,</span> <span class="n">minmax</span><span class="p">(</span><span class="m">300px</span><span class="p">,</span> <span class="m">1</span><span class="n">fr</span><span class="p">));</span>
+  <span class="py">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 避免强制重排 */</span>
+<span class="c">/* 不好 */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">100%</span> <span class="n">-</span> <span class="m">20px</span><span class="p">);</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">100vh</span> <span class="n">-</span> <span class="m">100px</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* 好 */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="构建优化">构建优化</h2>
+
+<h3 id="1-webpack-优化">1. Webpack 优化</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">optimization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">splitChunks</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">chunks</span><span class="p">:</span> <span class="dl">'</span><span class="s1">all</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">cacheGroups</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">vendor</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">[\\/]</span><span class="sr">node_modules</span><span class="se">[\\/]</span><span class="sr">/</span><span class="p">,</span>
+          <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">vendors</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">chunks</span><span class="p">:</span> <span class="dl">'</span><span class="s1">all</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">common</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">minChunks</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="na">chunks</span><span class="p">:</span> <span class="dl">'</span><span class="s1">all</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">enforce</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+  
+  <span class="c1">// 压缩</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="k">new</span> <span class="nx">TerserPlugin</span><span class="p">({</span>
+      <span class="na">terserOptions</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">compress</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">drop_console</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">}),</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="2-vite-优化">2. Vite 优化</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// vite.config.js</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">build</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rollupOptions</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">manualChunks</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">vendor</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">vue-router</span><span class="dl">'</span><span class="p">],</span>
+          <span class="na">utils</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">lodash-es</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">date-fns</span><span class="dl">'</span><span class="p">],</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+  
+  <span class="c1">// 预构建</span>
+  <span class="na">optimizeDeps</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">include</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">lodash-es</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">date-fns</span><span class="dl">'</span><span class="p">],</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="监控和分析">监控和分析</h2>
+
+<h3 id="1-性能监控">1. 性能监控</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 自定义性能监控</span>
+<span class="kd">class</span> <span class="nx">PerformanceMonitor</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">metrics</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+  <span class="p">}</span>
+  
+  <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 监控页面加载时间</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">navigation</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">getEntriesByType</span><span class="p">(</span><span class="dl">'</span><span class="s1">navigation</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">metrics</span><span class="p">.</span><span class="nx">loadTime</span> <span class="o">=</span> <span class="nx">navigation</span><span class="p">.</span><span class="nx">loadEventEnd</span> <span class="o">-</span> <span class="nx">navigation</span><span class="p">.</span><span class="nx">fetchStart</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">sendMetrics</span><span class="p">();</span>
+    <span class="p">});</span>
+    
+    <span class="c1">// 监控资源加载</span>
+    <span class="k">new</span> <span class="nx">PerformanceObserver</span><span class="p">((</span><span class="nx">list</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nx">list</span><span class="p">.</span><span class="nx">getEntries</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">duration</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">'</span><span class="s1">慢资源:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">duration</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}).</span><span class="nx">observe</span><span class="p">({</span> <span class="na">entryTypes</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">resource</span><span class="dl">'</span><span class="p">]</span> <span class="p">});</span>
+  <span class="p">}</span>
+  
+  <span class="nx">sendMetrics</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 发送性能数据到分析服务</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/metrics</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">metrics</span><span class="p">),</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">new</span> <span class="nx">PerformanceMonitor</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="2-错误监控">2. 错误监控</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 全局错误监控</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">JavaScript错误:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+  <span class="c1">// 发送错误信息到监控服务</span>
+<span class="p">});</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">unhandledrejection</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">未处理的Promise拒绝:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">reason</span><span class="p">);</span>
+  <span class="c1">// 发送错误信息到监控服务</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="实用工具和技巧">实用工具和技巧</h2>
+
+<h3 id="1-性能分析工具">1. 性能分析工具</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 自定义性能计时器</span>
+<span class="kd">class</span> <span class="nx">Timer</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="nx">start</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">performance</span><span class="p">.</span><span class="nx">mark</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">-start`</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="kd">static</span> <span class="nx">end</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">performance</span><span class="p">.</span><span class="nx">mark</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">-end`</span><span class="p">);</span>
+    <span class="nx">performance</span><span class="p">.</span><span class="nx">measure</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">-start`</span><span class="p">,</span> <span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">-end`</span><span class="p">);</span>
+    
+    <span class="kd">const</span> <span class="nx">measure</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">getEntriesByName</span><span class="p">(</span><span class="nx">name</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">: </span><span class="p">${</span><span class="nx">measure</span><span class="p">.</span><span class="nx">duration</span><span class="p">}</span><span class="s2">ms`</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 使用示例</span>
+<span class="nx">Timer</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="dl">'</span><span class="s1">data-processing</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">processData</span><span class="p">();</span>
+<span class="nx">Timer</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="dl">'</span><span class="s1">data-processing</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="2-防抖和节流">2. 防抖和节流</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 防抖函数</span>
+<span class="kd">function</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">wait</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">timeout</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="nx">executedFunction</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">later</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timeout</span><span class="p">);</span>
+      <span class="nx">func</span><span class="p">(...</span><span class="nx">args</span><span class="p">);</span>
+    <span class="p">};</span>
+    <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timeout</span><span class="p">);</span>
+    <span class="nx">timeout</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">later</span><span class="p">,</span> <span class="nx">wait</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// 节流函数</span>
+<span class="kd">function</span> <span class="nx">throttle</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">inThrottle</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">inThrottle</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">func</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+      <span class="nx">inThrottle</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">inThrottle</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">limit</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// 使用示例</span>
+<span class="kd">const</span> <span class="nx">debouncedSearch</span> <span class="o">=</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">searchFunction</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">throttledScroll</span> <span class="o">=</span> <span class="nx">throttle</span><span class="p">(</span><span class="nx">scrollHandler</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="总结">总结</h2>
+
+<p>前端性能优化是一个持续的过程，需要从多个维度进行考虑：</p>
+
+<h3 id="关键策略">关键策略</h3>
+
+<ol>
+  <li><strong>测量优先</strong> - 先测量，再优化</li>
+  <li><strong>用户体验</strong> - 关注用户感知的性能</li>
+  <li><strong>渐进增强</strong> - 确保基本功能可用</li>
+  <li><strong>持续监控</strong> - 建立性能监控体系</li>
+</ol>
+
+<h3 id="优化清单">优化清单</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />优化图片和资源加载</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />实施代码分割和懒加载</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />配置适当的缓存策略</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />优化关键渲染路径</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />减少和优化JavaScript执行</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />实施性能监控</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />定期进行性能审计</li>
+</ul>
+
+<p>记住，性能优化不是一次性的工作，而是需要在整个开发过程中持续关注和改进的重要环节。通过系统性的优化策略，我们可以为用户提供更好的Web体验。</p>
+
+                </article>
+                
+                <!-- Post Navigation -->
+                <nav class="post-navigation">
+                    
+                    <div class="nav-previous">
+                        <a href="/blog/modern-css-techniques/" class="nav-link">
+                            <span class="nav-label">上一篇</span>
+                            <span class="nav-title">现代CSS技术与最佳实践</span>
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="nav-next">
+                        <a href="/blog/vue3-composition-api-guide/" class="nav-link">
+                            <span class="nav-label">下一篇</span>
+                            <span class="nav-title">Vue 3 Composition API 完全指南</span>
+                        </a>
+                    </div>
+                    
+                </nav>
+
+                <!-- Related Posts -->
+                
+                
+                <section class="related-posts">
+                    <h3>相关文章</h3>
+                    <div class="related-posts-grid">
+                        
+                        <article class="related-post">
+                            <h4><a href="/blog/vue3-composition-api-guide/">Vue 3 Composition API 完全指南</a></h4>
+                            <time datetime="2024-01-15T00:00:00+08:00">
+                                2024年01月15日
+                            </time>
+                            
+                            <p>深入了解 Vue 3 Composition API 的核心概念、使用方法和最佳实践，帮助你更好地构建现代化的 Vue 应用。</p>
+                            
+                        </article>
+                        
+                        <article class="related-post">
+                            <h4><a href="/blog/modern-css-techniques/">现代CSS技术与最佳实践</a></h4>
+                            <time datetime="2024-01-05T00:00:00+08:00">
+                                2024年01月05日
+                            </time>
+                            
+                            <p>探索现代CSS的强大功能，包括Grid布局、Flexbox、自定义属性、容器查询等最新技术，助你构建更优雅的用户界面。</p>
+                            
+                        </article>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </section>
+</main>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <h3>个人官网 | Vue风格设计</h3>
+                    <p>基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+</p>
+                </div>
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/Fxxk181126" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="掘金">
+                        <i class="fas fa-gem"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="知乎">
+                        <i class="fab fa-zhihu"></i>
+                    </a>
+                    
+                    <a href="mailto:your.email@example.com" class="social-link" target="_blank" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul class="footer-links">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/about">关于我</a></li>
+                    <li><a href="/projects">项目</a></li>
+                    <li><a href="/blog">博客</a></li>
+                    <li><a href="/contact">联系</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>技术栈</h4>
+                <ul class="footer-links">
+                    
+                    
+                    <li>Vue.js</li>
+                    
+                    <li>React</li>
+                    
+                    <li>TypeScript</li>
+                    
+                    <li>JavaScript</li>
+                    
+                    <li>CSS/SCSS</li>
+                    
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <div class="footer-contact">
+                    <p>
+                        <i class="icon-mail"></i>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    </p>
+                    
+                    <p>
+                        <i class="icon-location"></i>
+                        中国
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 你的姓名. 2024 个人官网. All Rights Reserved.</p>
+            </div>
+            <div class="footer-meta">
+                <p>
+                    使用 <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> 构建
+                    • 托管于 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+        <!-- Scripts -->
+        <!-- Core Scripts -->
+<script src="/assets/js/main.js"></script>
+
+<!-- Additional Scripts for specific pages -->
+
+<!-- Syntax highlighting for code blocks -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+
+
+
+
+<!-- Blog search and filtering -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Blog category filtering
+    const categoryFilters = document.querySelectorAll('.category-filter');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    if (categoryFilters.length > 0) {
+        categoryFilters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                const filterValue = this.getAttribute('data-category');
+                
+                // Update active filter
+                categoryFilters.forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter blog posts
+                blogCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.add('show'), 100);
+                    } else {
+                        card.classList.remove('show');
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+    }
+});
+</script>
+
+
+<!-- Analytics (if configured) -->
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+
+<!-- Performance optimization -->
+<script>
+// Preload critical resources
+document.addEventListener('DOMContentLoaded', function() {
+    // Preload next page if user hovers over navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('/')) {
+                const linkElement = document.createElement('link');
+                linkElement.rel = 'prefetch';
+                linkElement.href = href;
+                document.head.appendChild(linkElement);
+            }
+        });
+    });
+});
+</script>
+        
+        <!-- Tracking -->
+        <!-- Google Analitycs -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!-- END Google Analitycs -->
+    </body>
+</html>

@@ -25,7 +25,7 @@
 }
 
 // Button styles
-@mixin button-style($bg-color, $text-color: #fff, $hover-bg: color.scale($bg-color, $lightness: -10%)) {
+@mixin button-style($bg-color, $text-color: #fff, $hover-bg: darken($bg-color, 10%)) {
   background: $bg-color;
   color: $text-color;
   border: none;

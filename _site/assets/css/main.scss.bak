@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>个人官网 | Vue风格设计</title>
+    <meta name="description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta name="author" content="你的姓名">
+    <meta name="keywords" content="Vue.js, 个人网站, 前端开发, 全栈开发, Jekyll, 响应式设计">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-CN">
+    
+    <!-- Google Site Verification -->
+    
+    <meta name="google-site-verification" content="">
+    
+    
+    <!-- Bing Site Verification -->
+    
+    <meta name="msvalidate.01" content="">
+    
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="个人官网 | Vue风格设计">
+    <meta property="og:description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/assets/css/main.scss.bak">
+    <meta property="og:image" content="http://localhost:4000/assets/images/og-image.png">
+    <meta property="og:site_name" content="个人官网 | Vue风格设计">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="个人官网 | Vue风格设计">
+    <meta name="twitter:description" content="基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/og-image.png">
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#42b883">
+    <meta name="msapplication-TileColor" content="#42b883">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/assets/css/main.scss.bak">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="个人官网 | Vue风格设计" href="/feed.xml">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/assets/css/main.css" as="style">
+    <link rel="preload" href="/assets/js/main.js" as="script">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Google Analytics -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "你的姓名",
+        "url": "http://localhost:4000",
+        "sameAs": [
+            
+            "https://github.com/Fxxk181126",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "#",
+            
+            "mailto:your.email@example.com"
+            
+        ],
+        "jobTitle": "全栈开发者",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelancer"
+        },
+        "description": "热爱技术创新，专注于前端开发和用户体验设计",
+        "image": "http://localhost:4000/assets/images/avatar.svg"
+    }
+    </script>
+</head>
+
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+    <div class="container">
+        <!-- Brand -->
+        <a href="/" class="navbar-brand">
+            <div class="brand-logo">个</div>
+            <span>个人品牌</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link ">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link ">联系</a>
+            </li>
+        </ul>
+        
+        <!-- Actions -->
+        <div class="navbar-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <a href="/contact" class="btn contact-btn">联系我</a>
+        </div>
+        
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" id="navbar-toggler" aria-label="打开菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="navbar-mobile" id="navbar-mobile">
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-brand">个人品牌</div>
+            <button class="mobile-close" id="mobile-close" aria-label="关闭菜单">
+                ✕
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link ">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link ">关于我</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link ">项目</a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link ">博客</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link ">联系</a>
+            </li>
+        </ul>
+        <div class="mobile-actions">
+            <a href="/contact" class="btn contact-btn">联系我</a>
+            <button class="btn theme-toggle">
+                <span class="theme-icon">🌙</span>
+                切换主题
+            </button>
+        </div>
+    </div>
+</div>
+
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            @charset "UTF-8";
+
+// Vue.js inspired personal website styles
+// Based on Vue.js official website design principles
+
+// Core Variables and Mixins (Vue.js inspired)
+@import "../../_web-src/scss/theme/variables";
+@import "../../_web-src/scss/theme/mixins";
+
+// Base styles and utilities
+@import "../../_web-src/scss/theme/base";
+
+// Layout components
+@import "../../_web-src/scss/theme/navbar";
+
+// Component styles
+@import "../../_web-src/scss/components/buttons";
+@import "../../_web-src/scss/components/cards";
+@import "../../_web-src/scss/components/tags";
+@import "../../_web-src/scss/components/projects";
+@import "../../_web-src/scss/components/blog";
+@import "../../_web-src/scss/components/footer";
+
+// Page-specific styles
+@import "../../_web-src/scss/pages/home";
+@import "../../_web-src/scss/pages/about";
+@import "../../_web-src/scss/pages/projects";
+@import "../../_web-src/scss/pages/blog";
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <h3>个人官网 | Vue风格设计</h3>
+                    <p>基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。 致力于创造优雅的用户体验和高质量的技术解决方案。
+</p>
+                </div>
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/Fxxk181126" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="掘金">
+                        <i class="fas fa-gem"></i>
+                    </a>
+                    
+                    <a href="#" class="social-link" target="_blank" title="知乎">
+                        <i class="fab fa-zhihu"></i>
+                    </a>
+                    
+                    <a href="mailto:your.email@example.com" class="social-link" target="_blank" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul class="footer-links">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/about">关于我</a></li>
+                    <li><a href="/projects">项目</a></li>
+                    <li><a href="/blog">博客</a></li>
+                    <li><a href="/contact">联系</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>技术栈</h4>
+                <ul class="footer-links">
+                    
+                    
+                    <li>Vue.js</li>
+                    
+                    <li>React</li>
+                    
+                    <li>TypeScript</li>
+                    
+                    <li>JavaScript</li>
+                    
+                    <li>CSS/SCSS</li>
+                    
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <div class="footer-contact">
+                    <p>
+                        <i class="icon-mail"></i>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    </p>
+                    
+                    <p>
+                        <i class="icon-location"></i>
+                        中国
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 你的姓名. 2024 个人官网. All Rights Reserved.</p>
+            </div>
+            <div class="footer-meta">
+                <p>
+                    使用 <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> 构建
+                    • 托管于 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+        <!-- Scripts -->
+        <!-- Core Scripts -->
+<script src="/assets/js/main.js"></script>
+
+<!-- Additional Scripts for specific pages -->
+
+
+
+
+
+
+<!-- Analytics (if configured) -->
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+
+<!-- Performance optimization -->
+<script>
+// Preload critical resources
+document.addEventListener('DOMContentLoaded', function() {
+    // Preload next page if user hovers over navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('/')) {
+                const linkElement = document.createElement('link');
+                linkElement.rel = 'prefetch';
+                linkElement.href = href;
+                document.head.appendChild(linkElement);
+            }
+        });
+    });
+});
+</script>
+        
+        <!-- Tracking -->
+        <!-- Google Analitycs -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!-- END Google Analitycs -->
+    </body>
+</html>
