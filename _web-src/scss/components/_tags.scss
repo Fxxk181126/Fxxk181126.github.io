@@ -1,4 +1,6 @@
 // Tag component styles
+@use "sass:color";
+@use "../theme/variables" as *;
 
 .tag {
   display: inline-flex;
@@ -13,7 +15,7 @@
   transition: $transition-fast;
   
   &:hover {
-    background: darken($light-gray, 5%);
+    background: color.adjust($light-gray, $lightness: -5%);
     color: $text-color;
     text-decoration: none;
   }
@@ -83,7 +85,7 @@
     color: #fff;
     
     &:hover {
-      background: darken($primary-color, 10%);
+      background: color.adjust($primary-color, $lightness: -10%);
       color: #fff;
     }
   }
@@ -101,11 +103,24 @@
 
 // Tech stack tags
 .tech-tag {
-  @extend .tag;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  border-radius: $border-radius-full;
   background: rgba($primary-color, 0.1);
   color: $primary-color;
+  text-decoration: none;
+  transition: $transition-fast;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+  
+  &:hover {
+    background: rgba($primary-color, 0.2);
+    color: $primary-color;
+    text-decoration: none;
+  }
   
   &:last-child {
     margin-right: 0;
@@ -134,27 +149,42 @@
 
 // Blog tags
 .blog-tag {
-  @extend .tag;
-  @extend .tag-sm;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  border-radius: $border-radius-full;
   background: $light-gray;
   color: $text-light;
+  text-decoration: none;
+  transition: $transition-fast;
   
   &:hover {
     background: $primary-color;
     color: #fff;
+    text-decoration: none;
   }
 }
 
 // Category tags
 .category-tag {
-  @extend .tag;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  border-radius: $border-radius-full;
   background: linear-gradient(135deg, $primary-color, $secondary-color);
   color: #fff;
+  text-decoration: none;
+  transition: $transition-fast;
   
   &:hover {
     transform: translateY(-1px);
     box-shadow: $shadow;
     color: #fff;
+    text-decoration: none;
   }
 }
 

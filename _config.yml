@@ -1,29 +1,29 @@
-# Site settings - 引用统一的个人信息配置
-title: "{{ site.data.personal.site.title }}"
-email: "{{ site.data.personal.contact.email }}"
-brand: "{{ site.data.personal.site.brand }}"
-headline: "{{ site.data.personal.site.headline }}"
-description: "{{ site.data.personal.site.description }}"
+# Site settings - 直接配置值
+title: "个人官网"
+email: "zhao999ss@163.com"
+brand: "个人品牌"
+headline: "全栈开发者 & 技术创新者"
+description: "个人官网，展示技术能力、项目作品和个人见解。致力于创造优雅的用户体验和高质量的技术解决方案。"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fxxk181126.github.io" # the base hostname & protocol for your site
-copyright: "{{ site.data.personal.site.copyright }}"
+copyright: "2025 个人官网. All Rights Reserved."
 
-# Personal Information - 引用统一配置
+# Personal Information - 直接配置
 author:
-  name: "{{ site.data.personal.basic.name }}"
-  display_name: "{{ site.data.personal.basic.display_name }}"
-  title: "{{ site.data.personal.basic.title }}"
-  bio: "{{ site.data.personal.basic.bio }}"
-  location: "{{ site.data.personal.basic.location }}"
-  avatar: "{{ site.data.personal.basic.avatar }}"
-  experience: "{{ site.data.personal.basic.experience }}"
+  name: "Zane"
+  display_name: "Zane"
+  title: "全栈开发者"
+  bio: "热爱技术创新，专注于前端开发和用户体验设计"
+  location: "中国"
+  avatar: "/assets/images/avatar.svg"
+  experience: "3+"
 
-# Social Media - 引用统一配置
+# Social Media - 直接配置
 social:
-  github: "{{ site.data.personal.social.github.url }}"
-  linkedin: "{{ site.data.personal.social.linkedin.url }}"
-  twitter: "{{ site.data.personal.social.twitter.url }}"
-  email: "{{ site.data.personal.contact.email }}"
+  github: "https://github.com/Fxxk181126"
+  linkedin: "#"
+  twitter: "#"
+  email: "zhao999ss@163.com"
 
 # Build settings
 markdown: kramdown
@@ -77,12 +77,12 @@ exclude:
 lang: zh-CN
 timezone: Asia/Shanghai
 
-# SEO settings - 引用统一配置
+# SEO settings - 直接配置
 seo:
-  type: "{{ site.data.personal.seo.type }}"
-  name: "{{ site.data.personal.basic.name }}"
+  type: "Person"
+  name: "Zane"
   links:
-    - "{{ site.data.personal.social.github.url }}"
+    - "https://github.com/Fxxk181126"
     - "https://fxxk181126.github.io"
 
 # Open Graph / Twitter Card defaults
@@ -120,7 +120,7 @@ feed:
   excerpt_only: true
 
 # Theme colors (Vue.js inspired)
-theme:
+theme_colors:
   primary_color: "#42b883"
   secondary_color: "#35495e"
   accent_color: "#007bff"

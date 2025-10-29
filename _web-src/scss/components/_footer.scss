@@ -1,4 +1,7 @@
 // Footer component styles
+@use "sass:color";
+@use "../theme/variables" as *;
+@use "../theme/mixins" as *;
 
 .footer {
   background: $dark-gray;
@@ -166,7 +169,7 @@
 // Back to top button styles
 .back-to-top {
   &:hover {
-    background: darken($primary-color, 10%) !important;
+    background: color.adjust($primary-color, $lightness: -10%) !important;
     transform: translateY(-2px) !important;
   }
   

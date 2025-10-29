@@ -1,4 +1,7 @@
 // Blog component styles
+@use "sass:color";
+@use "../theme/variables" as *;
+@use "../theme/mixins" as *;
 
 .blog-preview {
   .blog-grid {
@@ -34,9 +37,22 @@
     }
     
     .blog-tag {
-      @extend .tag;
-      @extend .tag-primary;
-      @extend .tag-sm;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      border-radius: $border-radius-full;
+      background: $primary-color;
+      color: white;
+      text-decoration: none;
+      transition: $transition-fast;
+      
+      &:hover {
+        background: color.adjust($primary-color, $lightness: -10%);
+        color: white;
+        text-decoration: none;
+      }
     }
   }
   
@@ -70,7 +86,7 @@
     font-size: $font-size-sm;
     
     &:hover {
-      color: darken($primary-color, 10%);
+      color: color.adjust($primary-color, $lightness: -10%);
     }
   }
 }
@@ -102,9 +118,24 @@
     flex-wrap: wrap;
     
     .filter-tag {
-      @extend .tag;
-      @extend .tag-outline;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      border-radius: $border-radius-full;
+      background: transparent;
+      color: $text-color;
+      border: 1px solid $border-color;
+      text-decoration: none;
+      transition: $transition-fast;
       cursor: pointer;
+      
+      &:hover {
+        background: $light-gray;
+        color: $text-color;
+        text-decoration: none;
+      }
       
       &.active {
         background: $primary-color;
@@ -166,9 +197,22 @@
           }
           
           .article-category {
-            @extend .tag;
-            @extend .tag-sm;
-            @extend .tag-primary;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.125rem 0.5rem;
+            font-size: $font-size-xs;
+            font-weight: $font-weight-medium;
+            border-radius: $border-radius-full;
+            background: $primary-color;
+            color: white;
+            text-decoration: none;
+            transition: $transition-fast;
+            
+            &:hover {
+              background: color.adjust($primary-color, $lightness: -10%);
+              color: white;
+              text-decoration: none;
+            }
           }
         }
         
@@ -200,14 +244,21 @@
           flex-wrap: wrap;
           
           .article-tag {
-            @extend .tag;
-            @extend .tag-sm;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.125rem 0.5rem;
+            font-size: $font-size-xs;
+            font-weight: $font-weight-medium;
+            border-radius: $border-radius-full;
             background: $light-gray;
             color: $text-light;
+            text-decoration: none;
+            transition: $transition-fast;
             
             &:hover {
               background: $primary-color;
               color: #fff;
+              text-decoration: none;
             }
           }
         }

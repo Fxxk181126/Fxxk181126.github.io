@@ -1,4 +1,6 @@
 // Vue.js inspired project components
+@use "../theme/variables" as *;
+@use "../theme/mixins" as *;
 
 .projects-preview {
   .projects-grid {

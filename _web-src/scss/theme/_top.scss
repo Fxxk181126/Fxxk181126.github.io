@@ -32,7 +32,7 @@
   // Element: container-top-name
 
   &-name {
-    @extend .theme-font;
+    font-family: 'Lobster', cursive;
     font-size: 2.5rem;
     padding-top: $spacer / 2;
     color: darken($theme-color-main, 50%);

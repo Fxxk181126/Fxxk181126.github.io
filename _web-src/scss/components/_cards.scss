@@ -1,4 +1,6 @@
 // Vue.js inspired card components
+@use "../theme/variables" as *;
+@use "../theme/mixins" as *;
 
 .card {
   @include card-style;

@@ -1,4 +1,6 @@
 // Vue.js inspired button components
+@use "../theme/variables" as *;
+@use "../theme/mixins" as *;
 
 .btn {
   @include button-style($primary-color);

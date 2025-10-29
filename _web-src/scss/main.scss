@@ -4,26 +4,26 @@
 // Based on Vue.js official website design principles
 
 // Core Variables and Mixins (Vue.js inspired)
-@import "theme/variables";
-@import "theme/mixins";
+@use "theme/variables" as *;
+@use "theme/mixins" as *;
 
 // Base styles and utilities
-@import "theme/base";
+@use "theme/base";
 
 // Layout components
-@import "theme/navbar";
+@use "theme/navbar";
 
 // Component styles
-@import "components/buttons";
-@import "components/cards";
-@import "components/tags";
-@import "components/projects";
-@import "components/blog";
-@import "components/footer";
+@use "components/buttons";
+@use "components/cards";
+@use "components/tags";
+@use "components/projects";
+@use "components/blog";
+@use "components/footer";
 
 // Page-specific styles
-@import "pages/home";
-@import "pages/about";
-@import "pages/projects";
-@import "pages/blog";
+@use "pages/home";
+@use "pages/about";
+@use "pages/projects" as projects-page;
+@use "pages/blog" as blog-page;
 
