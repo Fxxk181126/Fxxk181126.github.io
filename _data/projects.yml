@@ -1,0 +1,99 @@
+- title: "Vue.js 个人博客系统"
+  description: "基于Vue 3和Vite构建的现代化个人博客系统，支持Markdown编辑、标签分类、搜索功能和响应式设计。"
+  image: "/assets/images/project-placeholder.svg"
+  category: "frontend"
+  status: "completed"
+  featured: true
+  tech_stack:
+    - "Vue 3"
+    - "TypeScript"
+    - "Vite"
+    - "Tailwind CSS"
+    - "Pinia"
+  links:
+    demo: "https://demo.example.com"
+    github: "https://github.com/username/vue-blog"
+  date: "2024-01-15"
+
+- title: "React 电商管理系统"
+  description: "全栈电商管理系统，包含商品管理、订单处理、用户管理和数据分析功能，采用现代化技术栈开发。"
+  image: "/assets/images/project-placeholder.svg"
+  category: "fullstack"
+  status: "completed"
+  featured: true
+  tech_stack:
+    - "React"
+    - "Node.js"
+    - "Express"
+    - "MongoDB"
+    - "Ant Design"
+  links:
+    demo: "https://admin.example.com"
+    github: "https://github.com/username/react-admin"
+  date: "2023-12-20"
+
+- title: "微信小程序 - 任务管理"
+  description: "基于微信小程序开发的任务管理应用，支持任务创建、分类、提醒和团队协作功能。"
+  image: "/assets/images/project-placeholder.svg"
+  category: "mobile"
+  status: "completed"
+  featured: false
+  tech_stack:
+    - "微信小程序"
+    - "JavaScript"
+    - "WeUI"
+    - "云开发"
+  links:
+    demo: "#"
+    github: "https://github.com/username/wechat-todo"
+  date: "2023-11-10"
+
+- title: "Python 数据分析平台"
+  description: "基于Django和Pandas构建的数据分析平台，支持数据导入、清洗、分析和可视化展示。"
+  image: "/assets/images/project-placeholder.svg"
+  category: "backend"
+  status: "completed"
+  featured: false
+  tech_stack:
+    - "Python"
+    - "Django"
+    - "Pandas"
+    - "Chart.js"
+    - "PostgreSQL"
+  links:
+    demo: "https://data.example.com"
+    github: "https://github.com/username/data-platform"
+  date: "2023-10-05"
+
+- title: "Flutter 移动应用"
+  description: "跨平台移动应用，提供用户认证、内容浏览、社交互动等功能，支持iOS和Android平台。"
+  image: "/assets/images/project-placeholder.svg"
+  category: "mobile"
+  status: "in_progress"
+  featured: true
+  tech_stack:
+    - "Flutter"
+    - "Dart"
+    - "Firebase"
+    - "Provider"
+  links:
+    demo: "#"
+    github: "https://github.com/username/flutter-app"
+  date: "2024-02-01"
+
+- title: "开源组件库"
+  description: "基于Vue 3开发的UI组件库，提供丰富的组件和完善的文档，支持按需引入和主题定制。"
+  image: "/assets/images/project-placeholder.svg"
+  category: "opensource"
+  status: "in_progress"
+  featured: false
+  tech_stack:
+    - "Vue 3"
+    - "TypeScript"
+    - "Rollup"
+    - "Storybook"
+    - "Jest"
+  links:
+    demo: "https://ui.example.com"
+    github: "https://github.com/username/vue-ui"
+  date: "2024-01-20"

@@ -1,0 +1,203 @@
+---
+layout: default
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <p class="hero-greeting">👋 你好，我是</p>
+            <h1 class="hero-title">{{ site.author.name | default: site.title }}</h1>
+            <p class="hero-subtitle">{{ site.author.bio | default: site.description }}</p>
+            <div class="hero-actions">
+                <a href="#about" class="btn btn-primary btn-lg">了解更多</a>
+                <a href="#contact" class="btn btn-outline btn-lg">联系我</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span class="scroll-text">向下滚动</span>
+            <i class="scroll-icon">↓</i>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview Section -->
+<section id="about" class="section about-preview">
+    <div class="container">
+        <div class="section-title">
+            <h2>关于我</h2>
+            <p>了解我的背景、技能和经验</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 class="about-title">{{ site.author.title | default: "全栈开发工程师" }}</h3>
+                <p class="about-description">
+                    {{ site.author.description | default: "我是一名充满热情的全栈开发工程师，专注于创建优雅、高效的Web应用程序。我热爱学习新技术，并致力于将创新的解决方案带给用户。" }}
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">{{ site.author.experience | default: "3+" }}</span>
+                        <span class="stat-label">年经验</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{ site.data.projects.size | default: "10+" }}</span>
+                        <span class="stat-label">项目</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{ site.posts.size | default: "20+" }}</span>
+                        <span class="stat-label">文章</span>
+                    </div>
+                </div>
+                <a href="/about" class="btn btn-primary">查看详情</a>
+            </div>
+            <div class="about-image">
+                <img src="{{ site.author.avatar | default: '/assets/images/avatar.jpg' }}" alt="{{ site.author.name }}" class="profile-image">
+                <div class="image-decoration"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Preview Section -->
+<section class="section skills-preview">
+    <div class="container">
+        <div class="section-title">
+            <h2>技能专长</h2>
+            <p>我掌握的技术栈和工具</p>
+        </div>
+        <div class="skills-grid">
+            {% for skill_category in site.data.skills %}
+            <div class="skill-category">
+                <h3 class="category-title">{{ skill_category[1].name }}</h3>
+                <div class="skills-list">
+                    {% for skill in skill_category[1].items %}
+                    <span class="tech-tag tech-{{ skill_category[0] }}" style="color: {{ skill.color }}">
+                        {{ skill.name }}
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Projects Preview Section -->
+<section class="section projects-preview">
+    <div class="container">
+        <div class="section-title">
+            <h2>精选项目</h2>
+            <p>展示我的技术能力和创造力</p>
+        </div>
+        <div class="projects-grid">
+            {% assign featured_projects = site.data.projects | where: "featured", true | limit: 3 %}
+            {% for project in featured_projects %}
+            <div class="project-card">
+                <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-tech">
+                        {% for tech in project.tech %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="project-links">
+                        {% if project.github %}
+                        <a href="{{ project.github }}" class="btn btn-ghost btn-sm" target="_blank">
+                            <i class="icon-github"></i> 源码
+                        </a>
+                        {% endif %}
+                        {% if project.demo %}
+                        <a href="{{ project.demo }}" class="btn btn-primary btn-sm" target="_blank">
+                            <i class="icon-external-link"></i> 演示
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="section-footer">
+            <a href="/projects" class="btn btn-outline btn-lg">查看所有项目</a>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Preview Section -->
+<section class="section blog-preview">
+    <div class="container">
+        <div class="section-title">
+            <h2>最新文章</h2>
+            <p>分享我的技术见解和学习心得</p>
+        </div>
+        <div class="blog-grid">
+            {% for post in site.posts limit: 3 %}
+            <article class="blog-card">
+                {% if post.image %}
+                <img src="{{ post.image }}" alt="{{ post.title }}" class="blog-image">
+                {% endif %}
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y年%m月%d日" }}</time>
+                        {% if post.category %}
+                        <span class="blog-category">{{ post.category }}</span>
+                        {% endif %}
+                    </div>
+                    <h3 class="blog-title">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="blog-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                    {% if post.tags %}
+                    <div class="blog-tags">
+                        {% for tag in post.tags limit: 3 %}
+                        <span class="blog-tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="section-footer">
+            <a href="/blog" class="btn btn-outline btn-lg">查看所有文章</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Preview Section -->
+<section id="contact" class="section contact-preview">
+    <div class="container">
+        <div class="section-title">
+            <h2>联系我</h2>
+            <p>让我们一起创造些什么</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3 class="contact-title">准备好开始你的项目了吗？</h3>
+                <p class="contact-description">
+                    我很乐意听到你的想法，并讨论如何将它们变为现实。无论是技术咨询、项目合作还是简单的交流，都欢迎与我联系。
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:{{ site.email }}" class="contact-method">
+                        <div class="method-icon">📧</div>
+                        <div class="method-text">{{ site.email }}</div>
+                    </a>
+                    {% if site.author.location %}
+                    <div class="contact-method">
+                        <div class="method-icon">📍</div>
+                        <div class="method-text">{{ site.author.location }}</div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="social-links">
+                {% for social in site.data.social %}
+                <a href="{{ social.url }}" class="social-link" target="_blank" title="{{ social.name }}">
+                    <i class="{{ social.icon }}"></i>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

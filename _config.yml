@@ -1,25 +1,147 @@
 # Site settings
-# in the templates available like {{ site.myvariable }}.
-title: Clean portfolio theme for Jekyll powered by Bootstrap 4.
-email: your-email@domain.com
-brand: 小温这是我的静态网站
-headline: Inventor, Engineer and Futurist
+title: "个人官网 | Vue风格设计"
+email: your.email@example.com
+brand: "个人品牌"
+headline: "全栈开发者 & 技术创新者"
 description: > # this means to ignore newlines until "baseurl:"
-  New Site
+  基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。
+  致力于创造优雅的用户体验和高质量的技术解决方案。
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://example.com" # the base hostname & protocol for your site
-copyright: 2016 Whatever Company, Inc. All Rights Reserved.
+url: "https://fxxk181126.github.io" # the base hostname & protocol for your site
+copyright: "2024 个人官网. All Rights Reserved."
+
+# Personal Information
+author:
+  name: "你的姓名"
+  title: "全栈开发者"
+  bio: "热爱技术创新，专注于前端开发和用户体验设计"
+  location: "中国"
+  avatar: "/assets/images/avatar.svg"
+
+# Social Media
+social:
+  github: "https://github.com/Fxxk181126"
+  linkedin: "#"
+  twitter: "#"
+  email: "your.email@example.com"
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+paginate: 6
+paginate_path: "/blog/page:num/"
 
-# Account ids
-snapwidget: 247552
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+  posts:
+    output: true
+    permalink: /blog/:title/
 
-# Contacts
-email: your.name@gmail.com
-phone: +1-800-555-2016
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
 
-# Tracking
-googleAnalitycsID: UA-83933844-1
+# Sass
+sass:
+  sass_dir: _web-src/scss
+  style: compressed
+  load_paths:
+    - _web-src/scss
+
+# Assets
+assets:
+  sources:
+    - assets/images
+    - assets/js
+    - assets/css
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - README.md
+  - LICENSE.md
+  - _web-src
+  - web-dist
+
+# SEO settings
+lang: zh-CN
+timezone: Asia/Shanghai
+
+# SEO and Social Media
+seo:
+  type: "Person"
+  name: "你的姓名"
+  links:
+    - "https://github.com/Fxxk181126"
+    - "https://fxxk181126.github.io"
+
+# Open Graph / Twitter Card defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      image: "/assets/images/og-image.png"
+      author: "你的姓名"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "你的姓名"
+      image: "/assets/images/blog-default.png"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+      author: "你的姓名"
+
+# Google Analytics (replace with your tracking ID)
+google_analytics: "G-XXXXXXXXXX"
+
+# Webmaster verification
+google_site_verification: ""
+bing_site_verification: ""
+
+# Feed settings
+feed:
+  posts_limit: 20
+  excerpt_only: true
+
+# Theme colors (Vue.js inspired)
+theme:
+  primary_color: "#42b883"
+  secondary_color: "#35495e"
+  accent_color: "#007bff"
+  text_color: "#2c3e50"
+  background_color: "#ffffff"
+  light_gray: "#f8f9fa"
+  dark_gray: "#6c757d"
+  success_color: "#28a745"
+  warning_color: "#ffc107"
+  danger_color: "#dc3545"
+
+# Navigation
+navigation:
+  - title: "首页"
+    url: "/"
+  - title: "关于我"
+    url: "/about/"
+  - title: "项目作品"
+    url: "/projects/"
+  - title: "博客"
+    url: "/blog/"
+  - title: "联系我"
+    url: "/contact/"
 

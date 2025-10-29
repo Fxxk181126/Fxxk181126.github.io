@@ -1,0 +1,32 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+  
+  <!-- Vue.js inspired gradient background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#42b883;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#35495e;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Main content area -->
+  <rect x="100" y="100" width="1000" height="430" fill="#ffffff" rx="20" stroke="#42b883" stroke-width="2"/>
+  
+  <!-- Logo/Icon area -->
+  <circle cx="300" cy="315" r="80" fill="#42b883"/>
+  <text x="300" y="330" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">V</text>
+  
+  <!-- Title -->
+  <text x="450" y="280" fill="#35495e" font-family="Arial, sans-serif" font-size="48" font-weight="bold">个人官网</text>
+  
+  <!-- Subtitle -->
+  <text x="450" y="330" fill="#42b883" font-family="Arial, sans-serif" font-size="32" font-weight="500">Vue风格设计</text>
+  
+  <!-- Description -->
+  <text x="450" y="380" fill="#6c757d" font-family="Arial, sans-serif" font-size="24">全栈开发者 &amp; 技术创新者</text>
+  
+  <!-- Bottom accent -->
+  <rect x="100" y="580" width="1000" height="4" fill="#42b883"/>
+</svg>

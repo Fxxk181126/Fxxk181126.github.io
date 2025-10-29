@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
     {% include head.html %}
     <body>
+        <!-- Navigation -->
         {% include navbar.html %}
-        {% include top.html %}
-        {% include about.html %}
-        {% include instagram.html %}
-        {% include contacts.html %}
-        {% include copyright.html %}
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            {{ content }}
+        </main>
+        
+        <!-- Footer -->
+        {% include footer.html %}
+        
+        <!-- Scripts -->
+        {% include scripts.html %}
+        
+        <!-- Tracking -->
         {% include tracking.html %}
     </body>
 </html>

@@ -1,0 +1,270 @@
+---
+layout: default
+---
+
+<div class="blog-page">
+  <!-- Blog Hero Section -->
+  <section class="blog-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">{{ page.title }}</h1>
+        <p class="hero-subtitle">{{ page.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Filter and Search -->
+  <section class="blog-filter">
+    <div class="container">
+      <div class="filter-controls">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">全部</button>
+          {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
+          {% for category in categories %}
+            {% unless category == blank %}
+              <button class="filter-tab" data-filter="{{ category | slugify }}">{{ category }}</button>
+            {% endunless %}
+          {% endfor %}
+        </div>
+        <div class="search-box">
+          <input type="text" id="blog-search" placeholder="搜索文章..." class="search-input">
+          <button class="search-btn">🔍</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="blog-posts">
+    <div class="container">
+      <div class="posts-grid" id="posts-grid">
+        {% for post in site.posts %}
+          <article class="post-card animate" 
+                   data-categories="{% for category in post.categories %}{{ category | slugify }} {% endfor %}"
+                   data-tags="{% for tag in post.tags %}{{ tag | slugify }} {% endfor %}"
+                   data-title="{{ post.title | downcase }}"
+                   data-excerpt="{{ post.excerpt | strip_html | downcase }}">
+            
+            {% if post.image %}
+              <div class="post-image">
+                <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+                <div class="post-overlay">
+                  <a href="{{ post.url | relative_url }}" class="read-more-btn">阅读全文</a>
+                </div>
+              </div>
+            {% endif %}
+            
+            <div class="post-content">
+              <div class="post-meta">
+                <time class="post-date">{{ post.date | date: "%Y年%m月%d日" }}</time>
+                <span class="post-reading-time">{{ post.content | number_of_words | divided_by: 200 | plus: 1 }} 分钟阅读</span>
+              </div>
+              
+              <h2 class="post-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h2>
+              
+              <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+              
+              <div class="post-tags">
+                {% for tag in post.tags limit: 3 %}
+                  <span class="tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              
+              <div class="post-categories">
+                {% for category in post.categories %}
+                  <span class="category">{{ category }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      <!-- Empty State -->
+      <div class="blog-empty" id="blog-empty" style="display: none;">
+        <div class="empty-content">
+          <div class="empty-icon">📝</div>
+          <h3>暂无相关文章</h3>
+          <p>请尝试其他关键词或查看全部文章</p>
+        </div>
+      </div>
+
+      <!-- Load More Button -->
+      <div class="load-more-section" id="load-more-section">
+        <button class="btn btn-outline load-more-btn" id="load-more-btn">加载更多</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Stats -->
+  <section class="blog-stats section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">{{ site.posts.size }}</div>
+          <div class="stat-label">文章总数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{{ categories.size }}</div>
+          <div class="stat-label">分类数量</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{% assign total_words = 0 %}{% for post in site.posts %}{% assign total_words = total_words | plus: post.content | number_of_words %}{% endfor %}{{ total_words | divided_by: 1000 }}K+</div>
+          <div class="stat-label">总字数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{{ site.posts.first.date | date: "%Y" }}</div>
+          <div class="stat-label">开始写作</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">订阅我的博客</h2>
+        <p class="newsletter-description">获取最新的技术文章和开发心得，不定期分享有价值的内容</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <div class="form-group">
+            <input type="email" class="form-input" placeholder="输入您的邮箱地址" required>
+            <button type="submit" class="btn btn-primary">订阅</button>
+          </div>
+          <p class="newsletter-note">我们尊重您的隐私，不会发送垃圾邮件</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const postCards = document.querySelectorAll('.post-card');
+  const searchInput = document.getElementById('blog-search');
+  const postsGrid = document.getElementById('posts-grid');
+  const emptyState = document.getElementById('blog-empty');
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  const loadMoreSection = document.getElementById('load-more-section');
+  
+  let visiblePosts = 6; // 初始显示的文章数量
+  let filteredPosts = Array.from(postCards);
+
+  // 初始化显示
+  showPosts();
+
+  // 分类筛选
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      
+      // 更新活动标签
+      filterTabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      
+      // 筛选文章
+      filterPosts(filter, searchInput.value);
+    });
+  });
+
+  // 搜索功能
+  searchInput.addEventListener('input', function() {
+    const activeFilter = document.querySelector('.filter-tab.active').getAttribute('data-filter');
+    filterPosts(activeFilter, this.value);
+  });
+
+  // 加载更多
+  loadMoreBtn.addEventListener('click', function() {
+    visiblePosts += 6;
+    showPosts();
+  });
+
+  function filterPosts(category, searchTerm) {
+    filteredPosts = Array.from(postCards).filter(card => {
+      const categories = card.getAttribute('data-categories');
+      const title = card.getAttribute('data-title');
+      const excerpt = card.getAttribute('data-excerpt');
+      
+      // 分类筛选
+      const categoryMatch = category === 'all' || categories.includes(category);
+      
+      // 搜索筛选
+      const searchMatch = !searchTerm || 
+                         title.includes(searchTerm.toLowerCase()) || 
+                         excerpt.includes(searchTerm.toLowerCase());
+      
+      return categoryMatch && searchMatch;
+    });
+    
+    visiblePosts = 6; // 重置显示数量
+    showPosts();
+  }
+
+  function showPosts() {
+    // 隐藏所有文章
+    postCards.forEach(card => {
+      card.style.display = 'none';
+      card.classList.remove('animate');
+    });
+    
+    // 显示筛选后的文章
+    const postsToShow = filteredPosts.slice(0, visiblePosts);
+    postsToShow.forEach((card, index) => {
+      card.style.display = 'block';
+      setTimeout(() => {
+        card.classList.add('animate');
+      }, index * 100);
+    });
+    
+    // 显示/隐藏空状态
+    if (filteredPosts.length === 0) {
+      emptyState.style.display = 'block';
+      postsGrid.style.display = 'none';
+      loadMoreSection.style.display = 'none';
+    } else {
+      emptyState.style.display = 'none';
+      postsGrid.style.display = 'grid';
+      
+      // 显示/隐藏加载更多按钮
+      if (visiblePosts >= filteredPosts.length) {
+        loadMoreSection.style.display = 'none';
+      } else {
+        loadMoreSection.style.display = 'block';
+      }
+    }
+  }
+
+  // 订阅表单
+  const newsletterForm = document.getElementById('newsletter-form');
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    
+    // 这里可以添加实际的订阅逻辑
+    alert('感谢订阅！我们会将最新内容发送到您的邮箱。');
+    this.reset();
+  });
+
+  // 滚动动画
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // 观察统计项目
+  document.querySelectorAll('.stat-item').forEach(item => {
+    observer.observe(item);
+  });
+});
+</script>

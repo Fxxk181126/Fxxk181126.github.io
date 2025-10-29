@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我 - 个人网站</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html">个人网站</a>
+            </div>
+            <div class="navbar-menu" id="navbar-menu">
+                <a href="index.html">首页</a>
+                <a href="about.html">关于我</a>
+                <a href="projects.html">项目</a>
+                <a href="blog.html">博客</a>
+                <a href="contact.html" class="active">联系我</a>
+                <button class="theme-toggle" id="theme-toggle">🌙</button>
+            </div>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1>联系我</h1>
+                <p>有项目合作或技术交流的想法？我很乐意与您沟通</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>发送消息</h2>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">姓名 *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱 *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">主题 *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">消息内容 *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">发送消息</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-section">
+                    <h2>联系信息</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>邮箱</h3>
+                                <p>your.email@example.com</p>
+                                <a href="mailto:your.email@example.com">发送邮件</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h3>电话</h3>
+                                <p>+86 138 0000 0000</p>
+                                <a href="tel:+8613800000000">拨打电话</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h3>位置</h3>
+                                <p>中国，北京</p>
+                                <span>可远程工作</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div class="contact-details">
+                                <h3>工作时间</h3>
+                                <p>周一至周五</p>
+                                <span>9:00 - 18:00 (GMT+8)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-section">
+                        <h3>社交媒体</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <div class="social-icon">🐙</div>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <div class="social-icon">💼</div>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="微博">
+                                <div class="social-icon">📱</div>
+                                <span>微博</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <div class="social-icon">🐦</div>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>常见问题</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>您接受什么类型的项目？</h3>
+                    <p>我专注于Web应用开发、移动应用开发和技术咨询。无论是初创公司的MVP产品还是企业级应用，我都很乐意参与。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>项目周期通常是多长？</h3>
+                    <p>项目周期因复杂度而异，从几周的小型项目到几个月的大型应用都有。我会在初步沟通后提供详细的时间估算。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>是否提供技术咨询服务？</h3>
+                    <p>是的，我提供技术架构设计、代码审查、性能优化等咨询服务。可以通过邮件或视频会议进行沟通。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>如何开始合作？</h3>
+                    <p>请通过上方的联系表单或邮件与我联系，详细描述您的项目需求。我会在24小时内回复并安排进一步讨论。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>准备开始您的项目？

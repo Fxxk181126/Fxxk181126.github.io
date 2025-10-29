@@ -1,0 +1,240 @@
+// Vue.js inspired card components
+
+.card {
+  @include card-style;
+  border: 1px solid $border-color;
+  
+  &.card-hover {
+    cursor: pointer;
+  }
+  
+  &.card-flat {
+    box-shadow: none;
+    border: 1px solid $border-color;
+    
+    &:hover {
+      box-shadow: $shadow;
+    }
+  }
+  
+  &.card-elevated {
+    box-shadow: $shadow-lg;
+    border: none;
+  }
+}
+
+.card-header {
+  padding: 1.5rem 2rem 0;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 1.5rem;
+  
+  .card-title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 0.5rem;
+    color: $text-color;
+  }
+  
+  .card-subtitle {
+    font-size: $font-size-sm;
+    color: $text-light;
+    margin-bottom: 0;
+  }
+}
+
+.card-body {
+  padding: 0 2rem;
+  
+  .card-text {
+    color: $text-light;
+    line-height: 1.6;
+  }
+}
+
+.card-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid $border-color;
+  margin-top: 1.5rem;
+  background: $light-gray;
+  border-radius: 0 0 $border-radius-lg $border-radius-lg;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
+}
+
+// Project card
+.project-card {
+  @include card-style(1.5rem);
+  position: relative;
+  overflow: hidden;
+  
+  .project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $border-radius $border-radius 0 0;
+    transition: $transition-base;
+  }
+  
+  .project-content {
+    padding: 1.5rem;
+  }
+  
+  .project-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 0.5rem;
+    color: $text-color;
+  }
+  
+  .project-description {
+    color: $text-light;
+    font-size: $font-size-sm;
+    margin-bottom: 1rem;
+    @include line-clamp(2);
+  }
+  
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  &:hover {
+    .project-image {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Blog card
+.blog-card {
+  @include card-style(0);
+  border: 1px solid $border-color;
+  
+  .blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+  }
+  
+  .blog-content {
+    padding: 1.5rem;
+  }
+  
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: $font-size-sm;
+    color: $text-light;
+  }
+  
+  .blog-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 0.5rem;
+    
+    a {
+      color: $text-color;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  
+  .blog-excerpt {
+    color: $text-light;
+    @include line-clamp(3);
+    margin-bottom: 1rem;
+  }
+  
+  .blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+// Skill card
+.skill-card {
+  @include card-style(1.5rem);
+  text-align: center;
+  
+  .skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+  
+  .skill-name {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 0.5rem;
+    color: $text-color;
+  }
+  
+  .skill-level {
+    font-size: $font-size-sm;
+    color: $text-light;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-progress {
+    width: 100%;
+    height: 4px;
+    background: $light-gray;
+    border-radius: 2px;
+    overflow: hidden;
+    
+    .skill-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, $primary-color, $secondary-color);
+      border-radius: 2px;
+      transition: width 1s ease-out;
+    }
+  }
+}
+
+// Feature card
+.feature-card {
+  @include card-style(2rem);
+  text-align: center;
+  border: 1px solid $border-color;
+  
+  .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    border-radius: 50%;
+    @include flex-center;
+    margin: 0 auto 1.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  .feature-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 1rem;
+    color: $text-color;
+  }
+  
+  .feature-description {
+    color: $text-light;
+    line-height: 1.6;
+  }
+}

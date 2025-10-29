@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://fxxk181126.github.io/sitemap.xml
+
+# Disallow crawling of admin and private directories
+Disallow: /admin/
+Disallow: /_site/
+Disallow: /.git/
+Disallow: /.sass-cache/
+Disallow: /node_modules/
+
+# Allow crawling of main content
+Allow: /
+Allow: /about/
+Allow: /projects/
+Allow: /blog/
+Allow: /contact/
+Allow: /assets/
+
+# Crawl delay (optional)
+Crawl-delay: 1

@@ -1,0 +1,29 @@
+{
+    "name": "个人官网 | Vue风格设计",
+    "short_name": "个人官网",
+    "description": "基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "32x32",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/assets/images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#42b883",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/",
+    "orientation": "portrait-primary",
+    "lang": "zh-CN"
+}

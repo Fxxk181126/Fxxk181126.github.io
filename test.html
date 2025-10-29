@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue风格个人网站 - 测试页面</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="brand-link">
+                    <span class="brand-text">开发者</span>
+                </a>
+            </div>
+            
+            <div class="navbar-nav">
+                <a href="/" class="nav-link active">首页</a>
+                <a href="/about" class="nav-link">关于我</a>
+                <a href="/projects" class="nav-link">项目</a>
+                <a href="/blog" class="nav-link">博客</a>
+                <a href="/contact" class="nav-link">联系</a>
+            </div>
+            
+            <div class="navbar-actions">
+                <button id="theme-toggle" class="theme-toggle" title="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <a href="#contact" class="btn btn-primary btn-sm">联系我</a>
+            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="navbar-mobile" class="navbar-mobile">
+        <div class="mobile-nav-header">
+            <div class="mobile-brand">
+                <span class="brand-text">开发者</span>
+            </div>
+            <button id="mobile-close" class="mobile-close">&times;</button>
+        </div>
+        <div class="mobile-nav-body">
+            <a href="/" class="nav-link active">首页</a>
+            <a href="/about" class="nav-link">关于我</a>
+            <a href="/projects" class="nav-link">项目</a>
+            <a href="/blog" class="nav-link">博客</a>
+            <a href="/contact" class="nav-link">联系</a>
+        </div>
+        <div class="mobile-nav-footer">
+            <a href="#contact" class="btn btn-primary">联系我</a>
+            <button id="mobile-theme-toggle" class="theme-toggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-greeting">👋 你好，我是</p>
+                    <h1 class="hero-title">张开发者</h1>
+                    <p class="hero-subtitle">热爱技术创新，专注于前端开发和用户体验设计</p>
+                    <div class="hero-actions">
+                        <a href="#about" class="btn btn-primary btn-lg">了解更多</a>
+                        <a href="#contact" class="btn btn-outline btn-lg">联系我</a>
+                    </div>
+                </div>
+                <div class="hero-scroll">
+                    <span class="scroll-text">向下滚动</span>
+                    <i class="scroll-icon">↓</i>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Preview Section -->
+        <section id="about" class="section about-preview">
+            <div class="container">
+                <div class="section-title">
+                    <h2>关于我</h2>
+                    <p>了解我的背景、技能和经验</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3 class="about-title">全栈开发工程师</h3>
+                        <p class="about-description">
+                            我是一名充满热情的全栈开发工程师，专注于创建优雅、高效的Web应用程序。我热爱学习新技术，并致力于将创新的解决方案带给用户。
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">3+</span>
+                                <span class="stat-label">年经验</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">项目</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">20+</span>
+                                <span class="stat-label">文章</span>
+                            </div>
+                        </div>
+                        <a href="/about" class="btn btn-primary">查看详情</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="/assets/images/avatar.svg" alt="张开发者" class="profile-image">
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Preview Section -->
+        <section class="section skills-preview">
+            <div class="container">
+                <div class="section-title">
+                    <h2>技能专长</h2>
+                    <p>我掌握的技术栈和工具</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="category-title">前端开发</h3>
+                        <div class="skills-list">
+                            <span class="tech-tag tech-frontend" style="color: #42b883">Vue.js</span>
+                            <span class="tech-tag tech-frontend" style="color: #61dafb">React</span>
+                            <span class="tech-tag tech-frontend" style="color: #3178c6">TypeScript</span>
+                            <span class="tech-tag tech-frontend" style="color: #f7df1e">JavaScript</span>
+                            <span class="tech-tag tech-frontend" style="color: #1572b6">CSS/SCSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="category-title">后端开发</h3>
+                        <div class="skills-list">
+                            <span class="tech-tag tech-backend" style="color: #339933">Node.js</span>
+                            <span class="tech-tag tech-backend" style="color: #3776ab">Python</span>
+                            <span class="tech-tag tech-backend" style="color: #000000">Express.js</span>
+                            <span class="tech-tag tech-backend" style="color: #47a248">MongoDB</span>
+                            <span class="tech-tag tech-backend" style="color: #336791">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="category-title">开发工具</h3>
+                        <div class="skills-list">
+                            <span class="tech-tag tech-tools" style="color: #f05032">Git</span>
+                            <span class="tech-tag tech-tools" style="color: #2496ed">Docker</span>
+                            <span class="tech-tag tech-tools" style="color: #8dd6f9">Webpack</span>
+                            <span class="tech-tag tech-tools" style="color: #646cff">Vite</span>
+                            <span class="tech-tag tech-tools" style="color: #007acc">VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Preview Section -->
+        <section class="section projects-preview">
+            <div class="container">
+                <div class="section-title">
+                    <h2>精选项目</h2>
+                    <p>展示我的技术能力和创造力</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=vue%20task%20management%20app%20interface%20modern%20green&image_size=landscape_16_9" alt="Vue.js 任务管理应用" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Vue.js 任务管理应用</h3>
+                            <p class="project-description">基于Vue 3和Composition API构建的现代任务管理应用，支持拖拽排序、实时协作和数据同步。</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Pinia</span>
+                                <span class="tech-tag">Vite</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-ghost btn-sm" target="_blank">
+                                    <i class="fab fa-github"></i> 源码
+                                </a>
+                                <a href="#" class="btn btn-primary btn-sm" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 演示
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=react%20ecommerce%20platform%20shopping%20interface%20modern&image_size=landscape_16_9" alt="React 电商平台" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">React 电商平台</h3>
+                            <p class="project-description">全栈电商解决方案，包含商品管理、购物车、支付集成和用户认证系统。</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-ghost btn-sm" target="_blank">
+                                    <i class="fab fa-github"></i> 源码
+                                </a>
+                                <a href="#" class="btn btn-primary btn-sm" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 演示
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=real%20time%20chat%20application%20interface%20messaging&image_size=landscape_16_9" alt="实时聊天应用" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">实时聊天应用</h3>
+                            <p class="project-description">基于WebSocket的实时聊天应用，支持群聊、私聊、文件传输和消息加密。</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Socket.io</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-ghost btn-sm" target="_blank">
+                                    <i class="fab fa-github"></i> 源码
+                                </a>
+                                <a href="#" class="btn btn-primary btn-sm" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 演示
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-footer">
+                    <a href="/projects" class="btn btn-outline btn-lg">查看所有项目</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Preview Section -->
+        <section id="contact" class="section contact-preview">
+            <div class="container">
+                <div class="section-title">
+                    <h2>联系我</h2>
+                    <p>让我们一起创造些什么</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 class="contact-title">准备好开始你的项目了吗？</h3>
+                        <p class="contact-description">
+                            我很乐意听到你的想法，并讨论如何将它们变为现实。无论是技术咨询、项目合作还是简单的交流，都欢迎与我联系。
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:your.email@example.com" class="contact-method">
+                                <div class="method-icon">📧</div>
+                                <div class="method-text">your.email@example.com</div>
+                            </a>
+                            <div class="contact-method">
+                                <div class="method-icon">📍</div>
+                                <div class="method-text">中国</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Fxxk181126" class="social-link" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:your.email@example.com" class="social-link" target="_blank" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2024 张开发者. 保留所有权利.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/privacy">隐私政策</a>
+                    <a href="/terms">使用条款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

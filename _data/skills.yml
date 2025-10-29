@@ -1,0 +1,98 @@
+frontend:
+  name: "前端开发"
+  items:
+    - name: "Vue.js"
+      level: 90
+      color: "#42b883"
+      icon: "⚡"
+      description: "现代前端框架，组件化开发"
+      
+    - name: "React"
+      level: 85
+      color: "#61dafb"
+      icon: "⚛️"
+      description: "流行的前端库，生态丰富"
+      
+    - name: "TypeScript"
+      level: 88
+      color: "#3178c6"
+      icon: "🔷"
+      description: "类型安全的JavaScript超集"
+      
+    - name: "JavaScript"
+      level: 92
+      color: "#f7df1e"
+      icon: "🟨"
+      description: "核心前端编程语言"
+      
+    - name: "CSS/SCSS"
+      level: 90
+      color: "#1572b6"
+      icon: "🎨"
+      description: "样式设计和布局技术"
+
+backend:
+  name: "后端开发"
+  items:
+    - name: "Node.js"
+      level: 85
+      color: "#339933"
+      icon: "🟢"
+      description: "服务端JavaScript运行环境"
+      
+    - name: "Python"
+      level: 80
+      color: "#3776ab"
+      icon: "🐍"
+      description: "多用途编程语言"
+      
+    - name: "Express.js"
+      level: 82
+      color: "#000000"
+      icon: "🚀"
+      description: "轻量级Node.js Web框架"
+      
+    - name: "MongoDB"
+      level: 78
+      color: "#47a248"
+      icon: "🍃"
+      description: "NoSQL文档数据库"
+      
+    - name: "PostgreSQL"
+      level: 75
+      color: "#336791"
+      icon: "🐘"
+      description: "关系型数据库"
+
+tools:
+  name: "开发工具"
+  items:
+    - name: "Git"
+      level: 88
+      color: "#f05032"
+      icon: "📝"
+      description: "版本控制系统"
+      
+    - name: "Docker"
+      level: 75
+      color: "#2496ed"
+      icon: "🐳"
+      description: "容器化技术"
+      
+    - name: "Webpack"
+      level: 80
+      color: "#8dd6f9"
+      icon: "📦"
+      description: "模块打包工具"
+      
+    - name: "Vite"
+      level: 85
+      color: "#646cff"
+      icon: "⚡"
+      description: "现代前端构建工具"
+      
+    - name: "VS Code"
+      level: 95
+      color: "#007acc"
+      icon: "💻"
+      description: "代码编辑器"

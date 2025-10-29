@@ -1,21 +1,224 @@
-*:focus {
-  outline: none;
+@use "sass:map";
+@use "sass:color";
+
+// Vue.js inspired base styles
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @include smooth-scroll;
 }
 
 body {
-  background: $body-background;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: darken($theme-color-main, 50%);
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: $text-color;
 }
+
+h1 {
+  font-size: $font-size-5xl;
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+  @include respond-to(sm) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-4xl;
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+  @include respond-to(sm) {
+    font-size: $font-size-2xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-3xl;
+  @include respond-to(md) {
+    font-size: $font-size-2xl;
+  }
+  @include respond-to(sm) {
+    font-size: $font-size-xl;
+  }
+}
+
+h4 {
+  font-size: $font-size-2xl;
+  @include respond-to(sm) {
+    font-size: $font-size-lg;
+  }
+}
+
+h5 {
+  font-size: $font-size-xl;
+}
+
+h6 {
+  font-size: $font-size-lg;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: $text-light;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: $transition-fast;
+  
+  &:hover {
+    color: color.scale($primary-color, $lightness: -10%);
+    text-decoration: none;
+  }
+}
+
+// Lists
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+// Code
+code {
+  font-family: $font-family-code;
+  font-size: 0.875em;
+  background: $light-gray;
+  padding: 0.25rem 0.5rem;
+  border-radius: $border-radius-sm;
+  color: $danger-color;
+}
+
+pre {
+  font-family: $font-family-code;
+  background: $light-gray;
+  padding: 1rem;
+  border-radius: $border-radius;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  
+  code {
+    background: none;
+    padding: 0;
+    color: $text-color;
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: $border-radius;
+}
+
+// Containers
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  @include respond-to(lg) {
+    max-width: 960px;
+  }
+  
+  @include respond-to(md) {
+    max-width: 720px;
+  }
+  
+  @include respond-to(sm) {
+    max-width: 540px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+// Sections
+.section {
+  padding: 5rem 0;
+  
+  @include respond-to(md) {
+    padding: 3rem 0;
+  }
+  
+  @include respond-to(sm) {
+    padding: 2rem 0;
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  h2 {
+    @include gradient-text;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: $font-size-lg;
+    color: $text-light;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// Utilities
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.d-flex { display: flex; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-none { display: none; }
+
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.justify-content-around { justify-content: space-around; }
+.align-items-center { align-items: center; }
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: map.get($spacers, 1); }
+.mb-2 { margin-bottom: map.get($spacers, 2); }
+.mb-3 { margin-bottom: map.get($spacers, 3); }
+.mb-4 { margin-bottom: map.get($spacers, 4); }
+.mb-5 { margin-bottom: map.get($spacers, 5); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: map.get($spacers, 1); }
+.mt-2 { margin-top: map.get($spacers, 2); }
+.mt-3 { margin-top: map.get($spacers, 3); }
+.mt-4 { margin-top: map.get($spacers, 4); }
+.mt-5 { margin-top: map.get($spacers, 5); }
 
 button {
   &:focus {

@@ -1,0 +1,114 @@
+<!-- Core Scripts -->
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+<!-- Additional Scripts for specific pages -->
+{% if page.layout == 'post' %}
+<!-- Syntax highlighting for code blocks -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+{% endif %}
+
+{% if page.url contains '/projects' %}
+<!-- Project filtering and search -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Project search functionality
+    const projectSearch = document.getElementById('project-search');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    if (projectSearch) {
+        projectSearch.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            projectCards.forEach(card => {
+                const title = card.querySelector('.project-title').textContent.toLowerCase();
+                const description = card.querySelector('.project-description').textContent.toLowerCase();
+                const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
+                
+                const matches = title.includes(searchTerm) || 
+                               description.includes(searchTerm) || 
+                               tags.some(tag => tag.includes(searchTerm));
+                
+                if (matches) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.classList.add('show'), 100);
+                } else {
+                    card.classList.remove('show');
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        });
+    }
+});
+</script>
+{% endif %}
+
+{% if page.url contains '/blog' %}
+<!-- Blog search and filtering -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Blog category filtering
+    const categoryFilters = document.querySelectorAll('.category-filter');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    if (categoryFilters.length > 0) {
+        categoryFilters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                const filterValue = this.getAttribute('data-category');
+                
+                // Update active filter
+                categoryFilters.forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter blog posts
+                blogCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.add('show'), 100);
+                    } else {
+                        card.classList.remove('show');
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+    }
+});
+</script>
+{% endif %}
+
+<!-- Analytics (if configured) -->
+{% if site.google_analytics %}
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}');
+</script>
+{% endif %}
+
+<!-- Performance optimization -->
+<script>
+// Preload critical resources
+document.addEventListener('DOMContentLoaded', function() {
+    // Preload next page if user hovers over navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('/')) {
+                const linkElement = document.createElement('link');
+                linkElement.rel = 'prefetch';
+                linkElement.href = href;
+                document.head.appendChild(linkElement);
+            }
+        });
+    });
+});
+</script>

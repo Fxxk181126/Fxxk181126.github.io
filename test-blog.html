@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术博客 - 个人网站</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="brand-link">
+                    <span class="brand-text">开发者</span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <a href="/" class="navbar-item">首页</a>
+                <a href="/about/" class="navbar-item">关于我</a>
+                <a href="/projects/" class="navbar-item">项目作品</a>
+                <a href="/blog/" class="navbar-item active">博客</a>
+                <a href="/contact/" class="navbar-item">联系我</a>
+                <button class="theme-toggle" id="theme-toggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="blog-page">
+        <!-- Blog Hero Section -->
+        <section class="blog-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">技术博客</h1>
+                    <p class="hero-subtitle">分享前端开发经验、技术心得和编程思考</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Filter and Search -->
+        <section class="blog-filter">
+            <div class="container">
+                <div class="filter-controls">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">全部</button>
+                        <button class="filter-tab" data-filter="frontend">前端开发</button>
+                        <button class="filter-tab" data-filter="vue">Vue.js</button>
+                        <button class="filter-tab" data-filter="javascript">JavaScript</button>
+                        <button class="filter-tab" data-filter="css">CSS</button>
+                        <button class="filter-tab" data-filter="performance">性能优化</button>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" id="blog-search" placeholder="搜索文章..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="blog-posts">
+            <div class="container">
+                <div class="posts-grid" id="posts-grid">
+                    <!-- Post Card 1 -->
+                    <article class="post-card animate" 
+                             data-categories="vue frontend javascript"
+                             data-tags="vue3 composition-api javascript frontend"
+                             data-title="vue 3 composition api 完全指南"
+                             data-excerpt="深入了解 vue 3 composition api 的核心概念、使用方法和最佳实践，帮助你更好地构建现代化的 vue 应用。">
+                        
+                        <div class="post-image">
+                            <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Vue.js%20logo%20composition%20api%20modern%20web%20development&image_size=landscape_16_9" alt="Vue 3 Composition API 完全指南" loading="lazy">
+                            <div class="post-overlay">
+                                <a href="/2024/01/15/vue3-composition-api-guide.html" class="read-more-btn">阅读全文</a>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <time class="post-date">2024年01月15日</time>
+                                <span class="post-reading-time">8 分钟阅读</span>
+                            </div>
+                            
+                            <h2 class="post-title">
+                                <a href="/2024/01/15/vue3-composition-api-guide.html">Vue 3 Composition API 完全指南</a>
+                            </h2>
+                            
+                            <p class="post-excerpt">深入了解 Vue 3 Composition API 的核心概念、使用方法和最佳实践，帮助你更好地构建现代化的 Vue 应用。</p>
+                            
+                            <div class="post-tags">
+                                <span class="tag">Vue3</span>
+                                <span class="tag">Composition API</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            
+                            <div class="post-categories">
+                                <span class="category">前端开发</span>
+                                <span class="category">Vue.js</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 2 -->
+                    <article class="post-card animate" 
+                             data-categories="frontend performance javascript"
+                             data-tags="performance optimization javascript frontend"
+                             data-title="前端性能优化实战指南"
+                             data-excerpt="从代码分割到图片优化，全面介绍前端性能优化的各种技巧和最佳实践，让你的网站飞起来。">
+                        
+                        <div class="post-image">
+                            <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Frontend%20performance%20optimization%20speed%20metrics%20dashboard&image_size=landscape_16_9" alt="前端性能优化实战指南" loading="lazy">
+                            <div class="post-overlay">
+                                <a href="/2024/01/10/frontend-performance-optimization.html" class="read-more-btn">阅读全文</a>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <time class="post-date">2024年01月10日</time>
+                                <span class="post-reading-time">12 分钟阅读</span>
+                            </div>
+                            
+                            <h2 class="post-title">
+                                <a href="/2024/01/10/frontend-performance-optimization.html">前端性能优化实战指南</a>
+                            </h2>
+                            
+                            <p class="post-excerpt">从代码分割到图片优化，全面介绍前端性能优化的各种技巧和最佳实践，让你的网站飞起来。</p>
+                            
+                            <div class="post-tags">
+                                <span class="tag">性能优化</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">前端</span>
+                            </div>
+                            
+                            <div class="post-categories">
+                                <span class="category">前端开发</span>
+                                <span class="category">性能优化</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 3 -->
+                    <article class="post-card animate" 
+                             data-categories="css frontend design"
+                             data-tags="css modern-css grid flexbox frontend"
+                             data-title="现代 css 技术深度解析"
+                             data-excerpt="探索 css grid、flexbox、css 变量等现代 css 技术，掌握最新的布局和样式技巧。">
+                        
+                        <div class="post-image">
+                            <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Modern%20CSS%20grid%20flexbox%20layout%20design%20colorful&image_size=landscape_16_9" alt="现代 CSS 技术深度解析" loading="lazy">
+                            <div class="post-overlay">
+                                <a href="/2024/01/05/modern-css-techniques.html" class="read-more-btn">阅读全文</a>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <time class="post-date">2024年01月05日</time>
+                                <span class="post-reading-time">10 分钟阅读</span>
+                            </div>
+                            
+                            <h2 class="post-title">
+                                <a href="/2024/01/05/modern-css-techniques.html">现代 CSS 技术深度解析</a>
+                            </h2>
+                            
+                            <p class="post-excerpt">探索 CSS Grid、Flexbox、CSS 变量等现代 CSS 技术，掌握最新的布局和样式技巧。</p>
+                            
+                            <div class="post-tags">
+                                <span class="tag">CSS</span>
+                                <span class="tag">Grid</span>
+                                <span class="tag">Flexbox</span>
+                            </div>
+                            
+                            <div class="post-categories">
+                                <span class="category">前端开发</span>
+                                <span class="category">CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 4 -->
+                    <article class="post-card animate" 
+                             data-categories="javascript frontend es6"
+                             data-tags="javascript es6 async-await promises"
+                             data-title="javascript 异步编程进阶"
+                             data-excerpt="从回调函数到 promise，再到 async/await，全面掌握 javascript 异步编程的各种模式。">
+                        
+                        <div class="post-image">
+                            <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=JavaScript%20async%20programming%20promises%20code%20flow&image_size=landscape_16_9" alt="JavaScript 异步编程进阶" loading="lazy">
+                            <div class="post-overlay">
+                                <a href="/2023/12/20/javascript-async-programming.html" class="read-more-btn">阅读全文</a>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <time class="post-date">2023年12月20日</time>
+                                <span class="post-reading-time">15 分钟阅读</span>
+                            </div>
+                            
+                            <h2 class="post-title">
+                                <a href="/2023/12/20/javascript-async-programming.html">JavaScript 异步编程进阶</a>
+                            </h2>
+                            
+                            <p class="post-excerpt">从回调函数到 Promise，再到 async/await，全面掌握 JavaScript 异步编程的各种模式。</p>
+                            
+                            <div class="post-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Async/Await</span>
+                                <span class="tag">Promise</span>
+                            </div>
+                            
+                            <div class="post-categories">
+                                <span class="category">前端开发</span>
+                                <span class="category">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 5 -->
+                    <article class="post-card animate" 
+                             data-categories="react frontend hooks"
+                             data-tags="react hooks useeffect usestate"
+                             data-title="react hooks 最佳实践"
+                             data-excerpt="深入理解 react hooks 的工作原理，学习如何正确使用 hooks 构建高效的 react 应用。">
+                        
+                        <div class="post-image">
+                            <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=React%20hooks%20components%20modern%20development&image_size=landscape_16_9" alt="React Hooks 最佳实践" loading="lazy">
+                            <div class="post-overlay">
+                                <a href="/2023/12/10/react-hooks-best-practices.html" class="read-more-btn">阅读全文</a>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <time class="post-date">2023年12月10日</time>
+                                <span class="post-reading-time">11 分钟阅读</span>
+                            </div>
+                            
+                            <h2 class="post-title">
+                                <a href="/2023/12/10/react-hooks-best-practices.html">React Hooks 最佳实践</a>
+                            </h2>
+                            
+                            <p class="post-excerpt">深入理解 React Hooks 的工作原理，学习如何正确使用 Hooks 构建高效的 React 应用。</p>
+                            
+                            <div class="post-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Hooks</span>
+                                <span class="tag">useState</span>
+                            </div>
+                            
+                            <div class="post-categories">
+                                <span class="category">前端开发</span>
+                                <span class="category">React</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 6 -->
+                    <article class="post-card animate" 
+                             data-categories="typescript frontend development"
+                             data-tags="typescript javascript types development"
+                             data-title="typescript 进阶技巧"
+                             data-excerpt="掌握 typescript 的高级特性，包括泛型、装饰器、模块系统等，提升代码质量和开发效率。">
+                        
+                        <div class="post-image">
+                            <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=TypeScript%20code%20types%20development%20programming&image_size=landscape_16_9" alt="TypeScript 进阶技巧" loading="lazy">
+                            <div class="post-overlay">
+                                <a href="/2023/11/25/typescript-advanced-tips.html" class="read-more-btn">阅读全文</a>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <time class="post-date">2023年11月25日</time>
+                                <span class="post-reading-time">13 分钟阅读</span>
+                            </div>
+                            
+                            <h2 class="post-title">
+                                <a href="/2023/11/25/typescript-advanced-tips.html">TypeScript 进阶技巧</a>
+                            </h2>
+                            
+                            <p class="post-excerpt">掌握 TypeScript 的高级特性，包括泛型、装饰器、模块系统等，提升代码质量和开发效率。</p>
+                            
+                            <div class="post-tags">
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">泛型</span>
+                                <span class="tag">类型系统</span>
+                            </div>
+                            
+                            <div class="post-categories">
+                                <span class="category">前端开发</span>
+                                <span class="category">TypeScript</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Empty State -->
+                <div class="blog-empty" id="blog-empty" style="display: none;">
+                    <div class="empty-content">
+                        <div class="empty-icon">📝</div>
+                        <h3>暂无相关文章</h3>
+                        <p>请尝试其他关键词或查看全部文章</p>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-section" id="load-more-section">
+                    <button class="btn btn-outline load-more-btn" id="load-more-btn">加载更多</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Stats -->
+        <section class="blog-stats section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">25</div>
+                        <div class="stat-label">文章总数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">分类数量</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">总字数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2023</div>
+                        <div class="stat-label">开始写作</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title">订阅我的博客</h2>
+                    <p class="newsletter-description">获取最新的技术文章和开发心得，不定期分享有价值的内容</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="输入您的邮箱地址" required>
+                            <button type="submit" class="btn btn-primary">订阅</button>
+                        </div>
+                        <p class="newsletter-note">我们尊重您的隐私，不会发送垃圾邮件</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>邮箱：hello@example.com</p>
+                    <p>电话：+86 138 0000 0000</p>
+                </div>
+                <div class="footer-section">
+                    <h3>社交媒体</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <a href="/">首页</a>
+                    <a href="/about/">关于我</a>
+                    <a href="/projects/">项目作品</a>
+                    <a href="/blog/">博客</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 个人网站. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const postCards = document.querySelectorAll('.post-card');
+            const searchInput = document.getElementById('blog-search');
+            const postsGrid = document.getElementById('posts-grid');
+            const emptyState = document.getElementById('blog-empty');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const loadMoreSection = document.getElementById('load-more-section');
+            
+            let visiblePosts = 6; // 初始显示的文章数量
+            let filteredPosts = Array.from(postCards);
+
+            // 初始化显示
+            showPosts();
+
+            // 分类筛选
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // 更新活动标签
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 筛选文章
+                    filterPosts(filter, searchInput.value);
+                });
+            });
+
+            // 搜索功能
+            searchInput.addEventListener('input', function() {
+                const activeFilter = document.querySelector('.filter-tab.active').getAttribute('data-filter');
+                filterPosts(activeFilter, this.value);
+            });
+
+            // 加载更多
+            loadMoreBtn.addEventListener('click', function() {
+                visiblePosts += 6;
+                showPosts();
+            });
+
+            function filterPosts(category, searchTerm) {
+                filteredPosts = Array.from(postCards).filter(card => {
+                    const categories = card.getAttribute('data-categories');
+                    const title = card.getAttribute('data-title');
+                    const excerpt = card.getAttribute('data-excerpt');
+                    
+                    // 分类筛选
+                    const categoryMatch = category === 'all' || categories.includes(category);
+                    
+                    // 搜索筛选
+                    const searchMatch = !searchTerm || 
+                                       title.includes(searchTerm.toLowerCase()) || 
+                                       excerpt.includes(searchTerm.toLowerCase());
+                    
+                    return categoryMatch && searchMatch;
+                });
+                
+                visiblePosts = 6; // 重置显示数量
+                showPosts();
+            }
+
+            function showPosts() {
+                // 隐藏所有文章
+                postCards.forEach(card => {
+                    card.style.display = 'none';
+                    card.classList.remove('animate');
+                });
+                
+                // 显示筛选后的文章
+                const postsToShow = filteredPosts.slice(0, visiblePosts);
+                postsToShow.forEach((card, index) => {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, index * 100);
+                });
+                
+                // 显示/隐藏空状态
+                if (filteredPosts.length === 0) {
+                    emptyState.style.display = 'block';
+                    postsGrid.style.display = 'none';
+                    loadMoreSection.style.display = 'none';
+                } else {
+                    emptyState.style.display = 'none';
+                    postsGrid.style.display = 'grid';
+                    
+                    // 显示/隐藏加载更多按钮
+                    if (visiblePosts >= filteredPosts.length) {
+                        loadMoreSection.style.display = 'none';
+                    } else {
+                        loadMoreSection.style.display = 'block';
+                    }
+                }
+            }
+
+            // 订阅表单
+            const newsletterForm = document.getElementById('newsletter-form');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // 这里可以添加实际的订阅逻辑
+                alert('感谢订阅！我们会将最新内容发送到您的邮箱。');
+                this.reset();
+            });
+
+            // 滚动动画
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // 观察统计项目
+            document.querySelectorAll('.stat-item').forEach(item => {
+                observer.observe(item);
+            });
+
+            // 主题切换功能
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle.querySelector('.theme-icon');
+            
+            // 检查保存的主题偏好
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+            
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        });
+    </script>
+</body>
+</html>

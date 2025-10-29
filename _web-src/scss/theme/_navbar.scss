@@ -1,81 +1,286 @@
-// Block: navbar
+@use "sass:map";
+@use "sass:color";
+
+// Navbar styles
 
 .navbar {
-  transition: height .5s;
-
-  @include media-breakpoint-up(lg) {
-    height: 5rem;
+  @include glass-effect(0.95);
+  border-bottom: 1px solid $border-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-index-navbar;
+  transition: $transition-base;
+  padding: 1rem 0;
+  
+  &.scrolled {
+    @include glass-effect(0.98);
+    box-shadow: $shadow;
+    padding: 0.5rem 0;
   }
-
-  background: $theme-color-main;
-
-  // Element: navbar-logo
-
-  &-logo {
-    @extend .theme-font;
-    color: $theme-color-main-contrast;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity .5s;
-
-    &.show {
-      opacity: 1;
-    }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+}
 
-  // Element: nav-item
+.navbar-brand {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  .brand-logo {
+    width: 2rem;
+    height: 2rem;
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    border-radius: $border-radius;
+    @include flex-center;
+    color: #fff;
+    font-weight: $font-weight-bold;
+  }
+  
+  &:hover {
+    color: color.scale($primary-color, $lightness: -10%);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+}
 
-  & .nav-item {
-    cursor: pointer;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: $border-radius-sm;
-    background-color: $theme-color-main;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background: $theme-color-main-contrast;
-
-      & > .nav-link {
-        color: $theme-color-main;
-      }
-    }
-
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 2rem;
+  
+  @include respond-to(md) {
+    gap: 1.5rem;
+  }
+  
+  .nav-item {
+    position: relative;
+    
     .nav-link {
-      color: $theme-color-main-contrast;
-
-      @include media-breakpoint-up(lg) {
-        font-size: 1.5rem;
-        line-height: 3rem;
+      color: $text-color;
+      text-decoration: none;
+      font-weight: $font-weight-medium;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: $transition-fast;
+      font-size: $font-size-base;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, $primary-color, $secondary-color);
+        transition: $transition-fast;
+        transform: translateX(-50%);
+      }
+      
+      &:hover {
+        color: $primary-color;
+        
+        &::before {
+          width: 100%;
+        }
+      }
+      
+      &.active {
+        color: $primary-color;
+        
+        &::before {
+          width: 100%;
+        }
       }
     }
-
   }
+}
 
-  // Block: navbar-brand
-
-  &-brand {
-
-    @include media-breakpoint-up(lg) {
-      font-size: 2.5rem;
-    }
-
-    // Modifier: navbar-brand--mobile
-
-    &--mobile {
-      float: right;
-    }
-  }
-
-  // Block: navbar-toggler
-
-  &-toggler {
-    opacity: .5;
-    transition: opacity .3s;
-
-    &.collapsed {
-      opacity: 1;
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+  .theme-toggle {
+    @include button-style(transparent, $text-color, rgba($text-color, 0.1));
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    @include flex-center;
+    
+    &:hover {
+      transform: rotate(180deg);
     }
   }
+  
+  .contact-btn {
+    @include button-style($primary-color);
+    padding: 0.5rem 1rem;
+    font-size: $font-size-sm;
+    
+    @include respond-to(sm) {
+      display: none;
+    }
+  }
+}
 
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: $text-color;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: $border-radius;
+  transition: $transition-fast;
+  
+  &:hover {
+    background: rgba($text-color, 0.1);
+  }
+  
+  @include respond-to(md) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Mobile menu
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: $z-index-modal;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-base;
+  
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .mobile-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: $background-color;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: $transition-base;
+    box-shadow: $shadow-lg;
+    
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $border-color;
+      
+      .mobile-brand {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        color: $primary-color;
+      }
+      
+      .mobile-close {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: $text-color;
+        cursor: pointer;
+        padding: 0.25rem;
+        border-radius: $border-radius;
+        transition: $transition-fast;
+        
+        &:hover {
+          background: rgba($text-color, 0.1);
+        }
+      }
+    }
+    
+    .mobile-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      
+      .nav-item {
+        margin-bottom: 1rem;
+        
+        .nav-link {
+          display: block;
+          color: $text-color;
+          text-decoration: none;
+          font-weight: $font-weight-medium;
+          padding: 0.75rem 1rem;
+          border-radius: $border-radius;
+          transition: $transition-fast;
+          
+          &:hover {
+            background: rgba($primary-color, 0.1);
+            color: $primary-color;
+          }
+          
+          &.active {
+            background: rgba($primary-color, 0.1);
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    
+    .mobile-actions {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid $border-color;
+      
+      .contact-btn {
+        @include button-style($primary-color);
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      
+      .theme-toggle {
+        @include button-style(transparent, $text-color, rgba($text-color, 0.1));
+        width: 100%;
+        justify-content: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  }
+  
+  &.show .mobile-menu {
+    transform: translateX(0);
+  }
+}
+
+// Responsive adjustments
+@include respond-to(md) {
+  .navbar-nav {
+    display: none;
+  }
+  
+  .navbar-actions .contact-btn {
+    display: none;
+  }
 }
