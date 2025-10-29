@@ -1,29 +1,29 @@
-# Site settings
-title: "个人官网 | Vue风格设计"
-email: your.email@example.com
-brand: "个人品牌"
-headline: "全栈开发者 & 技术创新者"
-description: > # this means to ignore newlines until "baseurl:"
-  基于Vue.js设计风格的个人官网，展示技术能力、项目作品和个人见解。
-  致力于创造优雅的用户体验和高质量的技术解决方案。
+# Site settings - 引用统一的个人信息配置
+title: "{{ site.data.personal.site.title }}"
+email: "{{ site.data.personal.contact.email }}"
+brand: "{{ site.data.personal.site.brand }}"
+headline: "{{ site.data.personal.site.headline }}"
+description: "{{ site.data.personal.site.description }}"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fxxk181126.github.io" # the base hostname & protocol for your site
-copyright: "2024 个人官网. All Rights Reserved."
+copyright: "{{ site.data.personal.site.copyright }}"
 
-# Personal Information
+# Personal Information - 引用统一配置
 author:
-  name: "你的姓名"
-  title: "全栈开发者"
-  bio: "热爱技术创新，专注于前端开发和用户体验设计"
-  location: "中国"
-  avatar: "/assets/images/avatar.svg"
+  name: "{{ site.data.personal.basic.name }}"
+  display_name: "{{ site.data.personal.basic.display_name }}"
+  title: "{{ site.data.personal.basic.title }}"
+  bio: "{{ site.data.personal.basic.bio }}"
+  location: "{{ site.data.personal.basic.location }}"
+  avatar: "{{ site.data.personal.basic.avatar }}"
+  experience: "{{ site.data.personal.basic.experience }}"
 
-# Social Media
+# Social Media - 引用统一配置
 social:
-  github: "https://github.com/Fxxk181126"
-  linkedin: "#"
-  twitter: "#"
-  email: "your.email@example.com"
+  github: "{{ site.data.personal.social.github.url }}"
+  linkedin: "{{ site.data.personal.social.linkedin.url }}"
+  twitter: "{{ site.data.personal.social.twitter.url }}"
+  email: "{{ site.data.personal.contact.email }}"
 
 # Build settings
 markdown: kramdown
@@ -77,12 +77,12 @@ exclude:
 lang: zh-CN
 timezone: Asia/Shanghai
 
-# SEO and Social Media
+# SEO settings - 引用统一配置
 seo:
-  type: "Person"
-  name: "你的姓名"
+  type: "{{ site.data.personal.seo.type }}"
+  name: "{{ site.data.personal.basic.name }}"
   links:
-    - "https://github.com/Fxxk181126"
+    - "{{ site.data.personal.social.github.url }}"
     - "https://fxxk181126.github.io"
 
 # Open Graph / Twitter Card defaults
@@ -92,20 +92,20 @@ defaults:
     values:
       layout: "default"
       image: "/assets/images/og-image.png"
-      author: "你的姓名"
+      author: "Zane"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      author: "你的姓名"
+      author: "Zane"
       image: "/assets/images/blog-default.png"
   - scope:
       path: ""
       type: "projects"
     values:
       layout: "project"
-      author: "你的姓名"
+      author: "Zane"
 
 # Google Analytics (replace with your tracking ID)
 google_analytics: "G-XXXXXXXXXX"

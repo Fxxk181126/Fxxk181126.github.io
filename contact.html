@@ -31,8 +31,8 @@ permalink: /contact/
                   <div class="contact-details">
                     <h5>邮箱</h5>
                     <p class="mb-0">
-                      <a href="mailto:{{ site.author.email }}" class="text-decoration-none">
-                        {{ site.author.email }}
+                      <a href="mailto:{{ site.data.personal.contact.email }}" class="text-decoration-none">
+                        {{ site.data.personal.contact.email }}
                       </a>
                     </p>
                   </div>
@@ -46,7 +46,7 @@ permalink: /contact/
                   </div>
                   <div class="contact-details">
                     <h5>位置</h5>
-                    <p class="mb-0">{{ site.author.location | default: "中国" }}</p>
+                    <p class="mb-0">{{ site.data.personal.basic.location | default: "中国" }}</p>
                   </div>
                 </div>
               </div>

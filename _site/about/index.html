@@ -8,7 +8,7 @@
     <!-- SEO Meta Tags -->
     <title>关于我 - 个人官网 | Vue风格设计</title>
     <meta name="description" content="了解更多关于我的背景、技能和经历">
-    <meta name="author" content="你的姓名">
+    <meta name="author" content="Zane">
     <meta name="keywords" content="Vue.js, 个人网站, 前端开发, 全栈开发, Jekyll, 响应式设计">
     <meta name="robots" content="index, follow">
     <meta name="language" content="zh-CN">
@@ -86,21 +86,21 @@
     {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "你的姓名",
+        "name": "Zane",
         "url": "http://localhost:4000",
         "sameAs": [
             
-            "https://github.com/Fxxk181126",
+            "{{ site.data.personal.social.github.url }}",
             
-            "#",
+            "{{ site.data.personal.social.linkedin.url }}",
             
-            "#",
+            "{{ site.data.personal.social.twitter.url }}",
             
-            "#",
+            "{{ site.data.personal.social.juejin.url }}",
             
-            "#",
+            "{{ site.data.personal.social.zhihu.url }}",
             
-            "mailto:your.email@example.com"
+            "mailto:{{ site.data.personal.contact.email }}"
             
         ],
         "jobTitle": "全栈开发者",
@@ -212,34 +212,34 @@
         <div class="card">
           <div class="card-body text-center">
             <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20developer%20portrait%20avatar%20modern%20style&image_size=square" 
-                 alt="你的姓名" 
+                 alt="Zane" 
                  class="rounded-circle mb-3" 
                  style="width: 150px; height: 150px; object-fit: cover;">
-            <h3>你的姓名</h3>
+            <h3>Zane</h3>
             <p class="text-muted">全栈开发者</p>
             <div class="d-flex justify-content-center gap-2">
               
-                <a href="https://github.com/Fxxk181126" class="btn btn-outline-primary btn-sm" target="_blank">
+                <a href="{{ site.data.personal.social.github.url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                   <i class="fab fa-github"></i>
                 </a>
               
-                <a href="#" class="btn btn-outline-primary btn-sm" target="_blank">
+                <a href="{{ site.data.personal.social.linkedin.url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                   <i class="fab fa-linkedin"></i>
                 </a>
               
-                <a href="#" class="btn btn-outline-primary btn-sm" target="_blank">
+                <a href="{{ site.data.personal.social.twitter.url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                   <i class="fab fa-twitter"></i>
                 </a>
               
-                <a href="#" class="btn btn-outline-primary btn-sm" target="_blank">
+                <a href="{{ site.data.personal.social.juejin.url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                   <i class="fas fa-gem"></i>
                 </a>
               
-                <a href="#" class="btn btn-outline-primary btn-sm" target="_blank">
+                <a href="{{ site.data.personal.social.zhihu.url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                   <i class="fab fa-zhihu"></i>
                 </a>
               
-                <a href="mailto:your.email@example.com" class="btn btn-outline-primary btn-sm" target="_blank">
+                <a href="mailto:{{ site.data.personal.contact.email }}" class="btn btn-outline-primary btn-sm" target="_blank">
                   <i class="fas fa-envelope"></i>
                 </a>
               
@@ -507,27 +507,27 @@
                 </div>
                 <div class="footer-social">
                     
-                    <a href="https://github.com/Fxxk181126" class="social-link" target="_blank" title="GitHub">
+                    <a href="{{ site.data.personal.social.github.url }}" class="social-link" target="_blank" title="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
                     
-                    <a href="#" class="social-link" target="_blank" title="LinkedIn">
+                    <a href="{{ site.data.personal.social.linkedin.url }}" class="social-link" target="_blank" title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
                     
-                    <a href="#" class="social-link" target="_blank" title="Twitter">
+                    <a href="{{ site.data.personal.social.twitter.url }}" class="social-link" target="_blank" title="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
                     
-                    <a href="#" class="social-link" target="_blank" title="掘金">
+                    <a href="{{ site.data.personal.social.juejin.url }}" class="social-link" target="_blank" title="掘金">
                         <i class="fas fa-gem"></i>
                     </a>
                     
-                    <a href="#" class="social-link" target="_blank" title="知乎">
+                    <a href="{{ site.data.personal.social.zhihu.url }}" class="social-link" target="_blank" title="知乎">
                         <i class="fab fa-zhihu"></i>
                     </a>
                     
-                    <a href="mailto:your.email@example.com" class="social-link" target="_blank" title="Email">
+                    <a href="mailto:{{ site.data.personal.contact.email }}" class="social-link" target="_blank" title="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
                     
@@ -569,7 +569,7 @@
                 <div class="footer-contact">
                     <p>
                         <i class="icon-mail"></i>
-                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        <a href="mailto:zhao999ss@163.com">zhao999ss@163.com</a>
                     </p>
                     
                     <p>
@@ -583,7 +583,7 @@
         
         <div class="footer-bottom">
             <div class="footer-copyright">
-                <p>&copy; 2025 你的姓名. 2024 个人官网. All Rights Reserved.</p>
+                <p>&copy; 2025 Zane. 2024 个人官网. All Rights Reserved.</p>
             </div>
             <div class="footer-meta">
                 <p>

@@ -1,0 +1,87 @@
+# 个人信息统一配置文件
+# 修改此文件中的信息将在整个网站中全局生效
+
+# 基本信息
+basic:
+  name: "Zane"                    # 姓名
+  display_name: "Zane"         # 显示名称（可以是中文名或昵称）
+  title: "全栈开发者"              # 职位/头衔
+  bio: "热爱技术创新，专注于前端开发和用户体验设计"  # 个人简介
+  location: "中国"                # 所在地
+  avatar: "/assets/images/avatar.svg"  # 头像路径
+  experience: "3+"                # 工作经验年限
+
+# 网站信息
+site:
+  title: "个人官网"               # 网站标题
+  brand: "个人品牌"               # 品牌名称
+  headline: "全栈开发者 & 技术创新者"  # 网站标语
+  description: |                  # 网站描述
+    个人官网，展示技术能力、项目作品和个人见解。
+    致力于创造优雅的用户体验和高质量的技术解决方案。
+  copyright: "2025 个人官网. All Rights Reserved."  # 版权信息
+
+# 联系方式
+contact:
+  email: "zhao999ss@163.com"      # 主要邮箱
+  phone: ""                       # 电话（可选）
+  wechat: ""                      # 微信（可选）
+  qq: "244724407"                          # QQ（可选）
+
+# 社交媒体
+social:
+  github:
+    url: "https://github.com/Fxxk181126"
+    username: "Fxxk181126"
+    description: "查看我的开源项目和代码贡献"
+  linkedin:
+    url: "#"
+    username: ""
+    description: "专业经历和职业网络"
+  twitter:
+    url: "#"
+    username: ""
+    description: "技术分享和日常动态"
+  juejin:
+    url: "#"
+    username: ""
+    description: "技术文章和经验分享"
+  zhihu:
+    url: "#"
+    username: ""
+    description: "技术问答和深度思考"
+
+# 专业信息
+professional:
+  job_title: "全栈开发者"          # 职位
+  company: "Freelancer"           # 公司/组织
+  skills:                         # 技能列表
+    - "JavaScript"
+    - "TypeScript"
+    - "Vue.js"
+    - "React"
+    - "Node.js"
+    - "Python"
+    - "Django"
+    - "MySQL"
+    - "MongoDB"
+  interests:                      # 兴趣爱好
+    - name: "开源贡献"
+      description: "积极参与开源项目，贡献代码"
+    - name: "技术写作"
+      description: "分享技术心得和最佳实践"
+    - name: "游戏开发"
+      description: "业余时间开发小游戏，探索创意"
+
+# SEO 相关
+seo:
+  type: "Person"
+  keywords: "全栈开发者,前端开发,后端开发,Vue.js,React,Node.js"
+  image: "/assets/images/og-image.png"
+  
+# 统计信息
+stats:
+  projects_count: "{{ site.data.projects | size }}"
+  blog_posts_count: "{{ site.posts | size }}"
+  github_repos: "50+"
+  code_lines: "100k+"

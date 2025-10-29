@@ -11,7 +11,7 @@ layout: default
                 <p class="about-subtitle">{{ page.description | default: "了解我的故事、技能和经验" }}</p>
             </div>
             <div class="about-hero-image">
-                <img src="{{ site.author.avatar | default: '/assets/images/avatar.svg' }}" alt="{{ site.author.name }}" class="about-profile-image">
+                <img src="{{ site.data.personal.basic.avatar }}" alt="{{ site.data.personal.basic.display_name }}" class="about-profile-image">
                 <div class="image-decoration"></div>
             </div>
         </div>
@@ -149,26 +149,13 @@ layout: default
             <p>工作之外的爱好和兴趣</p>
         </div>
         <div class="interests-grid">
+            {% for interest in site.data.personal.professional.interests %}
             <div class="interest-item">
                 <div class="interest-icon">💻</div>
-                <h3 class="interest-title">开源贡献</h3>
-                <p class="interest-description">积极参与开源项目，分享代码和经验</p>
+                <h3 class="interest-title">{{ interest.name }}</h3>
+                <p class="interest-description">{{ interest.description }}</p>
             </div>
-            <div class="interest-item">
-                <div class="interest-icon">📚</div>
-                <h3 class="interest-title">技术学习</h3>
-                <p class="interest-description">持续学习新技术，保持技术敏感度</p>
-            </div>
-            <div class="interest-item">
-                <div class="interest-icon">✍️</div>
-                <h3 class="interest-title">技术写作</h3>
-                <p class="interest-description">撰写技术博客，分享学习心得</p>
-            </div>
-            <div class="interest-item">
-                <div class="interest-icon">🎮</div>
-                <h3 class="interest-title">游戏开发</h3>
-                <p class="interest-description">业余时间开发小游戏，探索创意</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -181,7 +168,7 @@ layout: default
             <p class="cta-description">如果你对我的经历感兴趣，或者有项目想要合作，欢迎联系我！</p>
             <div class="cta-actions">
                 <a href="/contact" class="btn btn-primary btn-lg">联系我</a>
-                <a href="{{ site.author.resume | default: '#' }}" class="btn btn-outline btn-lg" target="_blank">下载简历</a>
+                <a href="{{ site.data.personal.contact.resume | default: '#' }}" class="btn btn-outline btn-lg" target="_blank">下载简历</a>
             </div>
         </div>
     </div>
