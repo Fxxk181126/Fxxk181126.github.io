@@ -27,15 +27,15 @@
     <meta property="og:title" content="关于我">
     <meta property="og:description" content="了解更多关于我的背景、技能和经历">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/about/">
-    <meta property="og:image" content="http://localhost:4000/assets/images/og-image.png">
+    <meta property="og:url" content="http://0.0.0.0:4000/about/">
+    <meta property="og:image" content="http://0.0.0.0:4000/assets/images/og-image.png">
     <meta property="og:site_name" content="个人官网">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="关于我">
     <meta name="twitter:description" content="了解更多关于我的背景、技能和经历">
-    <meta name="twitter:image" content="http://localhost:4000/assets/images/og-image.png">
+    <meta name="twitter:image" content="http://0.0.0.0:4000/assets/images/og-image.png">
     
     
     <!-- Favicon -->
@@ -58,7 +58,7 @@
     <meta name="msapplication-TileColor" content="#42b883">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/about/">
+    <link rel="canonical" href="http://0.0.0.0:4000/about/">
     
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="个人官网" href="/feed.xml">
@@ -87,7 +87,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Zane",
-        "url": "http://localhost:4000",
+        "url": "http://0.0.0.0:4000",
         "sameAs": [
             
             "{{ site.data.personal.social.github.url }}",
@@ -109,7 +109,7 @@
             "name": "Freelancer"
         },
         "description": "热爱技术创新，专注于前端开发和用户体验设计",
-        "image": "http://localhost:4000/assets/images/avatar.svg"
+        "image": "http://0.0.0.0:4000/assets/images/avatar.svg"
     }
     </script>
 </head>
@@ -211,10 +211,7 @@
       <div class="col-lg-4 mb-4">
         <div class="card">
           <div class="card-body text-center">
-            <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20developer%20portrait%20avatar%20modern%20style&image_size=square" 
-                 alt="Zane" 
-                 class="rounded-circle mb-3" 
-                 style="width: 150px; height: 150px; object-fit: cover;">
+            <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20developer%20portrait%20avatar%20modern%20style&amp;image_size=square" alt="Zane" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;" />
             <h3>Zane</h3>
             <p class="text-muted">全栈开发者</p>
             <div class="d-flex justify-content-center gap-2">
@@ -425,10 +422,7 @@
                 </p>
               </div>
               <div class="col-md-4 text-center">
-                <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=university%20graduation%20cap%20diploma%20education%20academic&image_size=square" 
-                     alt="教育背景" 
-                     class="img-fluid rounded" 
-                     style="max-width: 150px;">
+                <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=university%20graduation%20cap%20diploma%20education%20academic&amp;image_size=square" alt="教育背景" class="img-fluid rounded" style="max-width: 120px;" />
               </div>
             </div>
           </div>
@@ -439,11 +433,58 @@
     <!-- 联系方式 -->
     <div class="row">
       <div class="col-12">
-        <div class="card bg-light">
-          <div class="card-body text-center">
-            <h3>让我们一起合作</h3>
-            <p class="lead">如果您对我的经历感兴趣，或者有合作机会，欢迎随时联系我！</p>
-            <a href="/contact/" class="btn btn-primary btn-lg">联系我</a>
+        <h2 class="mb-4">联系我</h2>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <h5>联系信息</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-envelope me-2 text-primary"></i>
+                    <a href="mailto:zhao999ss@163.com">zhao999ss@163.com</a>
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-phone me-2 text-primary"></i>
+                    
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                    
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5>社交媒体</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  
+                    <a href="{{ site.data.personal.social.github.url }}" class="btn btn-outline-primary" target="_blank">
+                      <i class="fab fa-github me-1"></i>GitHub
+                    </a>
+                  
+                    <a href="{{ site.data.personal.social.linkedin.url }}" class="btn btn-outline-primary" target="_blank">
+                      <i class="fab fa-linkedin me-1"></i>LinkedIn
+                    </a>
+                  
+                    <a href="{{ site.data.personal.social.twitter.url }}" class="btn btn-outline-primary" target="_blank">
+                      <i class="fab fa-twitter me-1"></i>Twitter
+                    </a>
+                  
+                    <a href="{{ site.data.personal.social.juejin.url }}" class="btn btn-outline-primary" target="_blank">
+                      <i class="fas fa-gem me-1"></i>掘金
+                    </a>
+                  
+                    <a href="{{ site.data.personal.social.zhihu.url }}" class="btn btn-outline-primary" target="_blank">
+                      <i class="fab fa-zhihu me-1"></i>知乎
+                    </a>
+                  
+                    <a href="mailto:{{ site.data.personal.contact.email }}" class="btn btn-outline-primary" target="_blank">
+                      <i class="fas fa-envelope me-1"></i>Email
+                    </a>
+                  
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -451,48 +492,6 @@
   </div>
 </div>
 
-<style>
-.timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 1rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #42b883;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.timeline-marker {
-  position: absolute;
-  left: -1.5rem;
-  top: 1rem;
-  width: 1rem;
-  height: 1rem;
-  background: #42b883;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 3px #42b883;
-}
-
-.timeline-content {
-  margin-left: 1rem;
-}
-
-.progress {
-  background-color: #e9ecef;
-  border-radius: 0.25rem;
-}
-</style>
         </main>
         
         <!-- Footer -->

@@ -50,10 +50,10 @@ plugins:
 
 # Sass
 sass:
-  sass_dir: _web-src/scss
+  sass_dir: _sass
   style: compressed
   load_paths:
-    - _web-src/scss
+    - _sass
 
 # Assets
 assets:
@@ -68,10 +68,15 @@ exclude:
   - Gemfile.lock
   - node_modules
   - package.json
+  - package-lock.json
   - README.md
   - LICENSE.md
   - _web-src
   - web-dist
+  - "*.backup.tar.gz"
+  - .git
+  - .gitignore
+  - .trae
 
 # SEO settings
 lang: zh-CN

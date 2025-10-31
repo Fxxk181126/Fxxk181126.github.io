@@ -27,15 +27,15 @@
     <meta property="og:title" content="联系我">
     <meta property="og:description" content="通过多种方式与我取得联系，期待与您的交流合作">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/contact/">
-    <meta property="og:image" content="http://localhost:4000/assets/images/og-image.png">
+    <meta property="og:url" content="http://0.0.0.0:4000/contact/">
+    <meta property="og:image" content="http://0.0.0.0:4000/assets/images/og-image.png">
     <meta property="og:site_name" content="个人官网">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="联系我">
     <meta name="twitter:description" content="通过多种方式与我取得联系，期待与您的交流合作">
-    <meta name="twitter:image" content="http://localhost:4000/assets/images/og-image.png">
+    <meta name="twitter:image" content="http://0.0.0.0:4000/assets/images/og-image.png">
     
     
     <!-- Favicon -->
@@ -58,7 +58,7 @@
     <meta name="msapplication-TileColor" content="#42b883">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/contact/">
+    <link rel="canonical" href="http://0.0.0.0:4000/contact/">
     
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="个人官网" href="/feed.xml">
@@ -87,7 +87,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Zane",
-        "url": "http://localhost:4000",
+        "url": "http://0.0.0.0:4000",
         "sameAs": [
             
             "{{ site.data.personal.social.github.url }}",
@@ -109,7 +109,7 @@
             "name": "Freelancer"
         },
         "description": "热爱技术创新，专注于前端开发和用户体验设计",
-        "image": "http://localhost:4000/assets/images/avatar.svg"
+        "image": "http://0.0.0.0:4000/assets/images/avatar.svg"
     }
     </script>
 </head>
@@ -276,56 +276,32 @@
               <h4 class="mb-3">社交媒体</h4>
               <div class="social-links">
                 
-                  <a href="{{ site.data.personal.social.github.url }}" 
-                     class="social-link" 
-                     target="_blank"
-                     title="{{ site.data.personal.social.github.description }}"
-                     style="background-color: #333;">
+                  <a href="{{ site.data.personal.social.github.url }}" class="social-link" target="_blank" title="{{ site.data.personal.social.github.description }}" style="background-color: #333;">
                     <i class="fab fa-github"></i>
                     <span>GitHub</span>
                   </a>
                 
-                  <a href="{{ site.data.personal.social.linkedin.url }}" 
-                     class="social-link" 
-                     target="_blank"
-                     title="{{ site.data.personal.social.linkedin.description }}"
-                     style="background-color: #0077b5;">
+                  <a href="{{ site.data.personal.social.linkedin.url }}" class="social-link" target="_blank" title="{{ site.data.personal.social.linkedin.description }}" style="background-color: #0077b5;">
                     <i class="fab fa-linkedin"></i>
                     <span>LinkedIn</span>
                   </a>
                 
-                  <a href="{{ site.data.personal.social.twitter.url }}" 
-                     class="social-link" 
-                     target="_blank"
-                     title="{{ site.data.personal.social.twitter.description }}"
-                     style="background-color: #1da1f2;">
+                  <a href="{{ site.data.personal.social.twitter.url }}" class="social-link" target="_blank" title="{{ site.data.personal.social.twitter.description }}" style="background-color: #1da1f2;">
                     <i class="fab fa-twitter"></i>
                     <span>Twitter</span>
                   </a>
                 
-                  <a href="{{ site.data.personal.social.juejin.url }}" 
-                     class="social-link" 
-                     target="_blank"
-                     title="{{ site.data.personal.social.juejin.description }}"
-                     style="background-color: #1e80ff;">
+                  <a href="{{ site.data.personal.social.juejin.url }}" class="social-link" target="_blank" title="{{ site.data.personal.social.juejin.description }}" style="background-color: #1e80ff;">
                     <i class="fas fa-gem"></i>
                     <span>掘金</span>
                   </a>
                 
-                  <a href="{{ site.data.personal.social.zhihu.url }}" 
-                     class="social-link" 
-                     target="_blank"
-                     title="{{ site.data.personal.social.zhihu.description }}"
-                     style="background-color: #0084ff;">
+                  <a href="{{ site.data.personal.social.zhihu.url }}" class="social-link" target="_blank" title="{{ site.data.personal.social.zhihu.description }}" style="background-color: #0084ff;">
                     <i class="fab fa-zhihu"></i>
                     <span>知乎</span>
                   </a>
                 
-                  <a href="mailto:{{ site.data.personal.contact.email }}" 
-                     class="social-link" 
-                     target="_blank"
-                     title="商务合作和技术交流"
-                     style="background-color: #ea4335;">
+                  <a href="mailto:{{ site.data.personal.contact.email }}" class="social-link" target="_blank" title="商务合作和技术交流" style="background-color: #ea4335;">
                     <i class="fas fa-envelope"></i>
                     <span>Email</span>
                   </a>
@@ -349,17 +325,17 @@
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="name" class="form-label">姓名 *</label>
-                  <input type="text" class="form-control" id="name" name="name" required>
+                  <input type="text" class="form-control" id="name" name="name" required="" />
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="email" class="form-label">邮箱 *</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
+                  <input type="email" class="form-control" id="email" name="email" required="" />
                 </div>
               </div>
               
               <div class="mb-3">
                 <label for="subject" class="form-label">主题 *</label>
-                <select class="form-select" id="subject" name="subject" required>
+                <select class="form-select" id="subject" name="subject" required="">
                   <option value="">请选择主题</option>
                   <option value="project">项目合作</option>
                   <option value="job">工作机会</option>
@@ -371,13 +347,12 @@
               
               <div class="mb-3">
                 <label for="message" class="form-label">消息内容 *</label>
-                <textarea class="form-control" id="message" name="message" rows="6" required 
-                          placeholder="请详细描述您的需求或想法..."></textarea>
+                <textarea class="form-control" id="message" name="message" rows="6" required="" placeholder="请详细描述您的需求或想法..."></textarea>
               </div>
               
               <div class="mb-3">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                  <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required="" />
                   <label class="form-check-label" for="privacy">
                     我同意处理我的个人信息用于回复此消息
                   </label>
@@ -708,6 +683,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+
         </main>
         
         <!-- Footer -->

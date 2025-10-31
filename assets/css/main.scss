@@ -8,27 +8,27 @@
 // Based on Vue.js official website design principles
 
 // Core Variables and Mixins (Vue.js inspired)
-@import "../../_web-src/scss/theme/variables";
-@import "../../_web-src/scss/theme/mixins";
+@import "theme/variables";
+@import "theme/mixins";
 
 // Base styles and utilities
-@import "../../_web-src/scss/theme/base";
-@import "../../_web-src/scss/theme/mobile";
+@import "theme/base";
+@import "theme/mobile";
 
 // Layout components
-@import "../../_web-src/scss/theme/navbar";
+@import "theme/navbar";
 
 // Component styles
-@import "../../_web-src/scss/components/buttons";
-@import "../../_web-src/scss/components/cards";
-@import "../../_web-src/scss/components/tags";
-@import "../../_web-src/scss/components/projects";
-@import "../../_web-src/scss/components/blog";
-@import "../../_web-src/scss/components/footer";
+@import "components/buttons";
+@import "components/cards";
+@import "components/tags";
+@import "components/projects";
+@import "components/blog";
+@import "components/footer";
 
 // Page-specific styles
-@import "../../_web-src/scss/pages/home";
-@import "../../_web-src/scss/pages/about";
-@import "../../_web-src/scss/pages/projects";
-@import "../../_web-src/scss/pages/blog";
-@import "../../_web-src/scss/pages/contact";
+@import "pages/home";
+@import "pages/about";
+@import "pages/projects";
+@import "pages/blog";
+@import "pages/contact";

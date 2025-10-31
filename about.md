@@ -203,7 +203,7 @@ permalink: /about/
                 <img src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=university%20graduation%20cap%20diploma%20education%20academic&image_size=square" 
                      alt="教育背景" 
                      class="img-fluid rounded" 
-                     style="max-width: 150px;">
+                     style="max-width: 120px;">
               </div>
             </div>
           </div>
@@ -214,57 +214,41 @@ permalink: /about/
     <!-- 联系方式 -->
     <div class="row">
       <div class="col-12">
-        <div class="card bg-light">
-          <div class="card-body text-center">
-            <h3>让我们一起合作</h3>
-            <p class="lead">如果您对我的经历感兴趣，或者有合作机会，欢迎随时联系我！</p>
-            <a href="/contact/" class="btn btn-primary btn-lg">联系我</a>
+        <h2 class="mb-4">联系我</h2>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <h5>联系信息</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-envelope me-2 text-primary"></i>
+                    <a href="mailto:{{ site.data.personal.contact.email }}">{{ site.data.personal.contact.email }}</a>
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-phone me-2 text-primary"></i>
+                    {{ site.data.personal.contact.phone }}
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                    {{ site.data.personal.contact.location }}
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5>社交媒体</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  {% for social in site.data.social %}
+                    <a href="{{ social.url }}" class="btn btn-outline-primary" target="_blank">
+                      <i class="{{ social.icon }} me-1"></i>{{ social.name }}
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<style>
-.timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 1rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #42b883;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.timeline-marker {
-  position: absolute;
-  left: -1.5rem;
-  top: 1rem;
-  width: 1rem;
-  height: 1rem;
-  background: #42b883;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 3px #42b883;
-}
-
-.timeline-content {
-  margin-left: 1rem;
-}
-
-.progress {
-  background-color: #e9ecef;
-  border-radius: 0.25rem;
-}
-</style>
