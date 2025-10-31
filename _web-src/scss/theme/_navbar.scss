@@ -57,7 +57,7 @@
   }
   
   &:hover {
-    color: color.adjust($primary-color, $lightness: -10%);
+    color: darken($primary-color, 10%);
     text-decoration: none;
     transform: translateY(-1px);
   }
@@ -163,7 +163,7 @@
     font-size: $font-size-sm;
     
     &:hover {
-      background: color.adjust($primary-color, $lightness: -10%);
+      background: darken($primary-color, 10%);
       color: white;
       text-decoration: none;
       transform: translateY(-2px);

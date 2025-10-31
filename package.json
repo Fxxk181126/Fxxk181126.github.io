@@ -4,18 +4,19 @@
   "private": true,
   "description": "Theme front-end assets",
   "scripts": {
-    "css:clean": "rm -rf ./web-dist/css && mkdir ./web-dist/css",
-    "css:sass": "sass --load-path=./_web-src/scss --style=compressed --source-map ./_web-src/scss/main.scss ./web-dist/css/main.min.css",
-    "css:build": "npm run css:clean && npm run css:sass",
-    "css:watch": "nodemon --ext scss --watch ./_web-src/scss --exec 'npm run css:build'",
-    "watch": "npm run css:watch",
-    "build": "npm run css:build"
+    "// Note": "SCSS compilation is now handled by Jekyll's built-in SCSS processor",
+    "// css:clean": "rm -rf ./assets/css/main.css ./assets/css/main.css.map",
+    "// css:sass": "sass --load-path=./_web-src/scss --style=compressed --source-map ./_web-src/scss/main.scss ./assets/css/main.css",
+    "// css:build": "npm run css:clean && npm run css:sass",
+    "// css:watch": "nodemon --ext scss --watch ./_web-src/scss --exec 'npm run css:build'",
+    "// watch": "npm run css:watch",
+    "// build": "npm run css:build"
   },
   "author": "Sergey Sokurenko",
   "license": "(c) Copyright 2016 Sergey Sokurenko",
   "devDependencies": {
-    "sass": "^1.69.0",
-    "nodemon": "^3.0.0",
+    "// sass": "^1.69.0 - No longer needed, using Jekyll's built-in SCSS processor",
+    "// nodemon": "^3.0.0 - No longer needed for SCSS watching",
     "uglify-js": "^3.17.0"
   },
   "dependencies": {
