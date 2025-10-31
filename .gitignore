@@ -1,1 +1,31 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Jekyll build output
+_site/
+
+# Sass cache
+.sass-cache/
+_sass/
+
+# Test and temporary files
+test-output.css
+*.tmp
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
