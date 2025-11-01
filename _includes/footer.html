@@ -7,11 +7,35 @@
                     <p>{{ site.description }}</p>
                 </div>
                 <div class="footer-social">
-                    {% for social in site.data.social %}
-                    <a href="{{ social.url }}" class="social-link" target="_blank" title="{{ social.name }}">
-                        <i class="{{ social.icon }}"></i>
+                    {% if site.data.personal.social.github.url and site.data.personal.social.github.url != "#" %}
+                    <a href="{{ site.data.personal.social.github.url }}" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
                     </a>
-                    {% endfor %}
+                    {% endif %}
+                    
+                    {% if site.data.personal.social.linkedin.url and site.data.personal.social.linkedin.url != "#" %}
+                    <a href="{{ site.data.personal.social.linkedin.url }}" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    {% endif %}
+                    
+                    {% if site.data.personal.social.twitter.url and site.data.personal.social.twitter.url != "#" %}
+                    <a href="{{ site.data.personal.social.twitter.url }}" class="social-link" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    {% endif %}
+                    
+                    {% if site.data.personal.social.juejin.url and site.data.personal.social.juejin.url != "#" %}
+                    <a href="{{ site.data.personal.social.juejin.url }}" class="social-link" target="_blank" title="掘金">
+                        <i class="fas fa-gem"></i>
+                    </a>
+                    {% endif %}
+                    
+                    {% if site.data.personal.social.zhihu.url and site.data.personal.social.zhihu.url != "#" %}
+                    <a href="{{ site.data.personal.social.zhihu.url }}" class="social-link" target="_blank" title="知乎">
+                        <i class="fab fa-zhihu"></i>
+                    </a>
+                    {% endif %}
                 </div>
             </div>
             

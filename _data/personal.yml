@@ -43,12 +43,12 @@ social:
     username: ""
     description: "技术分享和日常动态"
   juejin:
-    url: "#"
-    username: ""
+    url: "https://juejin.cn/user/1574920986563927"
+    username: "我不是药神"
     description: "技术文章和经验分享"
   zhihu:
-    url: "#"
-    username: ""
+    url: "https://www.zhihu.com/people/zhao-jiong-85-15"
+    username: "望指教"
     description: "技术问答和深度思考"
 
 # 专业信息

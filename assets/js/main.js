@@ -230,14 +230,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     images.forEach(img => imageObserver.observe(img));
-    
-    // Back to top button
+
     const backToTop = document.createElement('button');
     backToTop.className = 'back-to-top';
-    backToTop.innerHTML = '↑';
+    backToTop.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L12 20M12 4L6 10M12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    `;
     backToTop.setAttribute('aria-label', '回到顶部');
+    backToTop.setAttribute('title', '回到顶部');
     document.body.appendChild(backToTop);
-    
+
     function toggleBackToTop() {
         if (window.scrollY > 300) {
             backToTop.classList.add('show');
@@ -245,10 +249,23 @@ document.addEventListener('DOMContentLoaded', function() {
             backToTop.classList.remove('show');
         }
     }
+
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(toggleBackToTop, 10);
+    });
+
+    toggleBackToTop();
     
-    window.addEventListener('scroll', toggleBackToTop);
-    
-    backToTop.addEventListener('click', function() {
+    backToTop.addEventListener('click', function () {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+        
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
