@@ -4,8 +4,7 @@
 @use "../theme/mixins" as *;
 
 .footer {
-  background: $dark-gray;
-  color: #fff;
+  background: $light-gray;
   padding: 3rem 0 1rem;
   margin-top: 5rem;
   
@@ -29,7 +28,6 @@
   
   .footer-section {
     h3, h4 {
-      color: #fff;
       margin-bottom: 1rem;
       font-weight: $font-weight-semibold;
     }
@@ -43,7 +41,6 @@
     }
     
     p {
-      color: rgba(255, 255, 255, 0.8);
       line-height: 1.6;
       margin-bottom: 1rem;
     }

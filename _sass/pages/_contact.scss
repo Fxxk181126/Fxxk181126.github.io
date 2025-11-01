@@ -61,12 +61,6 @@
   }
 }
 
-// Contact Content
-.contact-content {
-  padding: 6rem 0;
-  background: var(--bg-color);
-}
-
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -96,14 +90,9 @@
 }
 
 .contact-method {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-2px);

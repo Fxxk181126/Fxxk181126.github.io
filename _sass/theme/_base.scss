@@ -160,22 +160,21 @@ img {
   padding: 0 1rem;
 }
 
-// Sections
-.section {
-  padding: 5rem 0;
+.main-content:not(:has(.hero)) {
+  margin-top: 80px;
   
   @include respond-to(md) {
-    padding: 3rem 0;
+    margin-top: 75px;
   }
   
   @include respond-to(sm) {
-    padding: 2rem 0;
+    margin-top: 70px;
   }
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   
   h2 {
     @include gradient-text;
