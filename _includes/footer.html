@@ -3,8 +3,8 @@
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-brand">
-                    <h3>{{ site.title }}</h3>
-                    <p>{{ site.description }}</p>
+                    <h4>{{ site.title }}</h4>
+                    <p>专注于前端技术，致力于创造优质的用户体验和高质量的代码。</p>
                 </div>
                 <div class="footer-social">
                     {% if site.data.personal.social.github.url and site.data.personal.social.github.url != "#" %}
@@ -42,38 +42,30 @@
             <div class="footer-section">
                 <h4>快速链接</h4>
                 <ul class="footer-links">
-                    <li><a href="/">首页</a></li>
-                    <li><a href="/about">关于我</a></li>
-                    <li><a href="/projects">项目</a></li>
-                    <li><a href="/blog">博客</a></li>
-                    <li><a href="/contact">联系</a></li>
+                    <li><a href="{{ '/' | relative_url }}">首页</a></li>
+                    <li><a href="{{ '/about' | relative_url }}">关于</a></li>
+                    <li><a href="{{ '/blog' | relative_url }}">博客</a></li>
+                    <li><a href="{{ '/projects' | relative_url }}">项目</a></li>
+                    <li><a href="{{ '/contact' | relative_url }}">联系</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>技术栈</h4>
                 <ul class="footer-links">
-                    {% for skill_category in site.data.skills limit: 1 %}
-                    {% for skill in skill_category[1].items limit: 5 %}
-                    <li>{{ skill.name }}</li>
-                    {% endfor %}
-                    {% endfor %}
+                    <li>Vue.js</li>
+                    <li>React</li>
+                    <li>TypeScript</li>
+                    <li>JavaScript</li>
+                    <li>CSS/SCSS</li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>联系方式</h4>
                 <div class="footer-contact">
-                    <p>
-                        <i class="icon-mail"></i>
-                        <a href="mailto:{{ site.data.personal.contact.email }}">{{ site.data.personal.contact.email }}</a>
-                    </p>
-                    {% if site.data.personal.basic.location %}
-                    <p>
-                        <i class="icon-location"></i>
-                        {{ site.data.personal.basic.location }}
-                    </p>
-                    {% endif %}
+                    <p>邮箱: {{ site.data.personal.contact.email }}</p>
+                    <p>地址: {{ site.data.personal.basic.location }}</p>
                 </div>
             </div>
         </div>

@@ -142,15 +142,15 @@ img {
   margin: 0 auto;
   padding: 0 1rem;
   
-  @include respond-to(lg) {
+  @media (max-width: 991px) {
     max-width: 960px;
   }
   
-  @include respond-to(md) {
+  @media (max-width: 767px) {
     max-width: 720px;
   }
   
-  @include respond-to(sm) {
+  @media (max-width: 575px) {
     max-width: 540px;
   }
 }
