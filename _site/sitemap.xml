@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>http://localhost:4000/</loc>
-    <lastmod>2025-11-01T11:03:54+08:00</lastmod>
+    <loc>http://0.0.0.0:4000/</loc>
+    <lastmod>2025-11-01T11:10:13+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,20 +12,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/about/</loc>
+      <loc>http://0.0.0.0:4000/about/</loc>
       
-      <lastmod>2025-11-01T11:03:54+08:00</lastmod>
-      
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/blog/</loc>
-      
-      <lastmod>2025-11-01T11:03:54+08:00</lastmod>
+      <lastmod>2025-11-01T11:10:13+08:00</lastmod>
       
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
@@ -34,20 +23,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/contact/</loc>
+      <loc>http://0.0.0.0:4000/blog/</loc>
       
-      <lastmod>2025-11-01T11:03:54+08:00</lastmod>
-      
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/feed.xml</loc>
-      
-      <lastmod>2025-11-01T11:03:54+08:00</lastmod>
+      <lastmod>2025-11-01T11:10:13+08:00</lastmod>
       
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
@@ -56,20 +34,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/</loc>
+      <loc>http://0.0.0.0:4000/contact/</loc>
       
-      <lastmod>2025-11-01T11:03:54+08:00</lastmod>
-      
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/assets/css/main.css</loc>
-      
-      <lastmod>2025-11-01T11:03:54+08:00</lastmod>
+      <lastmod>2025-11-01T11:10:13+08:00</lastmod>
       
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
@@ -78,9 +45,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/projects/</loc>
+      <loc>http://0.0.0.0:4000/feed.xml</loc>
       
-      <lastmod>2025-11-01T11:03:54+08:00</lastmod>
+      <lastmod>2025-11-01T11:10:13+08:00</lastmod>
       
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
@@ -89,9 +56,42 @@
   
     
     <url>
-      <loc>http://localhost:4000/sitemap.xml</loc>
+      <loc>http://0.0.0.0:4000/</loc>
       
-      <lastmod>2025-11-01T11:03:54+08:00</lastmod>
+      <lastmod>2025-11-01T11:10:13+08:00</lastmod>
+      
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://0.0.0.0:4000/assets/css/main.css</loc>
+      
+      <lastmod>2025-11-01T11:10:13+08:00</lastmod>
+      
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://0.0.0.0:4000/projects/</loc>
+      
+      <lastmod>2025-11-01T11:10:13+08:00</lastmod>
+      
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://0.0.0.0:4000/sitemap.xml</loc>
+      
+      <lastmod>2025-11-01T11:10:13+08:00</lastmod>
       
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
@@ -102,21 +102,21 @@
   <!-- Blog Posts -->
   
   <url>
-    <loc>http://localhost:4000/blog/vue3-composition-api-guide/</loc>
+    <loc>http://0.0.0.0:4000/blog/vue3-composition-api-guide/</loc>
     <lastmod>2024-01-15T00:00:00+08:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/blog/frontend-performance-optimization/</loc>
+    <loc>http://0.0.0.0:4000/blog/frontend-performance-optimization/</loc>
     <lastmod>2024-01-10T00:00:00+08:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/blog/modern-css-techniques/</loc>
+    <loc>http://0.0.0.0:4000/blog/modern-css-techniques/</loc>
     <lastmod>2024-01-05T00:00:00+08:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
