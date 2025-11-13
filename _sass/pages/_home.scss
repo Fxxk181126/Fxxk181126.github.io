@@ -277,9 +277,10 @@
       }
       
       .contact-methods {
+        width: fit-content;
         display: flex;
-        flex-direction: column;
         gap: 1rem;
+        margin: 0 auto;
         
         .contact-method {
           display: flex;
