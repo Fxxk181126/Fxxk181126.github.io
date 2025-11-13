@@ -111,7 +111,7 @@ permalink: /projects/
       <p>最新发布与重要更新</p>
     </div>
     <div class="projects-container">
-      {% assign product_news_pages = site.pages | where: "category", "product_news" %}
+      {% assign product_news_pages = site.pages | where_exp: "p", "p.categories contains 'product_news'" %}
       {% for p in product_news_pages %}
       <div class="project-card">
         <div class="project-content">
@@ -137,7 +137,7 @@ permalink: /projects/
       <p>了解产品的核心价值与能力全景</p>
     </div>
     <div class="projects-container">
-      {% assign product_intro_pages = site.pages | where: "category", "product_intro" %}
+      {% assign product_intro_pages = site.pages | where_exp: "p", "p.categories contains 'product_intro'" %}
       {% for p in product_intro_pages %}
       <div class="project-card">
         <div class="project-content">

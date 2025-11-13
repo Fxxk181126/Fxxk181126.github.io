@@ -3,7 +3,7 @@ layout: page
 title: 速贴（ClipFast）产品新闻稿
 description: 全平台、高安全性的粘贴板管理工具 ClipFast 正式发布，聚焦高效追溯、跨端同步与隐私保护。
 permalink: /products/clipfast/news/
-category: product_news
+categories: [product_news]
 product: 速贴（ClipFast）
 date: 2025-11-13
 ---

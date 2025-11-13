@@ -3,7 +3,7 @@ layout: page
 title: 速贴（ClipFast）产品介绍
 description: ClipFast 是一款面向全平台的高安全粘贴板管理工具，提供高效追溯、跨端同步与智能适配。
 permalink: /products/clipfast/intro/
-category: product_intro
+categories: [product_intro]
 product: 速贴（ClipFast）
 date: 2025-11-13
 ---
