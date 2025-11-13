@@ -3,7 +3,7 @@ title: "个人官网"
 email: "zhao999ss@163.com"
 brand: "个人品牌"
 headline: "全栈开发者 & 技术创新者"
-description: "个人官网，展示技术能力、项目作品和个人见解。致力于创造优雅的用户体验和高质量的技术解决方案。"
+description: "个人官网，展示技术能力、产品与个人见解。致力于创造优雅的用户体验和高质量的技术解决方案。"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fxxk181126.github.io" # the base hostname & protocol for your site
 copyright: "2025 个人官网. All Rights Reserved."
@@ -143,10 +143,9 @@ navigation:
     url: "/"
   - title: "关于我"
     url: "/about/"
-  - title: "项目作品"
+  - title: "产品"
     url: "/projects/"
   - title: "博客"
     url: "/blog/"
   - title: "联系我"
     url: "/contact/"
-

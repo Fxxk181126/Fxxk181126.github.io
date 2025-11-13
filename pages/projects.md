@@ -1,15 +1,15 @@
 ---
 layout: default
-title: 项目作品
-description: 展示我的技术项目和作品集
+title: 产品
+description: 展示我的产品与解决方案
 permalink: /projects/
 ---
 
 <div class="container">
   <div class="section">
     <div class="section-title">
-      <h1>项目作品</h1>
-      <p>这里展示了我参与开发的一些技术项目和作品</p>
+      <h1>产品</h1>
+      <p>这里展示了我打造与参与的部分产品与解决方案</p>
     </div>
 
     <!-- 项目筛选 -->
@@ -31,7 +31,7 @@ permalink: /projects/
       <div class="col-12">
         <h2 class="mb-4">
           <i class="fas fa-star text-warning me-2"></i>
-          精选项目
+          精选产品
         </h2>
         <div class="row">
           {% assign featured_projects = site.data.projects | where: "featured", true %}
@@ -77,10 +77,10 @@ permalink: /projects/
       </div>
     </div>
 
-    <!-- 所有项目 -->
+    <!-- 所有产品 -->
     <div class="row">
       <div class="col-12">
-        <h2 class="mb-4">所有项目</h2>
+        <h2 class="mb-4">所有产品</h2>
         <div class="row" id="projects-container">
           {% for project in site.data.projects %}
             <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="{{ project.category }}">
@@ -134,7 +134,7 @@ permalink: /projects/
       </div>
     </div>
 
-    <!-- 项目统计 -->
+    <!-- 产品统计 -->
     <div class="row mt-5">
       <div class="col-12">
         <div class="card bg-light">
@@ -143,28 +143,28 @@ permalink: /projects/
               <div class="col-md-3 col-6 mb-3">
                 <div class="stat-item">
                   <h3 class="text-primary mb-1">{{ site.data.projects | size }}</h3>
-                  <p class="text-muted mb-0">总项目数</p>
+                  <p class="text-muted mb-0">总产品数</p>
                 </div>
               </div>
               <div class="col-md-3 col-6 mb-3">
                 <div class="stat-item">
                   {% assign frontend_count = site.data.projects | where: "category", "frontend" | size %}
                   <h3 class="text-success mb-1">{{ frontend_count }}</h3>
-                  <p class="text-muted mb-0">前端项目</p>
+                  <p class="text-muted mb-0">前端产品</p>
                 </div>
               </div>
               <div class="col-md-3 col-6 mb-3">
                 <div class="stat-item">
                   {% assign fullstack_count = site.data.projects | where: "category", "fullstack" | size %}
                   <h3 class="text-warning mb-1">{{ fullstack_count }}</h3>
-                  <p class="text-muted mb-0">全栈项目</p>
+                  <p class="text-muted mb-0">全栈产品</p>
                 </div>
               </div>
               <div class="col-md-3 col-6 mb-3">
                 <div class="stat-item">
                   {% assign featured_count = site.data.projects | where: "featured", true | size %}
                   <h3 class="text-danger mb-1">{{ featured_count }}</h3>
-                  <p class="text-muted mb-0">精选项目</p>
+                  <p class="text-muted mb-0">精选产品</p>
                 </div>
               </div>
             </div>
@@ -206,9 +206,9 @@ permalink: /projects/
       <div class="col-12">
         <div class="card border-primary">
           <div class="card-body text-center">
-            <h3 class="card-title">有项目想要合作？</h3>
+            <h3 class="card-title">有产品想要合作？</h3>
             <p class="card-text">
-              如果您有有趣的项目想要合作，或者需要技术咨询，欢迎随时联系我！
+              如果您有有趣的产品想要合作，或者需要技术咨询，欢迎随时联系我！
             </p>
             <a href="/contact/" class="btn btn-primary btn-lg">
               <i class="fas fa-envelope me-2"></i>
@@ -219,6 +219,41 @@ permalink: /projects/
       </div>
     </div>
   </div>
+</div>
+
+<!-- 产品新闻列表（自动聚合） -->
+<div class="row mt-5">
+  <div class="col-12">
+    <h2 class="mb-4">
+      <i class="fas fa-newspaper text-primary me-2"></i>
+      产品新闻
+    </h2>
+    <div class="row">
+      {% assign product_news_pages = site.pages | where: "category", "product_news" %}
+      {% for p in product_news_pages %}
+        <div class="col-lg-6 col-md-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{{ p.url }}">{{ p.title }}</a></h5>
+              {% if p.description %}
+              <p class="card-text">{{ p.description }}</p>
+              {% endif %}
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">
+                  <i class="fas fa-calendar-alt me-1"></i>
+                  {{ p.date | default: site.time | date: "%Y年%m月%d日" }}
+                </small>
+                {% if p.product %}
+                  <span class="badge bg-secondary">{{ p.product }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
 </div>
 
 <style>
