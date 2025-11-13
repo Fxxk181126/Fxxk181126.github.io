@@ -18,17 +18,13 @@
 .project-card {
   @include card-style;
   overflow: hidden;
-  transition: $transition-base;
-  
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: $shadow-xl;
-  }
+  transition: $transition-fast;
+  &:hover { transform: translateY(-4px); box-shadow: $shadow-lg; }
   
   .project-image {
     position: relative;
     overflow: hidden;
-    height: 200px;
+    height: 240px;
     
     img {
       width: 100%;
@@ -37,32 +33,9 @@
       transition: $transition-base;
     }
     
-    .project-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.8);
-      @include flex-center;
-      opacity: 0;
-      transition: $transition-base;
-      
-      .project-actions {
-        display: flex;
-        gap: 1rem;
-      }
-    }
+    .project-overlay { display: none; }
     
-    &:hover {
-      img {
-        transform: scale(1.1);
-      }
-      
-      .project-overlay {
-        opacity: 1;
-      }
-    }
+    &:hover { img { transform: scale(1.03); } }
   }
   
   .project-content {

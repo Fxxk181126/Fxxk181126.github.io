@@ -315,6 +315,34 @@
   }
 }
 
+// Redesign overrides (Apple-inspired minimal layout)
+.projects-hero { padding: 140px 0 64px; background: var(--bg-primary); }
+.projects-hero .projects-title { font-size: 3rem; font-weight: 700; margin-bottom: 12px; }
+.projects-hero .projects-subtitle { font-size: 1.125rem; max-width: 720px; margin: 0 auto; }
+
+.projects-filter { padding: 24px 0; background: var(--bg-primary); }
+.projects-filter .segmented-control { display: inline-flex; gap: 0; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; background: var(--bg-secondary); }
+.projects-filter .filter-tab { background: transparent; border: none; color: var(--text-secondary); padding: 10px 18px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: background 0.2s ease, color 0.2s ease; }
+.projects-filter .filter-tab:hover { color: var(--text-primary); }
+.projects-filter .filter-tab.active { background: var(--bg-primary); color: var(--text-primary); }
+
+.projects-grid { padding: 64px 0; }
+.projects-grid .projects-container { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.projects-grid .project-card { border: 1px solid var(--border-color); box-shadow: none; }
+.projects-grid .project-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-4px); }
+.projects-grid .project-card .project-image { height: 240px; }
+.projects-grid .project-card .project-overlay { display: none !important; }
+.projects-grid .project-card .project-content { padding: 20px; }
+.projects-grid .project-card .project-title { font-weight: 700; }
+.projects-grid .project-card .project-tech .tech-tag { background: var(--bg-secondary); color: var(--text-primary); border-radius: 10px; }
+.project-card--hero { grid-column: 1 / -1; }
+.project-card--hero .project-image { height: 360px; }
+.project-card--hero .project-title { font-size: 1.5rem; }
+
+.projects-cta { padding: 72px 0; background: var(--bg-secondary); }
+.projects-cta .cta-title { color: var(--text-primary); }
+.projects-cta .cta-description { color: var(--text-secondary); }
+
 .project-stats {
   background: var(--bg-secondary);
 
