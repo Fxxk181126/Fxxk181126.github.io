@@ -315,6 +315,11 @@
   }
 }
 
+// Final override for CTA section
+.projects-cta { padding: 72px 0; background: var(--bg-secondary) !important; }
+.projects-cta .cta-title { color: var(--text-primary) !important; }
+.projects-cta .cta-description { color: var(--text-secondary) !important; }
+
 // Redesign overrides (Apple-inspired minimal layout)
 .projects-hero { padding: 140px 0 64px; background: var(--bg-primary); }
 .projects-hero .projects-title { font-size: 3rem; font-weight: 700; margin-bottom: 12px; }
