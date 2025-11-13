@@ -18,11 +18,16 @@ permalink: /projects/
   <div class="container">
     <div class="filter-tabs segmented-control" id="product-filter">
       <button class="filter-tab active" data-filter="all">全部</button>
-      <button class="filter-tab" data-filter="frontend">前端</button>
-      <button class="filter-tab" data-filter="backend">后端</button>
-      <button class="filter-tab" data-filter="fullstack">全栈</button>
-      <button class="filter-tab" data-filter="mobile">移动端</button>
-      <button class="filter-tab" data-filter="tool">工具</button>
+      {% assign types = "" | split: "," %}
+      {% for p in site.data.projects %}
+        {% if p.product_type %}
+          {% assign types = types | push: p.product_type %}
+        {% endif %}
+      {% endfor %}
+      {% assign unique_types = types | uniq %}
+      {% for t in unique_types %}
+        <button class="filter-tab" data-filter="{{ t }}">{{ t }}</button>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -61,7 +66,7 @@ permalink: /projects/
 
     <div class="projects-container" id="projects-container">
       {% for project in site.data.projects %}
-      <div class="project-card project-item" data-category="{{ project.category }}">
+      <div class="project-card project-item" data-type="{{ project.product_type | default: project.category }}">
         <div class="project-image">
           <img src="{{ project.image | default: '/assets/images/project-placeholder.svg' }}" alt="{{ project.title }}">
         </div>
@@ -81,7 +86,7 @@ permalink: /projects/
             {% endfor %}
           </div>
           <div class="project-meta">
-            <div class="project-category">{{ project.category }}</div>
+            <div class="project-category">{{ project.product_type | default: project.category }}</div>
             {% if project.date %}
             <div class="project-date">{{ project.date | date: "%Y年%m月" }}</div>
             {% endif %}
@@ -147,8 +152,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function applyFilter(filter) {
     let visible = 0;
     items.forEach(item => {
-      const category = item.getAttribute('data-category');
-      const match = filter === 'all' || category === filter;
+      const type = item.getAttribute('data-type');
+      const match = filter === 'all' || type === filter;
       item.style.display = match ? 'block' : 'none';
       if (match) visible++;
     });
