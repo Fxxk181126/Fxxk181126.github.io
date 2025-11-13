@@ -130,6 +130,32 @@ permalink: /projects/
   </div>
 </section>
 
+<section class="section product-intros">
+  <div class="container">
+    <div class="section-title">
+      <h2>产品介绍</h2>
+      <p>了解产品的核心价值与能力全景</p>
+    </div>
+    <div class="projects-container">
+      {% assign product_intro_pages = site.pages | where: "category", "product_intro" %}
+      {% for p in product_intro_pages %}
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+          {% if p.description %}
+          <p class="project-description">{{ p.description }}</p>
+          {% endif %}
+          <div class="project-meta">
+            <div class="project-category">{{ p.product | default: '产品' }}</div>
+            <div class="project-date">{{ p.date | default: site.time | date: "%Y年%m月%d日" }}</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <section class="section projects-cta">
   <div class="container">
     <div class="cta-content">
